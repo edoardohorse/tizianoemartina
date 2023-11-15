@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Header from '@components/Header'
 import Footer from '@components/Footer'
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -11,13 +12,13 @@ export default function Home() {
       </Head>
 
       <main>
-        <Header title="Welcome to my app!" />
+        <Header title="Matrimonio di     Tiziano e Martina" />
         <p className="description">
-          Get started by editing <code>pages/index.js</code>
+            <Image src={"/work-penguin.gif"} alt={"Work in progress"} width={200} height={200}/>
         </p>
       </main>
 
-      <Footer />
+      {/*<Footer />*/}
     </div>
   )
 }
