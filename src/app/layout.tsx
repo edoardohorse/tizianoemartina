@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-
+import packageJson from "../../package.json"
 const inter = Inter({ subsets: ["latin"] });
 /*
 export const metadata: Metadata = {
@@ -14,12 +14,17 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+
   return (
     <html lang="en">
       <head>
         <title>Tiziano e Martina</title>
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <footer>v{packageJson.version}</footer>
+      </body>
     </html>
   );
 }
