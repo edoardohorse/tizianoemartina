@@ -1,0 +1,44 @@
+Resoconto pacchetto
+
+-----------------------------------------------------------------------------
+Documento: 
+Nome: MATRIMONIO TIZ E MARTY.ai
+Metodo colore: Colore CMYK
+Profilo colore:  ISO Coated v2 (ECI)
+Unità righelli: centimetri
+Dimensioni tavola disegno: 30,335 cm x 21,635 cm
+Mostra immagini con metodo contorno: NO
+Evidenzia font sostituiti: NO
+Evidenzia glifi sostituiti: NO
+Mantieni testo modificabile
+Simula carta colorata: NO
+
+-----------------------------------------------------------------------------
+Oggetti in tinta piatta: 
+
+-----------------------------------------------------------------------------
+Font mancanti:NESSUNO
+
+-----------------------------------------------------------------------------
+Font protetti non inclusi nel pacchetto:NESSUNO
+
+-----------------------------------------------------------------------------
+Font: 
+Baskerville-Normal (TrueType)
+Bodoni MT (OTF)
+Vladimir Script (OTF)
+Calibri Italic (OTF)
+Calibri (OTF)
+Palace Script MT (OTF)
+
+-----------------------------------------------------------------------------
+Font incorporati:
+NESSUNO
+
+-----------------------------------------------------------------------------
+Collegamenti mancanti:
+NESSUNO
+
+-----------------------------------------------------------------------------
+Immagini collegate: 
+NESSUNO
