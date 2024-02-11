@@ -24,7 +24,7 @@ export default async function middleware(req: NextRequest) {
 	const isInMaintenanceMode = askPreviewModeOn()
 	const { pathname } = req.nextUrl;
 
-	console.log(isInMaintenanceMode, pathname)
+	// console.log(isInMaintenanceMode, pathname)
 	// If in maintenance mode, point the url pathname to the maintenance page
 	if (isInMaintenanceMode) {
 		// req.nextUrl.pathname = `/courtesy`

@@ -1,0 +1,36 @@
+.herobanner{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.content{
+  position: relative;
+  z-index: 10;
+  color: white;
+  text-shadow: -2px 0px 20px black;
+}
+
+.content > h1{
+  margin: 0;
+  font-size: 5rem;
+}
+
+.content > h2{
+  text-align: center;
+  font-size: 2rem;
+  margin: 0;
+}
+
+
+.hero{
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}

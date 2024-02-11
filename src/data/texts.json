@@ -1,0 +1,44 @@
+{
+  "banners": [
+    {
+      "title": "Tiziano & Martina",
+      "date": "31/Ago/2024"
+    },
+    {
+      "title": "Indicazioni stradali",
+      "content": [
+        {
+          "title": "Come raggiungere la chiesa",
+          "content":"",
+          "link": "https://maps.app.goo.gl/RtDVDXBNKgHWTFis9"},
+        {
+          "title": "Località ricevimento",
+          "content":"",
+          "link": "https://maps.app.goo.gl/mSveWQDU58KeTH8VA"},
+        {
+          "title": "Visita la sposa",
+          "content": "Per chi volesse visitare il giorno del matrimonio la casa della sposa",
+          "link": ""
+        },
+        {
+          "title": "Visita lo sposo",
+          "content": "tPer chi volesse visitare il giorno del matrimonio la casa dello ",
+          "link": ""
+        }
+      ]
+    },
+    {
+      "title": "Per chi viene da fuori",
+      "content": "Elenco dei nomi degli hotel con relativi link maps e successiva frase: Saremo lieti di ospitarvi due notti presso uno dei seguenti Hotel/B&B. Prossimamente vi informeremo della disposizione scelta per voi."
+
+    },
+    {
+      "title": "Nelle vicinanze...",
+      "content": ""
+    },
+    {
+      "title": "Sezione FUN",
+      "content": ""
+    }
+  ]
+}
