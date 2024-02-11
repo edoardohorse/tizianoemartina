@@ -8,29 +8,51 @@
   overflow: hidden;
 }
 
-.content{
-  position: relative;
-  z-index: 10;
-  color: white;
-  text-shadow: -2px 0px 20px black;
-}
-
-.content > h1{
-  margin: 0;
-  font-size: 5rem;
-}
-
-.content > h2{
-  text-align: center;
-  font-size: 2rem;
-  margin: 0;
-}
-
-
 .hero{
   position: absolute;
   z-index: 1;
   top: 0;
   left: 0;
   object-fit: cover;
+}
+
+
+.content{
+  display: grid;
+  position: relative;
+  z-index: 10;
+  color: white;
+  text-shadow: -2px 0px 20px black;
+  flex-direction: column;
+  align-items: center;
+
+  height: 100%;
+  grid-template-rows: [title] 50vh [date] 50px [countdown] 1fr;
+  grid-template-columns: 1fr;
+}
+
+.content > h1{
+  margin: 0;
+  font-size: 5rem;
+
+  grid-column: title;
+  align-self: end;
+}
+
+.content > h2{
+  text-align: center;
+  font-size: 2rem;
+  margin: 0;
+
+  grid-column: date;
+}
+
+.countdown{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  font-size: 1.5rem;
+
+  grid-column: countdown;
+  align-self: end;
 }
