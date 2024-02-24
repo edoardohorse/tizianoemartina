@@ -1,0 +1,27 @@
+.indicazioni_banner{
+}
+.indicazioni_wrapper{
+  display: flex;
+  flex-direction: row;
+}
+.indicazioni_btn_wrapper{
+  display: flex;
+  flex-direction: column;
+  flex-basis: 300px;
+  gap: 10px;
+}
+.indicazioni_btn{
+  border: 1px solid rgba(0,0,0,.5);
+  border-radius: 10px 10px;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  font-size: 23px;
+  background-color: transparent;
+}
+.indicazioni_btn:hover{
+  background-color: var(--primary);
+  text-decoration: underline;
+}
+.indicazioni_map{
+  flex-grow: 1;
+}
