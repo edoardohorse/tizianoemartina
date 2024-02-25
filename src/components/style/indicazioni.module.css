@@ -1,14 +1,22 @@
+
 .indicazioni_banner{
+  position: relative;
+  height: max-content;
 }
 .indicazioni_wrapper{
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: minmax(16px, 10%) [left] minmax(15%,20%) [half] auto [right] minmax(16px, 10%);
+  grid-template-rows: [top] auto [bottom];
+  height: 500px;
+  overflow: hidden;
 }
-.indicazioni_btn_wrapper{
+.indicazioni_btn_column{
   display: flex;
   flex-direction: column;
   flex-basis: 300px;
   gap: 10px;
+  grid-column: left / half;
+  grid-row: top / bottom;
 }
 .indicazioni_btn{
   border: 1px solid rgba(0,0,0,.5);
@@ -22,6 +30,23 @@
   background-color: var(--primary);
   text-decoration: underline;
 }
+
+.indicazioni_map_column{
+  display: grid;
+  grid-column: half / right;
+  grid-row: top / bottom;
+}
+
+.indicazioni_map_wrapper{
+  grid-column: half / right;
+  grid-row: 1;
+}
+
 .indicazioni_map{
-  flex-grow: 1;
+
+}
+
+.indicazioni_map_wrapper iframe{
+  width: 100%;
+  height: 100%;
 }

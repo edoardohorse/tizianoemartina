@@ -10,7 +10,8 @@
         {
           "title": "Come raggiungere la chiesa",
           "map":"<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3170.703286081151!2d14.201416600000002!3d37.3731971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1310e156516693e5%3A0xf42cf9cbaa5af4e6!2sChiesa%20Madre%20di%20Maria%20SS.%20della%20Purificazione!5e0!3m2!1sit!2sit!4v1708797668602!5m2!1sit!2sit\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
-          "link": "https://maps.app.goo.gl/RtDVDXBNKgHWTFis9"},
+          "link": "https://maps.app.goo.gl/RtDVDXBNKgHWTFis9",
+          "content": "Vacci"},
         {
           "title": "Località ricevimento",
           "map":"<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d50804.03009048018!2d14.3969625!3d37.2654538!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x131104b615b43b0b%3A0xd900e1a48e371c30!2sVecchia%20Masseria!5e0!3m2!1sit!2sit!4v1708798193120!5m2!1sit!2sit\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
@@ -22,7 +23,7 @@
         },
         {
           "title": "Visita lo sposo",
-          "content": "tPer chi volesse visitare il giorno del matrimonio la casa dello ",
+          "content": "Per chi volesse visitare il giorno del matrimonio la casa dello sposo",
           "link": ""
         }
       ]
