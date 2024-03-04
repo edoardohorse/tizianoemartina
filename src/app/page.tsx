@@ -6,6 +6,10 @@ import {useFetchTexts} from "@/utility/utility";
 import IndicazioniStradaliBanner from "@/components/IndicazioniStradaliBanner";
 
 
+function ArrowDownwardIcon() {
+  return null;
+}
+
 export default async function Home() {
     const data = await useFetchTexts()
 
@@ -15,7 +19,8 @@ export default async function Home() {
       {/*<Header></Header>*/}
       <main className={style.wrapper}>
         <HeroBanner title={data.banners[0].title} date={data.banners[0].date}/>
-        <IndicazioniStradaliBanner title={data.banners[1].title} indicazioni={data.banners[1].content}/>
+
+        <IndicazioniStradaliBanner/>
 
       </main>
 
