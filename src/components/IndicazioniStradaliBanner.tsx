@@ -6,6 +6,7 @@ import Banner from "@/components/Banner";
 import {motion, Variants} from "framer-motion"
 import styles from './style/indicazioni.module.css'
 import Image from "next/image";
+import { cls } from '@/utility/utility';
 
 
 type AccordionProps = {
@@ -50,9 +51,9 @@ const IndicazioniStradaliBanner = (props: IndicazioniStradaliBannerProps) => {
 					<AccordionCerimonia id={'panel3'} expanded={expanded === 'panel3'} handleChange={handleChange('panel3')}/>
 				</Box>
 				<Box gridColumn="span 7" className={styles.foto_column}>
-					<FotoChiesa      show={expanded === 'panel1'}/>
-					<FotoCase        show={expanded === 'panel2'}/>
-					<FotoRistorante  show={expanded === 'panel3'}/>
+					<FotoChiesa     show={expanded === 'panel1'}/>
+					<FotoTradizione show={expanded === 'panel2'}/>
+					<FotoLocation   show={expanded === 'panel3'}/>
 				</Box>
 			</Box>
 		</Banner>
@@ -127,23 +128,23 @@ const FotoChiesa = (props: FotoProps) => {
 	return <motion.div initial={{opacity: 0, pointerEvents: "none", position: "absolute"}}
 	                   animate={props.show ? {opacity: 1, pointerEvents: "auto"} : {}}
 	                   transition={{duration: 0.2}} className={styles.foto_wrapper}>
-		<Image className={styles.foto} src={'/chiesa.jpg'} alt={'foto chiesa'} fill={true}/>
+		<Image className={cls([styles.foto, styles.foto_chiesa])} src={'/chiesa.jpg'} alt={'foto chiesa'} fill={true} />
 	</motion.div>
 }
 
-const FotoCase = (props: FotoProps) => {
+const FotoTradizione = (props: FotoProps) => {
 	return <motion.div initial={{opacity: 0, pointerEvents: "none", position: "absolute"}}
 	                   animate={props.show ? {opacity: 1, pointerEvents: "auto"} : {}}
 	                   transition={{duration: 0.2}} className={styles.foto_wrapper}>
-		<Image className={styles.foto} src={'/tradizione_cleanup1_cut.jpg'} alt={'foto chiesa'} fill={true} style={{objectFit: 'contain'}}/>
+		<Image className={cls([styles.foto, styles.foto_tradizione])} src={'/tradizione_full.png'} alt={'foto tradizione'} fill={true}/>
 	</motion.div>
 }
 
-const FotoRistorante = (props: FotoProps) => {
+const FotoLocation = (props: FotoProps) => {
 	return <motion.div initial={{opacity: 0, pointerEvents: "none", position: "absolute"}}
 	                   animate={props.show ? {opacity: 1, pointerEvents: "auto"} : {}}
 	                   transition={{duration: 0.2}} className={styles.foto_wrapper}>
-
+		<Image className={cls([styles.foto, styles.foto_location])} src={'/location.jpg'} alt={'foto location'} fill={true}/>
 	</motion.div>
 }
 

@@ -15,6 +15,8 @@
   margin: 0;
 }
 
-.banner_content{
-
+@media (width <= 375px){
+  .banner_title{
+    font-size: 40px;
+  }
 }
