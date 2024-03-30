@@ -1,7 +1,7 @@
 "use client"
 
 import React, {ReactNode, useEffect, useRef, useState} from 'react';
-import {Accordion, AccordionDetails, AccordionSummary, Box, Button, Typography} from "@mui/material";
+import {Accordion, AccordionDetails, AccordionSummary, Box, Button, Grid, Typography} from "@mui/material";
 import Banner from "@/components/Banner";
 import {motion, Variants} from "framer-motion"
 import styles from './style/indicazioni.module.css'
@@ -44,18 +44,18 @@ const IndicazioniStradaliBanner = (props: IndicazioniStradaliBannerProps) => {
 
 	return (
 		<Banner title={"Dove e Come"}>
-			<Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={2} height={"auto"}>
-				<Box gridColumn="span 5">
+			<Grid container height={"auto"} spacing={2}>
+				<Grid item xs={12} md={5} lg={5}>
 					<AccordionChiesa id={'panel1'} expanded={expanded === 'panel1'} handleChange={handleChange('panel1')}/>
 					<AccordionTradizione id={'panel2'} expanded={expanded === 'panel2'} handleChange={handleChange('panel2')}/>
 					<AccordionCerimonia id={'panel3'} expanded={expanded === 'panel3'} handleChange={handleChange('panel3')}/>
-				</Box>
-				<Box gridColumn="span 7" className={styles.foto_column}>
+				</Grid>
+				<Grid item xs={12} md={7} lg={7} className={styles.foto_column}>
 					<FotoChiesa     show={expanded === 'panel1'}/>
 					<FotoTradizione show={expanded === 'panel2'}/>
 					<FotoLocation   show={expanded === 'panel3'}/>
-				</Box>
-			</Box>
+				</Grid>
+			</Grid>
 		</Banner>
 	)
 }
