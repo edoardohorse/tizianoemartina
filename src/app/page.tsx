@@ -3,6 +3,7 @@
 import HeroBanner from "@/components/HeroBannerProps";
 import style from './page.module.css'
 import IndicazioniStradaliBanner from "@/components/IndicazioniStradaliBanner";
+import PerChiVieneDaFuori from "@/components/PerChiVieneDaFuori";
 
 
 function ArrowDownwardIcon() {
@@ -18,6 +19,7 @@ export default async function Home() {
         <HeroBanner title={'Tiziano & Martina'} date={'31/10/2024'}/>
 
         <IndicazioniStradaliBanner/>
+        <PerChiVieneDaFuori/>
 
       </main>
 
