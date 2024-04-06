@@ -1,0 +1,12 @@
+.sliderdintorni{
+  position: relative;
+  height: 50px;
+}
+
+.item{
+  position: absolute;
+}
+
+.cardDintorni{
+  height: 100vh;
+}

@@ -1,45 +1,71 @@
 {
-  "banners": [
-    {
-      "title": "Tiziano & Martina",
-      "date": "31/Ago/2024"
-    },
-    {
-      "title": "Indicazioni stradali",
-      "content": [
-        {
-          "title": "Come raggiungere la chiesa",
-          "map":"<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3170.703286081151!2d14.201416600000002!3d37.3731971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1310e156516693e5%3A0xf42cf9cbaa5af4e6!2sChiesa%20Madre%20di%20Maria%20SS.%20della%20Purificazione!5e0!3m2!1sit!2sit!4v1708797668602!5m2!1sit!2sit\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
-          "link": "https://maps.app.goo.gl/RtDVDXBNKgHWTFis9",
-          "content": "Vacci"},
-        {
-          "title": "Località ricevimento",
-          "map":"<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d50804.03009048018!2d14.3969625!3d37.2654538!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x131104b615b43b0b%3A0xd900e1a48e371c30!2sVecchia%20Masseria!5e0!3m2!1sit!2sit!4v1708798193120!5m2!1sit!2sit\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
-          "link": "https://maps.app.goo.gl/mSveWQDU58KeTH8VA"},
-        {
-          "title": "Visita la sposa",
-          "content": "Per chi volesse visitare il giorno del matrimonio la casa della sposa",
-          "link": ""
-        },
-        {
-          "title": "Visita lo sposo",
-          "content": "Per chi volesse visitare il giorno del matrimonio la casa dello sposo",
-          "link": ""
-        }
-      ]
-    },
-    {
-      "title": "Per chi viene da fuori",
-      "content": "Elenco dei nomi degli hotel con relativi link maps e successiva frase: Saremo lieti di ospitarvi due notti presso uno dei seguenti Hotel/B&B. Prossimamente vi informeremo della disposizione scelta per voi."
-
-    },
-    {
-      "title": "Nelle vicinanze...",
-      "content": ""
-    },
-    {
-      "title": "Sezione FUN",
-      "content": ""
-    }
-  ]
+  "banner": {
+    "title": "Tiziano & Martina",
+    "date": "31/Ago/2024"
+  },
+  "indicazioniStradali": {
+    "title": "Indicazioni stradali",
+    "content": [
+      {
+        "title": "Come raggiungere la chiesa",
+        "map": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3170.703286081151!2d14.201416600000002!3d37.3731971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1310e156516693e5%3A0xf42cf9cbaa5af4e6!2sChiesa%20Madre%20di%20Maria%20SS.%20della%20Purificazione!5e0!3m2!1sit!2sit!4v1708797668602!5m2!1sit!2sit\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
+        "link": "https://maps.app.goo.gl/RtDVDXBNKgHWTFis9",
+        "content": "Vacci"
+      },
+      {
+        "title": "Località ricevimento",
+        "map": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d50804.03009048018!2d14.3969625!3d37.2654538!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x131104b615b43b0b%3A0xd900e1a48e371c30!2sVecchia%20Masseria!5e0!3m2!1sit!2sit!4v1708798193120!5m2!1sit!2sit\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
+        "link": "https://maps.app.goo.gl/mSveWQDU58KeTH8VA"
+      },
+      {
+        "title": "Visita la sposa",
+        "content": "Per chi volesse visitare il giorno del matrimonio la casa della sposa",
+        "link": ""
+      },
+      {
+        "title": "Visita lo sposo",
+        "content": "Per chi volesse visitare il giorno del matrimonio la casa dello sposo",
+        "link": ""
+      }
+    ]
+  },
+  "perChiVieneDaFuori": {
+    "title": "Per chi viene da fuori",
+    "descr": "Elenco dei nomi degli hotel con relativi link maps e successiva frase: Saremo lieti di ospitarvi due notti presso uno dei seguenti Hotel/B&B. Prossimamente vi informeremo della disposizione scelta per voi."
+  },
+  "neiDintorni": {
+    "title": "Nelle dintorni...",
+    "description": "Sicuramente il nostro matrimonio sarà l'evento clou del tuo viaggio… ma non credere che nelle vicinanze non ci sia nulla in cui trascorrere un po' di tempo piacevolmente. Anzi, l'entroterra siciliano è ricco di luoghi caratteristici da visitare, che ti consigliamo di aggiungere tra le tappe del tuo mini tour targato #Sicilia2024.",
+    "sections": [
+      {
+        "title": "Citta di Piazza Armerina",
+        "content": "La cosiddetta città delle 100 chiese, con un centro storico dai richiami barocchi e normanni,  è ricca di riferimenti storici e religiosi che rimarranno impressi nei tuoi occhi. Svetta su questi il duomo situato in una piazzetta che ti regalerà una vista mozzafiato sulle vallate circostanti.",
+        "link": "https://www.piazzaarmerina.org/"
+      },
+      {
+        "title": "Villa Romana del Casale",
+        "content": "Perché non continuare la visita di Piazza Armerina visitando anche gli scavi di epoca romana, tornando indietro nel tempo immergendosi nei momenti di svago della nobiltà di allora. Consigliato tour serale.",
+        "link": "https://www.villaromanadelcasale.it/"
+      },
+      {
+        "title": "Caltagirone",
+        "content": "Meta del nostro ricevimento e sicuramente tappa d'obbligo per poter confrontare se la rinomata ceramica locale sia effettivamente più bella della concorrenza grottagliese. Città in cui ammirare l'arte che permea tra i vari scorci, palazzi e fino ad arrivare al culmine nella famosissima scalinata di Santa Maria del Monte.",
+        "link": null
+      },
+      {
+        "title": "Enna",
+        "content": "Noto capoluogo più alto d'Italia, in cui è possibile visitare i resti del castello di Lombardia posizionato nel punto più alto della città. La posizione del castello offre un panorama vastissimo, che spazia dalle Madonie all'Etna. Adiacente al castello sorge la Rocca di Cerere, costruita in direzione del sole nascente",
+        "link": null
+      },
+      {
+        "title": "Templi di Agrigento",
+        "content": "Se il tempo a vostra disposizione ve lo consente, vi consigliamo di non perdervi la visita, al crepuscolo, al parco archeologico di Agrigento, inserito dall'UNESCO nell'elenco del patrimonio mondiale dell'umanità, in cui potrete ammirare la maestosità dei templi di epoca greca.",
+        "link": null
+      }
+    ]
+  },
+  "": {
+    "title": "Sezione FUN",
+    "content": ""
+  }
 }
