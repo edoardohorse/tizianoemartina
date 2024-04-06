@@ -1,0 +1,47 @@
+.carousel {
+  width: 80%;
+  height: 80vh;
+}
+
+
+
+.slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+
+}
+
+.swiper-slide-shadow{
+  display: none !important;
+}
+
+.image{
+  border-radius:4px;
+  width:100%;
+  height: 600px;
+  object-fit: contain;
+}
+
+/*
+.swiper-slide-prev img:after{
+  content:'';
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}*/
+
+@media (width <= 768px){
+  .carousel {
+    width: 100%;
+  }
+
+  .image{
+    /*height: 600px;*/
+    /*object-fit: cover;*/
+  }
+}

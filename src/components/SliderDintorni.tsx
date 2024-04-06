@@ -56,7 +56,7 @@ const SliderDintorni = forwardRef((props: SliderDintorniProps, ref: Ref<ISliderD
 		<>
 			<div className={styles.sliderdintorni}>
 			{props.titles.map((title, index) => {
-				return (<AnimatePresence>
+				return (<AnimatePresence key={index}>
 						{state.currentIndex < index &&
 							<motion.div key={index} initial={fromUp} className={styles.item}>
 								<Typography fontSize={25} fontWeight={700}>{title}</Typography>
