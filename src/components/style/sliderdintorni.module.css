@@ -1,12 +1,31 @@
 .sliderdintorni{
-  position: relative;
+  display: flex;
+  position: sticky;
+  justify-content: left;
+  align-items: center;
   height: 50px;
+  top: -1px;
+  width: 100%;
+  z-index: 10;
+  background: white;
+  opacity: 0;
+}
+
+.sliderdintorni--inview{
+  box-shadow: 0px 0px 25px -17px black;
+  padding: 4px 1em 0 1em;
+  opacity: 1;
 }
 
 .item{
   position: absolute;
 }
 
+.cardWrapperDintorni{
+  margin-top: 50px;
+}
+
 .cardDintorni{
-  height: 100vh;
+  height: auto;
+  padding: 0;
 }

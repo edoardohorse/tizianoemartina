@@ -1,8 +1,9 @@
 'use client'
-import React, {forwardRef, ReactNode, Ref, useEffect, useImperativeHandle, useState} from 'react';
-import {AnimatePresence, motion} from "framer-motion"
+import React, {forwardRef, ReactNode, Ref, useEffect, useImperativeHandle, useRef, useState} from 'react';
+import {AnimatePresence, motion, useMotionValueEvent, useScroll} from "framer-motion"
 import {Button, Typography} from "@mui/material";
 import styles from './style/sliderdintorni.module.css'
+import clsx from "clsx";
 
 type SliderDintorniProps = {
 	titles: Array<string>,
@@ -17,17 +18,20 @@ export interface ISliderDintorniActions{
 }
 
 const SliderDintorni = forwardRef((props: SliderDintorniProps, ref: Ref<ISliderDintorniActions>) => {
+	const { scrollY } = useScroll()
 	const [state, setState] = useState<{lastIndex: number, currentIndex: number}>({
 		lastIndex: 0,
 		currentIndex: 0,
 	})
+	const [stuck, setStuck] = useState(false)
+
+	const refInView = useRef<HTMLDivElement>(null)
 
 	const goTo = (index: number)=>{
 		if(index == 0) return reset()
 		if(index <= state.currentIndex) return goPrev(state.currentIndex - index )
 		if(index > state.currentIndex) return goNext(index - state.currentIndex)
 	}
-
 	const goPrev = (step: number = 1) => {
 		if(state.currentIndex === 0) return
 		setState({lastIndex: state.currentIndex ,currentIndex: state.currentIndex - step})
@@ -36,10 +40,18 @@ const SliderDintorni = forwardRef((props: SliderDintorniProps, ref: Ref<ISliderD
 		if(state.currentIndex + 1 === props.titles.length) return
 		setState({lastIndex: state.currentIndex ,currentIndex: state.currentIndex + step})
 	}
-
 	const reset = () => {
 		setState({lastIndex: 0 ,currentIndex: 0})
 	}
+	const isInView = ()=>{
+		if(refInView?.current?.getBoundingClientRect().y === -1){
+			if(stuck === true) return
+			return setStuck(true)
+		}
+		else if(stuck === true) return setStuck(false);
+	}
+
+	useMotionValueEvent(scrollY, "change", (latest) => isInView())
 
 	useEffect(function onChangeIndex() {
 		goTo(props?.index ?? 0)
@@ -54,7 +66,7 @@ const SliderDintorni = forwardRef((props: SliderDintorniProps, ref: Ref<ISliderD
 
 	return (
 		<>
-			<div className={styles.sliderdintorni}>
+			<div className={clsx(styles.sliderdintorni , stuck && styles['sliderdintorni--inview'])} ref={refInView}>
 			{props.titles.map((title, index) => {
 				return (<AnimatePresence key={index}>
 						{state.currentIndex < index &&

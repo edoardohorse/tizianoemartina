@@ -7,9 +7,7 @@ import PerChiVieneDaFuori from "@/components/sections/PerChiVieneDaFuori";
 import NeiDintorni from "@/components/sections/NeiDintorni";
 
 
-function ArrowDownwardIcon() {
-  return null;
-}
+
 
 export default async function Home() {
 

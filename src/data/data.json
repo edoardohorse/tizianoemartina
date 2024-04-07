@@ -34,11 +34,11 @@
     "descr": "Elenco dei nomi degli hotel con relativi link maps e successiva frase: Saremo lieti di ospitarvi due notti presso uno dei seguenti Hotel/B&B. Prossimamente vi informeremo della disposizione scelta per voi."
   },
   "neiDintorni": {
-    "title": "Nelle dintorni...",
+    "title": "Nei dintorni...",
     "description": "Sicuramente il nostro matrimonio sarà l'evento clou del tuo viaggio… ma non credere che nelle vicinanze non ci sia nulla in cui trascorrere un po' di tempo piacevolmente. Anzi, l'entroterra siciliano è ricco di luoghi caratteristici da visitare, che ti consigliamo di aggiungere tra le tappe del tuo mini tour targato #Sicilia2024.",
     "sections": {
       "piazzaamerina": {
-        "title": "Citta di Piazza Armerina",
+        "title": "Città di Piazza Armerina",
         "content": "La cosiddetta città delle 100 chiese, con un centro storico dai richiami barocchi e normanni,  è ricca di riferimenti storici e religiosi che rimarranno impressi nei tuoi occhi. Svetta su questi il duomo situato in una piazzetta che ti regalerà una vista mozzafiato sulle vallate circostanti.",
         "link": "https://www.piazzaarmerina.org/",
         "images": [

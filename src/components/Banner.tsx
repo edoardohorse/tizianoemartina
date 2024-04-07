@@ -14,7 +14,7 @@ const Banner = (props: BannerProps)=>{
 
 	return (
 		<>
-			<Card className={style.banner} variant={"outlined"}>
+			<Card className={style.banner} elevation={0}>
 				<Banner.Title>{props.title}</Banner.Title>
 				<div>
 					{props.children}

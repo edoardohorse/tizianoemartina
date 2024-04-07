@@ -17,7 +17,7 @@ type TDintorno = {
 
 function useInViewDintorni(props: TDintorno){
 	const ref = useRef(null)
-	const isInView = useInView(ref)
+	const isInView = useInView(ref, {amount: 0.5})
 
 	useEffect(function () {
 		if(isInView) props.select()
@@ -35,12 +35,10 @@ const NeiDintorni = (props: NeiDintorniProps) => {
 
 	return (
 		<>
-			<br/>
+			<SliderTitoliDintorni ref={refSlider} titles={titles}/>
 			<Banner title={data.neiDintorni.title}>
-				<Typography fontSize={30}>{data.neiDintorni.description}</Typography>
-
-				<SliderTitoliDintorni ref={refSlider} titles={titles}/>
-				<Card style={{border: '1px solid black', height: '70vh', overflow: 'scroll'}}>
+				<Typography fontSize={25}>{data.neiDintorni.description}</Typography>
+				<Card className={styles.cardWrapperDintorni} elevation={0}>
 					<div ref={refSliderContainer}>
 						<PiazzaArmerina select={()=>refSlider?.current?.goTo(0)}/>
 						<VillaRomana    select={()=>refSlider?.current?.goTo(1)}/>
@@ -57,11 +55,11 @@ const NeiDintorni = (props: NeiDintorniProps) => {
 
 const PiazzaArmerina = (props: TDintorno) => {
 	const ref = useInViewDintorni(props)
-	return <Card ref={ref} className={styles.cardDintorni}>
-			<CardContent>
-				<Typography>{data.neiDintorni.sections.piazzaamerina.content}</Typography>
-
+	return <Card ref={ref} className={styles.cardDintorni} elevation={0}>
+		<CardContent>
 				<CarouselNeiDintorni images={data.neiDintorni.sections.piazzaamerina.images}/>
+
+				<Typography fontSize={20}>{data.neiDintorni.sections.piazzaamerina.content}</Typography>
 				{/*https://www.piazzaarmerina.org/*/}
 			</CardContent>
 		</Card>
@@ -69,11 +67,11 @@ const PiazzaArmerina = (props: TDintorno) => {
 
 const VillaRomana = (props: TDintorno) => {
 	const ref = useInViewDintorni(props)
-	return <Card ref={ref} className={styles.cardDintorni}>
+	return <Card ref={ref} className={styles.cardDintorni} elevation={0}>
 		<CardContent>
-			<Typography>{data.neiDintorni.sections.villaromana.content}</Typography>
-
 			<CarouselNeiDintorni images={data.neiDintorni.sections.villaromana.images}/>
+
+			<Typography fontSize={20}>{data.neiDintorni.sections.villaromana.content}</Typography>
 			{/*https://www.villaromanadelcasale.it/*/}
 		</CardContent>
 	</Card>
@@ -81,33 +79,33 @@ const VillaRomana = (props: TDintorno) => {
 
 const Caltagirone = (props: TDintorno) => {
 	const ref = useInViewDintorni(props)
-	return <Card ref={ref} className={styles.cardDintorni}>
+	return <Card ref={ref} className={styles.cardDintorni} elevation={0}>
 		<CardContent>
-			<Typography>{data.neiDintorni.sections.caltagirone.content}</Typography>
-
 			<CarouselNeiDintorni images={data.neiDintorni.sections.caltagirone.images}/>
+
+			<Typography fontSize={20}>{data.neiDintorni.sections.caltagirone.content}</Typography>
 		</CardContent>
 	</Card>
 }
 
 const Enna = (props: TDintorno) => {
 	const ref = useInViewDintorni(props)
-	return <Card ref={ref} className={styles.cardDintorni}>
+	return <Card ref={ref} className={styles.cardDintorni} elevation={0}>
 		<CardContent>
-			<Typography>{data.neiDintorni.sections.enna.content}</Typography>
-
 			<CarouselNeiDintorni images={data.neiDintorni.sections.enna.images}/>
+
+			<Typography fontSize={20}>{data.neiDintorni.sections.enna.content}</Typography>
 		</CardContent>
 	</Card>
 }
 
 const Templi = (props: TDintorno) => {
 	const ref = useInViewDintorni(props)
-	return <Card ref={ref} className={styles.cardDintorni}>
+	return <Card ref={ref} className={styles.cardDintorni} elevation={0}>
 		<CardContent>
-			<Typography>{data.neiDintorni.sections.templi.content}</Typography>
-
 			<CarouselNeiDintorni images={data.neiDintorni.sections.templi.images}/>
+
+			<Typography fontSize={20}>{data.neiDintorni.sections.templi.content}</Typography>
 			{/*https://www.lavalledeitempli.it/*/}
 		</CardContent>
 	</Card>
