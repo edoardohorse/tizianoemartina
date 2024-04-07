@@ -1,33 +1,54 @@
-.indicazioni_banner{
-
-}
-
-.indicazioni_wrapper{
+.foto_column{
+  position:relative;
+  height: 600px;
   display: flex;
-  flex-direction: row;
+  justify-content: center;
 }
 
-.indicazioni_btn_wrapper{
+.foto_wrapper{
+ /* max-width: 800px;
+  max-height: 600px;*/
+  width: 100%;
+  height: 100%;
+}
+
+.foto{
+  border-radius: 10px;
+}
+
+.foto_chiesa{
+  object-fit: cover;
+}
+
+.foto_tradizione{
+  object-fit: cover;
+}
+
+.foto_location{
+  object-fit: cover;
+}
+
+.card-container {
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
-  flex-basis: 300px;
-  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding-top: 20px;
+  margin-bottom: -120px;
 }
 
-.indicazioni_btn{
-  border: 1px solid rgba(0,0,0,.5);
-  border-radius: 10px 10px;
-  padding: 0.5em 1em;
-  cursor: pointer;
-  font-size: 23px;
-  background-color: transparent;
-}
-
-.indicazioni_btn:hover{
-  background-color: var(--primary);
-  text-decoration: underline;
-}
-
-.indicazioni_map{
-  flex-grow: 1;
+.card {
+  font-size: 164px;
+  width: 300px;
+  height: 430px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 0 1px hsl(0deg 0% 0% / 0.075), 0 0 2px hsl(0deg 0% 0% / 0.075),
+  0 0 4px hsl(0deg 0% 0% / 0.075), 0 0 8px hsl(0deg 0% 0% / 0.075),
+  0 0 16px hsl(0deg 0% 0% / 0.075);
+  transform-origin: 10% 60%;
 }

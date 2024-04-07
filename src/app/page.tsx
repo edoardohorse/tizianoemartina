@@ -1,17 +1,26 @@
-import HeroBanner from "@/components/HeroBannerProps";
+"use client"
+
+import HeroBanner from "@/components/sections/HeroBanner";
 import style from './page.module.css'
-import {useFetchTexts} from "@/utility/utility";
-import IndicazioniStradaliBanner from "@/components/IndicazioniStradaliBanner";
+import IndicazioniStradaliBanner from "@/components/sections/IndicazioniStradaliBanner";
+import PerChiVieneDaFuori from "@/components/sections/PerChiVieneDaFuori";
+import NeiDintorni from "@/components/sections/NeiDintorni";
+
+
+
 
 export default async function Home() {
-  const data = await useFetchTexts()
 
   return (
     <>
       {/*<Header></Header>*/}
       <main className={style.wrapper}>
-        <HeroBanner title={data.banners[0].title} date={data.banners[0].date}/>
-        <IndicazioniStradaliBanner title={data.banners[1].title} indicazioni={data.banners[1].content}/>
+        <HeroBanner title={'Tiziano & Martina'} date={'31/10/2024'}/>
+
+        <IndicazioniStradaliBanner/>
+        <PerChiVieneDaFuori/>
+        <NeiDintorni/>
+
       </main>
 
     </>

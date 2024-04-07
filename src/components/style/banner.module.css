@@ -1,0 +1,23 @@
+.banner{
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 2em);
+  min-height: 400px;
+  height: fit-content;
+  margin: 1em;
+  /*padding: 1em;*/
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.banner_title{
+  font-size: 50px;
+  margin: 0;
+}
+
+@media (width <= 375px){
+  .banner_title{
+    font-size: 40px;
+  }
+}

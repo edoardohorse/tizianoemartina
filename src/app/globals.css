@@ -4,10 +4,9 @@
 @font-face {
   font-family: 'sitka';
   src:  url('/font/sitka-small-599.ttf') format('ttf'),
-        url('/font/sitka-small-652.ttf') format('ttf'),
-        url('/font/sitka-small-815.ttf') format('ttf');
+  url('/font/sitka-small-652.ttf') format('ttf'),
+  url('/font/sitka-small-815.ttf') format('ttf');
 }
-
 :root{
   --primary: ;
   --secondary: ;
@@ -18,13 +17,14 @@ html,
 body {
   padding: 0;
   margin: 0;
-  overflow-x: hidden;
-  /*font-family: 'DM Serif Display', serif;*/
   font-family: 'Sitka Text', serif;
+  letter-spacing: -0.2px;
+  overflow-x: hidden;
+  scrollbar-width: thin;
 }
 
 * {
-  box-sizing: content-box;
+  box-sizing: border-box;
 }
 
 main {
@@ -34,6 +34,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
 }
 
 code {
@@ -60,16 +61,30 @@ code {
 
 .banner{
   display: flex;
-  width: 100%;
+  width: 100vw;
   min-height: 500px;
   flex-direction: column;
   box-sizing: content-box;
   border: 1px solid red;
 }
 
+
 footer{
   position: fixed;
   bottom: 0;
   right: 5px;
   font-family: monospace;
+}
+
+
+.swiper-slide-shadow{
+  display: none !important;
+}
+
+.swiper-slide{
+  opacity: 0.2;
+}
+
+.swiper-slide-active{
+  opacity: 1;
 }
