@@ -8,8 +8,8 @@
   url('/font/sitka-small-815.ttf') format('ttf');
 }
 :root{
-  --primary: ;
-  --secondary: ;
+  --primary: #b1c6af;
+  --secondary: #b1c6afa;
   --accent: ;
 }
 
@@ -21,6 +21,7 @@ body {
   letter-spacing: -0.2px;
   overflow-x: hidden;
   scrollbar-width: thin;
+  background-color: var(--primary);
 }
 
 * {
