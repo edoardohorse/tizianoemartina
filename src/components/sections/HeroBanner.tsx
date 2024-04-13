@@ -2,19 +2,19 @@
 
 import style from '../style/herobanner.module.css'
 import Image from "next/image";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 type HeroBanner = {
 	title: string,
 	date: string
 }
 
-const HeroBanner = (props: HeroBanner)=>{
+const HeroBanner = (props: HeroBanner) => {
 	const countdown = ""
 
 	return (<>
 		<section className={style.herobanner}>
-			<Image className={style.hero} src={'/bouchet/ai/test1.png'} alt={"bouchet"} fill={true} />
+			<Image className={style.hero} src={'/bouchet/ai/test1.png'} alt={"bouchet"} fill={true} sizes={"100vw"} priority/>
 			<div className={style.content}>
 				<h1>{props.title}</h1>
 				<h2>{props.date}</h2>
@@ -25,16 +25,18 @@ const HeroBanner = (props: HeroBanner)=>{
 }
 
 type CountdownDate = {
-	days?   : string,
-	hours   : string,
-	minutes : string,
-	seconds : string,
-}  | undefined | null
+	days?: string,
+	hours: string,
+	minutes: string,
+	seconds: string,
+} | undefined | null
 
-const Countdown = ()=>{
+const Countdown = () => {
 	const date = useCountdown()
 
-	if(date == null){
+	if (date === undefined) return <></>
+
+	if (date === null) {
 		return <p className={style.countdown}>{"Auguriii"}</p>
 	}
 
@@ -48,41 +50,51 @@ const Countdown = ()=>{
 	</>)
 }
 
-const useCountdown = ()=>{
+const useCountdown = () => {
 	// Set the countdown date
 	const [finishDate, setFinishDate] = useState(new Date('August 31, 2024 00:00:00').getTime())
 	const [countdownDate, setCountdownDate] = useState<CountdownDate>(undefined)
+	const [distance, setDistance] = useState(0)
+	useEffect(function () {
+		// Update the countdown every second
+		const countdown = setInterval(function () {
+			const now = new Date().getTime();
+			const tempDistance = finishDate - now
+
+			// Calculate days, hours, minutes, and seconds
+			const days = Math.floor(tempDistance / (1000 * 60 * 60 * 24)).toString().padStart(2, "0")
+			const hours = Math.floor((tempDistance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, "0")
+			const minutes = Math.floor((tempDistance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, "0")
+			const seconds = Math.floor((tempDistance % (1000 * 60)) / 1000).toString().padStart(2, "0")
+
+			// console.log(`${days}d ${hours}h ${minutes}m ${seconds}s`);
+
+			// Check if the countdown is over
+			if (tempDistance < 0) {
+				clearInterval(countdown);
+				return setDistance(tempDistance);
+
+				// console.log('Countdown is over!');
+			}
+
+			setCountdownDate({
+				"days": days,
+				"hours": hours,
+				"minutes": minutes,
+				"seconds": seconds,
+			} as CountdownDate)
+
+			setDistance(tempDistance);
+
+		}, 1000);
 
 
-// Update the countdown every second
-	const countdown = setInterval(function() {
-		const now = new Date().getTime();
-		const distance = finishDate - now;
+	}, []);
 
-		// Calculate days, hours, minutes, and seconds
-		const days = Math.floor(distance / (1000 * 60 * 60 * 24)).toString().padStart(2,"0")
-		const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2,"0")
-		const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2,"0")
-		const seconds = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2,"0")
-
-		// console.log(`${days}d ${hours}h ${minutes}m ${seconds}s`);
-
-		// Check if the countdown is over
-		if (distance < 0) {
-			clearInterval(countdown);
-			// return "AUGURII!!!"
-			// console.log('Countdown is over!');
-		}
-
-		setCountdownDate( {
-			"days" : days,
-			"hours" : hours,
-			"minutes" : minutes,
-			"seconds" : seconds,
-		} as CountdownDate)
-
-
-	}, 1000);
+	if (distance < 0) {
+		return null
+		// console.log('Countdown is over!');
+	}
 
 	return countdownDate
 }
