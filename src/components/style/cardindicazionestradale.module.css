@@ -1,0 +1,118 @@
+.cardIndicazione_wrapper{
+  position: relative;
+  background-color: var(--background);
+  justify-content: center;
+  max-width: 410px;
+  min-height: 300px;
+  width: auto;
+  padding: 3em;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: var(--text);
+  border-radius: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px -1px rgba(0,0,0,0.1);
+}
+
+.cardIndicazione_border1{
+  position: absolute;
+  border: 2px solid var(--secondary);
+  width: calc(100% - 2em);
+  height: calc(100% - 2.5em);
+  top: 1.5em;
+  left: 1em;
+}
+.cardIndicazione_border2{
+  position: absolute;
+  border: 2px solid var(--secondary);
+  width: calc(100% - 3em);
+  height: calc(100% - 1.5em);
+  top: 1em;
+  left: 1.5em;
+}
+
+
+.cardIndicazione_title{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+}
+.cardIndicazione_title p{
+}
+
+.cardIndicazione_icon svg{
+  height: 70px;
+  width: 80px;
+}
+
+.cardIndicazione_wrapper_details{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardIndicazione_wrapper_details_title{
+  color: var(--text-title);
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 1;
+  font-family: 'Great Vibes' !important;
+  font-style: normal;
+  letter-spacing: 2.5px;
+}
+
+.cardIndicazione_wrapper_details_orario{
+  color: var(--text-title);
+  font-size: 25px;
+  line-height: 1;
+}
+
+.cardIndicazione_details{
+  text-align: center;
+}
+
+.cardIndicazione_wrapper_details_text{
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+.cardIndicazione_wrapper button{
+  line-height: 1.3;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  white-space: nowrap;
+}
+
+@media (width <= 1024px) {
+  .cardIndicazione_wrapper {
+    width: 100%;
+    max-width: unset;
+    min-height: 200px;
+    gap: 10px;
+  }
+}
+
+@media (width <= 475px) {
+  .cardIndicazione_wrapper_details_title{
+    font-size: 26px;
+  }
+
+  .cardIndicazione_wrapper_details_orario{
+    font-size: 21px;
+  }
+
+  .cardIndicazione_wrapper_details_text{
+    font-size: 16px;
+  }
+
+  .cardIndicazione_wrapper button{
+    font-size: 12px;
+  }
+}
+
+

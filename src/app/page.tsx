@@ -14,12 +14,12 @@ export default async function Home() {
     <>
       {/*<Header></Header>*/}
       <main className={style.wrapper}>
-        {/*<HeroBanner title={'Tiziano & Martina'} date={'31/10/2024'}/>
+        <HeroBanner title={'Tiziano & Martina'} date={'31/10/2024'}/>
 
         <IndicazioniStradaliBanner/>
         <PerChiVieneDaFuori/>
-        <NeiDintorni/>*/}
-        <Partecipazione/>
+        <NeiDintorni/>
+        {/*<Partecipazione/>*/}
       </main>
 
     </>

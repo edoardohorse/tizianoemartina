@@ -14,14 +14,14 @@
   top: 0;
   left: 0;
   object-fit: cover;
+  filter: brightness(0.8);
 }
-
 
 .content{
   display: grid;
   position: relative;
   z-index: 10;
-  color: white;
+  /*color: white;*/
   text-shadow: -2px 0px 20px black;
   flex-direction: column;
   align-items: center;
@@ -34,6 +34,7 @@
 .content > h1{
   margin: 0;
   font-size: 5rem;
+  color: #fff;
 
   grid-column: title;
   align-self: end;
@@ -43,6 +44,7 @@
   text-align: center;
   font-size: 2rem;
   margin: 0;
+  color: #fff;
 
   grid-column: date;
 }
@@ -55,4 +57,9 @@
 
   grid-column: countdown;
   align-self: end;
+}
+
+.content *{
+  color: #fff;
+
 }
