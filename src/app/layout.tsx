@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import { CookiesProvider } from 'next-client-cookies/server';
 
 import "./globals.css";
 import packageJson from "../../package.json"
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Tiziano e Martina",

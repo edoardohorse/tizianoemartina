@@ -7,11 +7,44 @@ import {motion, Variants} from "framer-motion"
 import styles from '../style/indicazioni.module.css'
 import Image from "next/image";
 import { cls } from '@/utility/utility';
+import ChurchRoundedIcon from '@mui/icons-material/ChurchRounded';
+import CardIndicazioneStradale from "@/components/CardIndicazioneStradale";
+import ChurchOutlinedIcon from "@mui/icons-material/ChurchOutlined";
+import TourOutlinedIcon from '@mui/icons-material/TourOutlined';
+import ArrowDropDownOutlinedIcon from '@mui/icons-material/ArrowDropDownOutlined';
+import CelebrationOutlinedIcon from '@mui/icons-material/CelebrationOutlined';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
 
+interface TabPanelProps {
+	children?: React.ReactNode;
+	index: number;
+	value: number;
+}
+
+function TabPanel(props: TabPanelProps) {
+	const { children, value, index, ...other } = props;
+
+	return (
+		<div
+			role="tabpanel"
+			hidden={value !== index}
+			id={`vertical-tabpanel-${index}`}
+			aria-labelledby={`vertical-tab-${index}`}
+			className={styles.panel_wrapper}
+			{...other}
+		>
+			{value === index && (
+				<>{children}</>
+			)}
+		</div>
+	);
+}
 
 type AccordionProps = {
 	id: string,
 	expanded: boolean,
+	title: string,
 	handleChange: (event: React.SyntheticEvent, isExpanded: boolean) => void
 }
 
@@ -33,121 +66,72 @@ const cardVariants: Variants = {
 	}
 };
 
+function a11yProps(index: number) {
+	return {
+		id: `vertical-tab-${index}`,
+		'aria-controls': `vertical-tabpanel-${index}`,
+	};
+}
+
+
 type IndicazioniStradaliBannerProps = {}
 
 const IndicazioniStradaliBanner = (props: IndicazioniStradaliBannerProps) => {
-	const [expanded, setExpanded] = React.useState<string | false>('panel1');
+	const [value, setValue] = React.useState(0);
 
-	const handleChange = (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
-		setExpanded(isExpanded ? panel : false);
+	const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+		setValue(newValue);
 	};
 
 	return (
 		<Banner title={"Dove e Come"}>
-			<Grid container height={"auto"} spacing={2}>
-				<Grid item xs={12} md={5} lg={5}>
-					<AccordionChiesa id={'panel1'} expanded={expanded === 'panel1'} handleChange={handleChange('panel1')}/>
-					<AccordionTradizione id={'panel2'} expanded={expanded === 'panel2'} handleChange={handleChange('panel2')}/>
-					<AccordionCerimonia id={'panel3'} expanded={expanded === 'panel3'} handleChange={handleChange('panel3')}/>
-				</Grid>
-				<Grid item xs={12} md={7} lg={7} className={styles.foto_column}>
-					<FotoChiesa     show={expanded === 'panel1'}/>
-					<FotoTradizione show={expanded === 'panel2'}/>
-					<FotoLocation   show={expanded === 'panel3'}/>
-				</Grid>
+
+			<Grid container height={"auto"} justifyContent="center" className={styles.tabs_wrapper}>
+				<Tabs
+					orientation="horizontal"
+					variant="scrollable"
+					value={value}
+					onChange={handleChange}
+				>
+					<Tab label="Tradizione" {...a11yProps(0)}/>
+					<Tab label="Chiesa" {...a11yProps(1)}/>
+					<Tab label="Cerimonia" {...a11yProps(2)}/>
+				</Tabs>
+
+				<TabPanel value={value} index={0}>
+					<div className={styles.panel}>
+						<div className={styles.panel_card}>
+							<CardIndicazioneStradale title={'Visita'} orario={''}
+							                         dettagli={'Storicamente è tradizione locale far visita agli sposi durante la vestizione che precede il rito nuziale'}
+							                         icon={<TourOutlinedIcon/>}>
+								<Button variant="outlined">Casa Martina, via Nicolò Bonservizi 1<br/> Barrafranca EN</Button>
+								<Button variant="outlined">Casa Tiziano, Via Dante 7<br/> Barrafranca EN</Button>
+							</CardIndicazioneStradale>
+						</div>
+						<img loading={"lazy"} className={styles.panel_foto} src={'/tradizione_full.png'} alt={'foto tradizione'}/>
+					</div>
+				</TabPanel>
+				<TabPanel value={value} index={1}>
+					<div className={styles.panel}>
+						<div className={styles.panel_card}>
+							<CardIndicazioneStradale title={'Chiesa'} orario={'16:00'} dettagli={'Chiesa Madre, Piazza Ligotti Tenente 2, Barrafranca EN'} icon={<ChurchOutlinedIcon/>}/>
+						</div>
+						<img src={'/chiesa.jpg'} alt={'foto chiesa'} loading={"lazy"} className={styles.panel_foto} />
+					</div>
+				</TabPanel>
+				<TabPanel value={value} index={2}>
+					<div className={styles.panel}>
+						<div className={styles.panel_card}>
+							<CardIndicazioneStradale icon={<CelebrationOutlinedIcon/>} title={'Cerimonia'} orario={''}
+							                         dettagli={'A seguito della cerimonia, gli sposi saranno lieti di festeggiare con voi presso la Vecchia Masseria, Cda Cutuminello Km 68, SS117bis, Caltagirone CT'}/>
+						</div>
+						<img loading={"lazy"} className={styles.panel_foto} src={'/location.jpg'} alt={'foto location'}/>
+					</div>
+				</TabPanel>
 			</Grid>
 		</Banner>
 	)
 }
-
-const AccordionChiesa = (props: AccordionProps) => {
-	return <Accordion expanded={props.expanded} onChange={props.handleChange}>
-		<AccordionSummary
-			// expandIcon={<ArrowDownwardIcon />}
-			aria-controls="panel1-content"
-			id="panel1-header"
-		>
-			Chiesa
-		</AccordionSummary>
-		<AccordionDetails>
-			<Typography fontSize={30} fontWeight={500} lineHeight={1.1}>
-				Il rito nuziale si terrà alle ore 16:00 presso la Chiesa Madre,
-				sita in Piazza Ligotti Tenente 2, Barrafranca EN
-			</Typography>
-			<Typography>
-				Nelle zone circostanti non ci sono aree parcheggio apposite, si consiglia di trovare posto nelle vie
-				principali (Corso Vittorio Emanuele, Corso Garibaldi, via Romano, via Santa Rita, Corso Umberto, Piazza
-				Umberto)
-			</Typography>
-		</AccordionDetails>
-	</Accordion>
-}
-
-const AccordionTradizione = (props: AccordionProps) => {
-	return <Accordion expanded={props.expanded} onChange={props.handleChange}>
-		<AccordionSummary
-			// expandIcon={<ArrowDownwardIcon />}
-			aria-controls="panel1-content"
-			id="panel1-header"
-		>
-			Tradizione
-		</AccordionSummary>
-		<AccordionDetails>
-			<Typography fontSize={30} fontWeight={500} lineHeight={1.1}>
-				Storicamente è tradizione locale far visita agli sposi durante la vestizione che precede il rito nuziale. Per
-				chi avesse piacere riportiamo qui sotto i rispettivi indirizzi:
-				<br/>
-
-				<Button variant="outlined">Casa Martina, via Nicolò Bonservizi 1, Barrafranca EN</Button>
-				<Button variant="outlined">Casa Tiziano, Via Dante 7, Barrafranca EN</Button>
-
-			</Typography>
-		</AccordionDetails>
-	</Accordion>
-}
-
-const AccordionCerimonia = (props: AccordionProps) => {
-	return <Accordion expanded={props.expanded} onChange={props.handleChange}>
-		<AccordionSummary
-			// expandIcon={<ArrowDownwardIcon />}
-			aria-controls="panel1-content"
-			id="panel1-header"
-		>
-			Cerimonia
-		</AccordionSummary>
-		<AccordionDetails>
-			<Typography fontSize={30} fontWeight={500} lineHeight={1.1}>
-				A seguito della cerimonia, gli sposi saranno lieti di festeggiare con voi presso la Vecchia Masseria, Cda
-				Cutuminello Km 68, SS117bis, Caltagirone CT
-			</Typography>
-		</AccordionDetails>
-	</Accordion>
-}
-
-const FotoChiesa = (props: FotoProps) => {
-	return <motion.div initial={{opacity: 0, pointerEvents: "none", position: "absolute"}}
-	                   animate={props.show ? {opacity: 1, pointerEvents: "auto"} : {}}
-	                   transition={{duration: 0.2}} className={styles.foto_wrapper}>
-		<Image className={cls([styles.foto, styles.foto_chiesa])} src={'/chiesa.jpg'} alt={'foto chiesa'} fill={true} />
-	</motion.div>
-}
-
-const FotoTradizione = (props: FotoProps) => {
-	return <motion.div initial={{opacity: 0, pointerEvents: "none", position: "absolute"}}
-	                   animate={props.show ? {opacity: 1, pointerEvents: "auto"} : {}}
-	                   transition={{duration: 0.2}} className={styles.foto_wrapper}>
-		<Image className={cls([styles.foto, styles.foto_tradizione])} src={'/tradizione_full.png'} alt={'foto tradizione'} fill={true}/>
-	</motion.div>
-}
-
-const FotoLocation = (props: FotoProps) => {
-	return <motion.div initial={{opacity: 0, pointerEvents: "none", position: "absolute"}}
-	                   animate={props.show ? {opacity: 1, pointerEvents: "auto"} : {}}
-	                   transition={{duration: 0.2}} className={styles.foto_wrapper}>
-		<Image className={cls([styles.foto, styles.foto_location])} src={'/location.jpg'} alt={'foto location'} fill={true}/>
-	</motion.div>
-}
-
 
 function Card({children}: { children: ReactNode }) {
 	// const background = `linear-gradient(306deg, ${hue(hueA)}, ${hue(hueB)})`;

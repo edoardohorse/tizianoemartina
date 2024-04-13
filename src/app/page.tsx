@@ -5,8 +5,7 @@ import style from './page.module.css'
 import IndicazioniStradaliBanner from "@/components/sections/IndicazioniStradaliBanner";
 import PerChiVieneDaFuori from "@/components/sections/PerChiVieneDaFuori";
 import NeiDintorni from "@/components/sections/NeiDintorni";
-
-
+import Partecipazione from "@/components/sections/Partecipazione";
 
 
 export default async function Home() {
@@ -20,7 +19,7 @@ export default async function Home() {
         <IndicazioniStradaliBanner/>
         <PerChiVieneDaFuori/>
         <NeiDintorni/>
-
+        {/*<Partecipazione/>*/}
       </main>
 
     </>

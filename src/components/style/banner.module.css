@@ -8,16 +8,28 @@
   /*padding: 1em;*/
   padding: 0;
   box-sizing: border-box;
+  background-color: transparent;
 }
 
 
 .banner_title{
   font-size: 50px;
   margin: 0;
+  text-align: center;
+  color: var(--text-title);
+  /*margin-bottom: 10px;*/
 }
 
-@media (width <= 375px){
-  .banner_title{
-    font-size: 40px;
+@media (width <= 475px){
+  .banner{
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
   }
+
+  .banner_title{
+    font-size: 30px;
+  }
+
 }
+
