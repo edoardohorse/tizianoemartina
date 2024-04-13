@@ -39,7 +39,7 @@ body {
 
 * {
   box-sizing: border-box;
-  font-family: 'Sitka Display' !important;
+  font-family: 'Sitka Display',serif !important;
   color: var(--text);
 }
 
