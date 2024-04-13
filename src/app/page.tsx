@@ -6,6 +6,7 @@ import IndicazioniStradaliBanner from "@/components/sections/IndicazioniStradali
 import PerChiVieneDaFuori from "@/components/sections/PerChiVieneDaFuori";
 import NeiDintorni from "@/components/sections/NeiDintorni";
 import Partecipazione from "@/components/sections/Partecipazione";
+import data from '@/data/data.json'
 
 
 export default async function Home() {
@@ -14,7 +15,7 @@ export default async function Home() {
     <>
       {/*<Header></Header>*/}
       <main className={style.wrapper}>
-        <HeroBanner title={'Tiziano & Martina'} date={'31/10/2024'}/>
+        <HeroBanner title={data.hero.title} date={data.hero.date}/>
 
         <IndicazioniStradaliBanner/>
         <PerChiVieneDaFuori/>

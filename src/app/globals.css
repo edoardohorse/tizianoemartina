@@ -35,12 +35,17 @@ body {
   overflow-x: hidden;
   scrollbar-width: thin;
   background-color: var(--background-2);
+  text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  -moz-text-size-adjust: none;
 }
 
 * {
   box-sizing: border-box;
-  font-family: 'Sitka Display' !important;
+  font-family: 'Sitka Display',serif !important;
   color: var(--text);
+
 }
 
 main {
@@ -113,8 +118,11 @@ footer{
   background-color: var(--text-title) !important;
 }
 
-.MuiButton-outlined{
+.MuiButton-contained{
   border: 0 !important;
   background-color: var(--text-title) !important;
+}
+
+.MuiButton-contained *{
   color: white;
 }
