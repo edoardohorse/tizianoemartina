@@ -113,8 +113,11 @@ footer{
   background-color: var(--text-title) !important;
 }
 
-.MuiButton-outlined{
+.MuiButton-contained{
   border: 0 !important;
   background-color: var(--text-title) !important;
+}
+
+.MuiButton-contained *{
   color: white;
 }

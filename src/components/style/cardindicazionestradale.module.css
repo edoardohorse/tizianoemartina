@@ -59,9 +59,8 @@
 .cardIndicazione_wrapper_details_title{
   color: var(--text-title);
   font-size: 35px;
-  font-weight: 600;
   line-height: 1;
-  font-family: 'Great Vibes' !important;
+  font-family: 'Great Vibes', cursive !important;
   font-style: normal;
   letter-spacing: 2.5px;
 }
