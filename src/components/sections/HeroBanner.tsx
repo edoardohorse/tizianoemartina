@@ -3,21 +3,19 @@
 import style from '../style/herobanner.module.css'
 import Image from "next/image";
 import {useEffect, useState} from "react";
+import data from '@/data/data.json'
 
-type HeroBanner = {
-	title: string,
-	date: string
-}
+type HeroBanner = {}
 
 const HeroBanner = (props: HeroBanner) => {
 	const countdown = ""
 
 	return (<>
-		<section className={style.herobanner}>
+		<section className={style.herobanner} id={data.hero.id}>
 			<Image className={style.hero} src={'/bouchet/ai/test1.png'} alt={"bouchet"} fill={true} sizes={"100vw"} priority/>
 			<div className={style.content}>
-				<h1>{props.title}</h1>
-				<h2>{props.date}</h2>
+				<h1>{data.hero.title}</h1>
+				<h2>{data.hero.date}</h2>
 				<Countdown/>
 			</div>
 		</section>

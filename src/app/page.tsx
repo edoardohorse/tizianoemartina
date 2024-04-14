@@ -8,27 +8,38 @@ import NeiDintorni from "@/components/sections/NeiDintorni";
 import Partecipazione from "@/components/sections/Partecipazione";
 import data from '@/data/data.json'
 import dynamic from "next/dynamic";
-// import ScrollTop from "@/components/ScrollTop";
-const ScrollTop = dynamic(() => import("@/components/ScrollTop"), { ssr: false });
-import Toolbar from '@mui/material/Toolbar';
+const ScrollTop = dynamic(() => import("@/components/ScrollTop"), {ssr: false});
+const CustomAppBar = dynamic(() => import("@/components/CustomAppBar"), {ssr: false});
+import {createTheme, ThemeProvider} from "@mui/material";
 
+const theme = createTheme({
+	palette: {
+		primary: {
+			main: '#158e83',
+		},
+		secondary: {
+			main: '#e2f0ed',
+		},
+	},
+});
 
 export default async function Home() {
 
-  return (
-    <>
-      {/*<Header></Header>*/}
-      <Toolbar id="back-to-top-anchor" />
+	return (
+		<>
+			<ThemeProvider theme={theme}>
+				{/*<Header></Header>*/}
+				<CustomAppBar/>
+				<main className={style.wrapper}>
+					<HeroBanner/>
 
-      <main className={style.wrapper}>
-        <HeroBanner title={data.hero.title} date={data.hero.date}/>
-
-        <IndicazioniStradaliBanner/>
-        <PerChiVieneDaFuori/>
-        <NeiDintorni/>
-        {/*<Partecipazione/>*/}
-      </main>
-      <ScrollTop/>
-    </>
-  );
+					<IndicazioniStradaliBanner/>
+					<PerChiVieneDaFuori/>
+					<NeiDintorni/>
+					{/*<Partecipazione/>*/}
+				</main>
+				<ScrollTop/>
+			</ThemeProvider>
+		</>
+	);
 }

@@ -58,7 +58,7 @@ const IndicazioniStradaliBanner = (props: IndicazioniStradaliBannerProps) => {
 	};
 
 	return (
-		<Banner title={data.doveecome.title}>
+		<Banner title={data.doveecome.title} id={data.doveecome.id}>
 
 			<Grid container height={"auto"} justifyContent="center" className={styles.tabs_wrapper}>
 				<Tabs

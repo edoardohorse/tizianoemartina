@@ -44,7 +44,7 @@ body {
 * {
   box-sizing: border-box;
   font-family: 'Sitka Display',serif !important;
-  color: var(--text);
+  /*color: var(--text);*/
 
 }
 
@@ -58,11 +58,10 @@ main {
   box-sizing: border-box;
 }
 
-code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-family: Menlo, Monaco, Lucida Console, Courier New, monospace;
+
+.appbar--transparent{
+ background-color: transparent;
+  box-shadow: unset;
 }
 
 .container {

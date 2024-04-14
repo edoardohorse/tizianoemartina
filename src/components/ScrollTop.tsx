@@ -17,14 +17,10 @@ export default function ScrollTop() {
 
 	const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
 		// @ts-ignore
-		const anchor = document.querySelector('#back-to-top-anchor');
-
-		if (anchor) {
-			anchor.scrollIntoView({
-				block: 'center',
-				behavior:'smooth'
+			window.scrollTo({
+				top: 0,
+				behavior  :'smooth'
 			});
-		}
 	};
 
 	return (
@@ -33,10 +29,10 @@ export default function ScrollTop() {
 			<Box
 				onClick={handleClick}
 				role="presentation"
-				sx={{ position: 'fixed', bottom: 16, right: 16 }}
+				sx={{ position: 'fixed', bottom: 16, right: 16, zIndex:100 }}
 			>
-					<Fab size="small" aria-label="scroll back to top">
-						<KeyboardArrowUpIcon />
+					<Fab color={"primary"} size="small" aria-label="scroll back to top">
+						<KeyboardArrowUpIcon sx={{color:"#ffffff"}} />
 					</Fab>
 			</Box>
 		</Fade>

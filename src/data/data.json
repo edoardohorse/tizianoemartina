@@ -1,9 +1,11 @@
 {
   "hero": {
+    "id": "hero",
     "title": "Tiziano & Martina",
     "date": "31/Ago/2024"
   },
   "doveecome": {
+    "id": "doveecome",
     "title": "Dove e Come",
     "chiesa": {
       "title": "Chiesa",
@@ -47,10 +49,12 @@
     }
   },
   "perChiVieneDaFuori": {
+    "id": "perChiVieneDaFuori",
     "title": "Per chi viene da fuori",
     "descr": "Elenco dei nomi degli hotel con relativi link maps e successiva frase: Saremo lieti di ospitarvi due notti presso uno dei seguenti Hotel/B&B. Prossimamente vi informeremo della disposizione scelta per voi."
   },
   "neiDintorni": {
+    "id": "neiDintorni",
     "title": "Nei dintorni...",
     "description": "Sicuramente il nostro matrimonio sarà l'evento clou del tuo viaggio… ma non credere che nelle vicinanze non ci sia nulla in cui trascorrere un po' di tempo piacevolmente. Anzi, l'entroterra siciliano è ricco di luoghi caratteristici da visitare, che ti consigliamo di aggiungere tra le tappe del tuo mini tour targato #Sicilia2024.",
     "sections": {
