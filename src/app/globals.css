@@ -60,8 +60,8 @@ main {
 
 
 .appbar--transparent{
- background-color: transparent;
-  box-shadow: unset;
+ background-color: transparent !important;
+  box-shadow: unset !important;
 }
 
 .container {
