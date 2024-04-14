@@ -55,8 +55,9 @@ const Partecipazione = (props: PartecipazioneProps) => {
 
 		const myForm = event.target;
 		const formData = new FormData(myForm);
-		formData.append('da_dove', daDove)
+		formData.append('da_dove', daDove?.toString()?? '')
 
+		// @ts-ignore
 		for (const [key, value] of formData) {
 			console.log(`${key}: ${value}`);
 		}
