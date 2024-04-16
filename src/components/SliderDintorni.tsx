@@ -96,5 +96,7 @@ const SliderDintorni = forwardRef((props: SliderDintorniProps, ref: Ref<ISliderD
 	)
 })
 
+SliderDintorni.displayName = 'SliderDintorni'
+
 
 export default SliderDintorni;

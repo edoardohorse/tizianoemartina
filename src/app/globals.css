@@ -1,5 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap')*/
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
 
 @font-face {
   font-family: 'sitka';
@@ -7,10 +9,21 @@
   url('/font/sitka-small-652.ttf') format('ttf'),
   url('/font/sitka-small-815.ttf') format('ttf');
 }
+
 :root{
-  --primary: ;
-  --secondary: ;
-  --accent: ;
+  --background: #e2f0ed;
+  --background-2: #f9fbff;
+  --primary: #343a40;
+  --secondary: #fff;
+  --text: var(--primary);
+  --text-title: #158e83;
+  --text-hero: #fff;
+  /*--background: #b1c6af;
+  --background-2: #c3e0c1;
+  --primary: #241d13;
+  --secondary: #cc6128;
+  --text: var(--primary);
+  --text-title: var(--secondary);*/
 }
 
 html,
@@ -21,10 +34,18 @@ body {
   letter-spacing: -0.2px;
   overflow-x: hidden;
   scrollbar-width: thin;
+  background-color: var(--background-2);
+  text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  -moz-text-size-adjust: none;
 }
 
 * {
   box-sizing: border-box;
+  font-family: 'Sitka Display',serif !important;
+  /*color: var(--text);*/
+
 }
 
 main {
@@ -37,11 +58,10 @@ main {
   box-sizing: border-box;
 }
 
-code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-family: Menlo, Monaco, Lucida Console, Courier New, monospace;
+
+.appbar--transparent{
+ background-color: transparent !important;
+  box-shadow: unset !important;
 }
 
 .container {
@@ -87,4 +107,21 @@ footer{
 
 .swiper-slide-active{
   opacity: 1;
+}
+
+.MuiTab-textColorPrimary.Mui-selected{
+  color: var(--text-title) !important;
+}
+
+.MuiTabs-indicator{
+  background-color: var(--text-title) !important;
+}
+
+.MuiButton-contained{
+  border: 0 !important;
+  background-color: var(--text-title) !important;
+}
+
+.MuiButton-contained *{
+  color: white;
 }

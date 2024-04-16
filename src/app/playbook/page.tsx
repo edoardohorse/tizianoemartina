@@ -8,10 +8,7 @@ type PlaybookProps = {}
 const page = (props: PlaybookProps)=>{
 
 
-  return (
-    <CarouselNeiDintorni/>
-
-  )
+  return <></>
 }
 
 

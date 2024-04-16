@@ -2,6 +2,7 @@
 import React from 'react';
 import {Button, Card, CardActions, CardContent, Grid, Typography} from "@mui/material";
 import Banner from "@/components/Banner";
+import data from '@/data/data.json'
 
 type PerChiVieneDaFuoriProps = {}
 
@@ -11,7 +12,7 @@ const PerChiVieneDaFuori = (props: PerChiVieneDaFuoriProps) => {
 
 	return (
 		<>
-			<Banner title={"Per chi viene da fuori"}>
+			<Banner title={"Per chi viene da fuori"} id={data.perChiVieneDaFuori.id}>
 
 				<Typography fontSize={30} fontWeight={500} lineHeight={1.1}>Saremo lieti di ospitarvi la notte delle nozze e
 					quella precedentei presso uno dei seguenti Hotel/B&B.</Typography>

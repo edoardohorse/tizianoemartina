@@ -1,54 +1,83 @@
-.foto_column{
-  position:relative;
-  height: 600px;
-  display: flex;
-  justify-content: center;
+.tabs_wrapper{
+  gap: 30px;
 }
 
-.foto_wrapper{
- /* max-width: 800px;
-  max-height: 600px;*/
-  width: 100%;
-  height: 100%;
-}
-
-.foto{
-  border-radius: 10px;
-}
-
-.foto_chiesa{
-  object-fit: cover;
-}
-
-.foto_tradizione{
-  object-fit: cover;
-}
-
-.foto_location{
-  object-fit: cover;
-}
-
-.card-container {
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.panel{
   position: relative;
-  padding-top: 20px;
-  margin-bottom: -120px;
-}
-
-.card {
-  font-size: 164px;
-  width: 300px;
-  height: 430px;
+  width: 90vw;
+  height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 0 1px hsl(0deg 0% 0% / 0.075), 0 0 2px hsl(0deg 0% 0% / 0.075),
-  0 0 4px hsl(0deg 0% 0% / 0.075), 0 0 8px hsl(0deg 0% 0% / 0.075),
-  0 0 16px hsl(0deg 0% 0% / 0.075);
-  transform-origin: 10% 60%;
+  padding-left: 20%;
+}
+
+.panel:hover > .panel_card,
+.panel:active > .panel_card{
+  transform: translateX(-125%);
+}
+
+.panel:hover > .panel_foto,
+.panel:active > .panel_foto{
+  transform: translateX(10%);
+}
+
+.panel_card{
+  position: absolute;
+  z-index: 10;
+  transform: translateX(-120%);
+  transition: transform 200ms;
+}
+
+
+.panel_foto{
+  position: absolute;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px -1px rgba(0,0,0,0.1);
+  /*width: 800px;*/
+  height: 100%;
+  transition: transform 200ms;
+}
+
+@media (width <= 1024px){
+
+  .tabs_wrapper{
+    gap: 10px;
+  }
+
+  .panel_wrapper{
+    width: 100%;
+  }
+
+  .panel{
+    flex-direction: column-reverse;
+    height: auto;
+    gap: 5px;
+    padding-left: 0;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .panel_foto{
+    position: relative;
+    width: auto;
+    height: 50vh;
+    object-fit: contain;
+  }
+
+  .panel_card{
+    position: relative;
+    transform: translateY(-10%);
+    width: 95%;
+  }
+
+  .panel:hover > .panel_card,
+  .panel:active > .panel_card{
+    transform: translateY(-10%);
+  }
+
+  .panel:hover > .panel_foto,
+  .panel:active > .panel_foto{
+    transform: unset;
+  }
 }

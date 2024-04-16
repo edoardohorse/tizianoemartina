@@ -6,22 +6,28 @@ import IndicazioniStradaliBanner from "@/components/sections/IndicazioniStradali
 import PerChiVieneDaFuori from "@/components/sections/PerChiVieneDaFuori";
 import NeiDintorni from "@/components/sections/NeiDintorni";
 import Partecipazione from "@/components/sections/Partecipazione";
+import dynamic from "next/dynamic";
+
+const ScrollTop = dynamic(() => import("@/components/ScrollTop"), {ssr: false});
+const CustomAppBar = dynamic(() => import("@/components/CustomAppBar"), {ssr: false});
 
 
 export default async function Home() {
 
-  return (
-    <>
-      {/*<Header></Header>*/}
-      <main className={style.wrapper}>
-        {/*<HeroBanner title={'Tiziano & Martina'} date={'31/10/2024'}/>
+	return (
+		<>
+			{/*<Header></Header>*/}
+			<CustomAppBar/>
+			<main className={style.wrapper}>
+				<HeroBanner/>
 
-        <IndicazioniStradaliBanner/>
-        <PerChiVieneDaFuori/>
-        <NeiDintorni/>*/}
-        <Partecipazione/>
-      </main>
+				<IndicazioniStradaliBanner/>
+				<PerChiVieneDaFuori/>
+				<NeiDintorni/>
+				{/*<Partecipazione/>*/}
+			</main>
+			<ScrollTop/>
 
-    </>
-  );
+		</>
+	);
 }

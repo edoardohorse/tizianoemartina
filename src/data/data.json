@@ -1,39 +1,60 @@
 {
-  "banner": {
+  "hero": {
+    "id": "hero",
     "title": "Tiziano & Martina",
     "date": "31/Ago/2024"
   },
-  "indicazioniStradali": {
-    "title": "Indicazioni stradali",
-    "content": [
-      {
-        "title": "Come raggiungere la chiesa",
-        "map": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3170.703286081151!2d14.201416600000002!3d37.3731971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1310e156516693e5%3A0xf42cf9cbaa5af4e6!2sChiesa%20Madre%20di%20Maria%20SS.%20della%20Purificazione!5e0!3m2!1sit!2sit!4v1708797668602!5m2!1sit!2sit\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
-        "link": "https://maps.app.goo.gl/RtDVDXBNKgHWTFis9",
-        "content": "Vacci"
-      },
-      {
-        "title": "Località ricevimento",
-        "map": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d50804.03009048018!2d14.3969625!3d37.2654538!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x131104b615b43b0b%3A0xd900e1a48e371c30!2sVecchia%20Masseria!5e0!3m2!1sit!2sit!4v1708798193120!5m2!1sit!2sit\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
-        "link": "https://maps.app.goo.gl/mSveWQDU58KeTH8VA"
-      },
-      {
-        "title": "Visita la sposa",
-        "content": "Per chi volesse visitare il giorno del matrimonio la casa della sposa",
-        "link": ""
-      },
-      {
-        "title": "Visita lo sposo",
-        "content": "Per chi volesse visitare il giorno del matrimonio la casa dello sposo",
-        "link": ""
-      }
-    ]
+  "doveecome": {
+    "id": "doveecome",
+    "title": "Dove e Come",
+    "chiesa": {
+      "title": "Chiesa",
+      "cardTitle": "Chiesa",
+      "time": "16:00",
+      "image": "/chiesa.jpg",
+      "links": [
+        {
+          "text": "<u><b>Chiesa Madre</b></u><br/> Piazza Ligotti Tenente 2 Barrafranca EN",
+          "url": "https://maps.app.goo.gl/RtDVDXBNKgHWTFis9"
+        }
+      ]
+    },
+    "tradizione": {
+      "title": "Tradizione",
+      "cardTitle": "Visita",
+      "image": "/tradizione_full.png",
+      "content": "Storicamente è tradizione locale far visita agli sposi durante la vestizione che precede il rito nuziale",
+      "links": [
+        {
+          "text": "<u><b>Casa Martina</b></u><br/>via Nicolò Bonservizi 1, Barrafranca EN",
+          "url": "https://maps.app.goo.gl/tuQh8GgKtyve4uuE7"
+        },
+        {
+          "text": "<u><b>Casa Tiziano</b></u><br/>via Dante 7, Barrafranca EN",
+          "url": "https://maps.app.goo.gl/27cvJNyMuu2EkC9o8"
+        }
+      ]
+    },
+    "cerimonia": {
+      "title": "Cerimonia",
+      "cardTitle": "Cerimonia",
+      "image": "/location.jpg",
+      "content": "A seguito della cerimonia, gli sposi saranno lieti di festeggiare con voi presso la",
+      "links": [
+        {
+          "text": "<u><b>Vecchia Masseria</b></u><br/>Cda Cutuminello, Caltagirone CT",
+          "url": "https://maps.app.goo.gl/iAjXBXh5DWmi6Eju6"
+        }
+      ]
+    }
   },
   "perChiVieneDaFuori": {
+    "id": "perChiVieneDaFuori",
     "title": "Per chi viene da fuori",
     "descr": "Elenco dei nomi degli hotel con relativi link maps e successiva frase: Saremo lieti di ospitarvi due notti presso uno dei seguenti Hotel/B&B. Prossimamente vi informeremo della disposizione scelta per voi."
   },
   "neiDintorni": {
+    "id": "neiDintorni",
     "title": "Nei dintorni...",
     "description": "Sicuramente il nostro matrimonio sarà l'evento clou del tuo viaggio… ma non credere che nelle vicinanze non ci sia nulla in cui trascorrere un po' di tempo piacevolmente. Anzi, l'entroterra siciliano è ricco di luoghi caratteristici da visitare, che ti consigliamo di aggiungere tra le tappe del tuo mini tour targato #Sicilia2024.",
     "sections": {

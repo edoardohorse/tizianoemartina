@@ -36,7 +36,7 @@ const NeiDintorni = (props: NeiDintorniProps) => {
 	return (
 		<>
 			<SliderTitoliDintorni ref={refSlider} titles={titles}/>
-			<Banner title={data.neiDintorni.title}>
+			<Banner title={data.neiDintorni.title} id={data.neiDintorni.id}>
 				<Typography fontSize={25}>{data.neiDintorni.description}</Typography>
 				<Card className={styles.cardWrapperDintorni} elevation={0}>
 					<div ref={refSliderContainer}>
