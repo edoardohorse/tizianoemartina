@@ -2,51 +2,98 @@
 
 import React, {ElementRef, useEffect, useRef, useState} from 'react';
 import Banner from "@/components/Banner";
-import {Card, CardContent, Typography} from "@mui/material";
+import {Card, CardContent, Grid, Typography} from "@mui/material";
 import SliderTitoliDintorni, {ISliderDintorniActions} from "@/components/SliderDintorni";
 import data from '@/data/data.json'
-import {useInView, useScroll} from "framer-motion";
-import styles from '../style/sliderdintorni.module.css'
+import { useInView, useScroll} from "framer-motion";
+import styles from '../style/neidintorni.module.css'
 import CarouselNeiDintorni from "@/components/CarouselNeiDintorni";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import {a11yProps} from "@/utility/utility";
+import {AnimatePresence, motion} from "framer-motion"
+const X_OFFSET = 20
+
+
+interface TabPanelProps {
+	children?: React.ReactNode;
+	index: number;
+	value: number;
+}
 
 type NeiDintorniProps = {}
 
 type TDintorno = {
-	select: () => void
+	value: number,
+	index: number,
+	direction: number,
+	select?: () => void
 }
 
-function useInViewDintorni(props: TDintorno){
-	const ref = useRef(null)
-	const isInView = useInView(ref, {amount: 0.5})
+function TabPanel(props: TabPanelProps) {
+	const {children, value, index, ...other} = props;
 
-	useEffect(function () {
-		if(isInView) props.select()
-		// if(isInView) _.debounce(()=>props.select(), 200)
-	}, [isInView]);
-
-	return ref
+	return (
+		<div
+			role="tabpanel"
+			hidden={value !== index}
+			id={`vertical-tabpanel-${index}`}
+			aria-labelledby={`vertical-tab-${index}`}
+			className={styles.panel_wrapper}
+			{...other}
+		>
+			{value === index && (
+				<>{children}</>
+			)}
+		</div>
+	);
 }
 
 const NeiDintorni = (props: NeiDintorniProps) => {
 	const refSlider = useRef<ISliderDintorniActions>(null)
 	const refSliderContainer = useRef<HTMLDivElement>(null)
+	const [value, setValue] = React.useState(0);
+	const [direction, setDirection] = useState(-1)
 
-	const titles    = Object.values(data.neiDintorni.sections).map(section=>section.title)
+
+	const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+		setDirection(newValue > value ? 1 : -1)
+		setValue(newValue);
+
+	};
+
 
 	return (
 		<>
-			<SliderTitoliDintorni ref={refSlider} titles={titles}/>
 			<Banner title={data.neiDintorni.title} id={data.neiDintorni.id}>
+				<Grid container height={"auto"} justifyContent="center" className={styles.neidintorni}>
 				<Typography fontSize={25}>{data.neiDintorni.description}</Typography>
+
+				<Tabs
+					orientation="horizontal"
+					variant="scrollable"
+					value={value}
+					onChange={handleChange}
+				>
+					<Tab label={data.neiDintorni.sections.piazzaamerina.title} {...a11yProps(0)}/>
+					<Tab label={data.neiDintorni.sections.villaromana.title} {...a11yProps(1)}/>
+					<Tab label={data.neiDintorni.sections.caltagirone.title} {...a11yProps(2)}/>
+					<Tab label={data.neiDintorni.sections.enna.title} {...a11yProps(3)}/>
+					<Tab label={data.neiDintorni.sections.templi.title} {...a11yProps(4)}/>
+				</Tabs>
+
+
 				<Card className={styles.cardWrapperDintorni} elevation={0}>
 					<div ref={refSliderContainer}>
-						<PiazzaArmerina select={()=>refSlider?.current?.goTo(0)}/>
-						<VillaRomana    select={()=>refSlider?.current?.goTo(1)}/>
-						<Caltagirone    select={()=>refSlider?.current?.goTo(2)}/>
-						<Enna           select={()=>refSlider?.current?.goTo(3)}/>
-						<Templi         select={()=>refSlider?.current?.goTo(4)}/>
+						<PiazzaArmerina value={value} index={0} direction={direction}/>
+						<VillaRomana value={value} index={1} direction={direction}/>
+						<Caltagirone value={value} index={2} direction={direction}/>
+						<Enna value={value} index={3} direction={direction}/>
+						<Templi value={value} index={4} direction={direction}/>
+
 					</div>
 				</Card>
+				</Grid>
 			</Banner>
 		</>
 
@@ -54,61 +101,69 @@ const NeiDintorni = (props: NeiDintorniProps) => {
 }
 
 const PiazzaArmerina = (props: TDintorno) => {
-	const ref = useInViewDintorni(props)
-	return <Card ref={ref} className={styles.cardDintorni} elevation={0}>
-		<CardContent>
-				<CarouselNeiDintorni images={data.neiDintorni.sections.piazzaamerina.images}/>
+	return <AnimatePresence>
+		<TabPanel value={props.value} index={props.index}>
+			<motion.div initial={{x: X_OFFSET * props.direction, opacity: 0}} animate={{x: 0, opacity: 1}} className={styles.cardDintorni}>
+					<CarouselNeiDintorni images={data.neiDintorni.sections.piazzaamerina.images}/>
 
-				<Typography fontSize={20}>{data.neiDintorni.sections.piazzaamerina.content}</Typography>
-				{/*https://www.piazzaarmerina.org/*/}
-			</CardContent>
-		</Card>
+					<Typography fontSize={20}>{data.neiDintorni.sections.piazzaamerina.content}</Typography>
+					{/*https://www.piazzaarmerina.org/*/}
+			</motion.div>
+		</TabPanel>
+	</AnimatePresence>
 }
 
 const VillaRomana = (props: TDintorno) => {
-	const ref = useInViewDintorni(props)
-	return <Card ref={ref} className={styles.cardDintorni} elevation={0}>
-		<CardContent>
-			<CarouselNeiDintorni images={data.neiDintorni.sections.villaromana.images}/>
+	return <AnimatePresence>
+		<TabPanel value={props.value} index={props.index}>
+			<motion.div initial={{x: X_OFFSET * props.direction, opacity: 0}} animate={{x: 0, opacity: 1}} className={styles.cardDintorni}>
+					<CarouselNeiDintorni images={data.neiDintorni.sections.villaromana.images}/>
 
-			<Typography fontSize={20}>{data.neiDintorni.sections.villaromana.content}</Typography>
-			{/*https://www.villaromanadelcasale.it/*/}
-		</CardContent>
-	</Card>
+					<Typography fontSize={20}>{data.neiDintorni.sections.villaromana.content}</Typography>
+					{/*https://www.villaromanadelcasale.it/*/}
+			</motion.div>
+		</TabPanel>
+	</AnimatePresence>
 }
 
 const Caltagirone = (props: TDintorno) => {
-	const ref = useInViewDintorni(props)
-	return <Card ref={ref} className={styles.cardDintorni} elevation={0}>
-		<CardContent>
-			<CarouselNeiDintorni images={data.neiDintorni.sections.caltagirone.images}/>
 
-			<Typography fontSize={20}>{data.neiDintorni.sections.caltagirone.content}</Typography>
-		</CardContent>
-	</Card>
+	return <AnimatePresence>
+		<TabPanel value={props.value} index={props.index}>
+			<motion.div initial={{x: X_OFFSET * props.direction, opacity: 0}} animate={{x: 0, opacity: 1}} className={styles.cardDintorni}>
+				<CardContent>
+					<CarouselNeiDintorni images={data.neiDintorni.sections.caltagirone.images}/>
+
+					<Typography fontSize={20}>{data.neiDintorni.sections.caltagirone.content}</Typography>
+				</CardContent>
+			</motion.div>
+		</TabPanel>
+	</AnimatePresence>
 }
 
 const Enna = (props: TDintorno) => {
-	const ref = useInViewDintorni(props)
-	return <Card ref={ref} className={styles.cardDintorni} elevation={0}>
-		<CardContent>
-			<CarouselNeiDintorni images={data.neiDintorni.sections.enna.images}/>
+	return <AnimatePresence>
+		<TabPanel value={props.value} index={props.index}>
+			<motion.div initial={{x: X_OFFSET * props.direction, opacity: 0}} animate={{x: 0, opacity: 1}} className={styles.cardDintorni}>
+					<CarouselNeiDintorni images={data.neiDintorni.sections.enna.images}/>
 
-			<Typography fontSize={20}>{data.neiDintorni.sections.enna.content}</Typography>
-		</CardContent>
-	</Card>
+					<Typography fontSize={20}>{data.neiDintorni.sections.enna.content}</Typography>
+			</motion.div>
+		</TabPanel>
+	</AnimatePresence>
 }
 
 const Templi = (props: TDintorno) => {
-	const ref = useInViewDintorni(props)
-	return <Card ref={ref} className={styles.cardDintorni} elevation={0}>
-		<CardContent>
-			<CarouselNeiDintorni images={data.neiDintorni.sections.templi.images}/>
+	return <AnimatePresence>
+		<TabPanel value={props.value} index={props.index}>
+			<motion.div initial={{x: X_OFFSET * props.direction, opacity: 0}} animate={{x: 0, opacity: 1}} className={styles.cardDintorni}>
+					<CarouselNeiDintorni images={data.neiDintorni.sections.templi.images}/>
 
-			<Typography fontSize={20}>{data.neiDintorni.sections.templi.content}</Typography>
-			{/*https://www.lavalledeitempli.it/*/}
-		</CardContent>
-	</Card>
+					<Typography fontSize={20}>{data.neiDintorni.sections.templi.content}</Typography>
+					{/*https://www.lavalledeitempli.it/*/}
+			</motion.div>
+		</TabPanel>
+	</AnimatePresence>
 }
 
 

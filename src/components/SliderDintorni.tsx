@@ -2,7 +2,7 @@
 import React, {forwardRef, ReactNode, Ref, useEffect, useImperativeHandle, useRef, useState} from 'react';
 import {AnimatePresence, motion, useMotionValueEvent, useScroll} from "framer-motion"
 import {Button, Typography} from "@mui/material";
-import styles from './style/sliderdintorni.module.css'
+import styles from './style/neidintorni.module.css'
 import clsx from "clsx";
 
 type SliderDintorniProps = {
