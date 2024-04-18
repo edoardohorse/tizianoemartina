@@ -3,6 +3,8 @@ import React from 'react';
 import {Button, Card, CardActions, CardContent, Grid, Typography} from "@mui/material";
 import Banner from "@/components/Banner";
 import data from '@/data/data.json'
+import Image from 'next/image'
+import styles from "@/components/style/perchivienedafuori.module.css"
 
 type PerChiVieneDaFuoriProps = {}
 
@@ -14,15 +16,13 @@ const PerChiVieneDaFuori = (props: PerChiVieneDaFuoriProps) => {
 		<>
 			<Banner title={"Per chi viene da fuori"} id={data.perChiVieneDaFuori.id}>
 
-				<Typography fontSize={30} fontWeight={500} lineHeight={1.1}>Saremo lieti di ospitarvi la notte delle nozze e
-					quella precedentei presso uno dei seguenti Hotel/B&B.</Typography>
-
-				<Grid container spacing={2}>
+				<Typography fontSize={20} lineHeight={1.1}>Saremo lieti di ospitarvi la notte delle nozze e
+					quella precedentei presso uno dei seguenti Hotel/B&B.<br/>Nelle prossime settimane vi aggiorneremo riguardo la disposizione che abbiamo scelto
+					per voi previa conferma della vostra presenza.</Typography>
+				<Grid container spacing={3} columnSpacing={{ xs: 1, sm: 2, md: 2 }} justifyContent={"center"} marginTop={2} marginBottom={2} >
 					<Content/>
 				</Grid>
 
-				<Typography fontSize={35}>Nelle prossime settimane vi aggiorneremo riguardo la disposizione che abbiamo scelto
-					per voi previa conferma della vostra presenza.</Typography>
 			</Banner>
 		</>
 
@@ -30,63 +30,28 @@ const PerChiVieneDaFuori = (props: PerChiVieneDaFuoriProps) => {
 }
 
 const Content = () => {
-	const go = (e: any) => {
-		window.open(e.target?.dataset?.href, '_blank')
+	const go = (link: string) => {
+		window.open(link, '_blank')
 	}
 
 	return <>
+		{data.perChiVieneDaFuori.location.map((data,index)=>{
+			return <Grid item>
+				<Card elevation={3}>
+					<CardContent className={styles.card}>
+						<Typography fontSize={20} fontWeight={700}>
+							<Image src={data.image} width={400} height={300} style={{objectFit:"cover"}} alt={'hotel_marconi'}/>
 
-		<Grid item>
-			<Card variant="outlined">
-				<CardContent>
-					<Typography fontSize={20} fontWeight={700}>
-						Hotel Marconi Via Kennedy 5, Pietraperzia EN
-					</Typography>
-					<CardActions>
-						<Button size="small" data-href={'https://maps.app.goo.gl/w2bjZwfpmty6jSZo7'} onClick={go}>Vai!</Button>
-					</CardActions>
-				</CardContent>
-			</Card>
-		</Grid>
-
-		<Grid item>
-			<Card variant="outlined">
-				<CardContent>
-					<Typography fontSize={20} fontWeight={700}>
-						B&B Dante Via Dante 7, Barrafranca EN
-					</Typography>
-					<CardActions>
-						<Button size="small" data-href={'https://maps.app.goo.gl/ujhBt41qYAJgG6Li9'} onClick={go}>Vai!</Button>
-					</CardActions>
-				</CardContent>
-			</Card>
-		</Grid>
-
-		<Grid item>
-			<Card variant="outlined">
-				<CardContent>
-					<Typography fontSize={20} fontWeight={700}>
-						B&B La Primula bivio catena, Barrafranca EN
-					</Typography>
-					<CardActions>
-						<Button size="small" data-href={'https://maps.app.goo.gl/eWEPFinkk6ttZ7DR6'} onClick={go}>Vai!</Button>
-					</CardActions>
-				</CardContent>
-			</Card>
-		</Grid>
-
-		<Grid item>
-			<Card variant="outlined">
-				<CardContent>
-					<Typography fontSize={20} fontWeight={700}>
-						B&B Principe di Scalea 17-19, Via Principe Scalea, Barrafranca EN
-					</Typography>
-					<CardActions>
-						<Button size="small" data-href={'https://maps.app.goo.gl/4H4oZLzKsiLmd4KKA'} onClick={go}>Vai!</Button>
-					</CardActions>
-				</CardContent>
-			</Card>
-		</Grid>
+						</Typography>
+						<CardActions>
+							<Button size="small" variant="contained"
+							        onClick={()=>go(data.map)}><span dangerouslySetInnerHTML={{__html: data.text}}/></Button>
+						</CardActions>
+					</CardContent>
+				</Card>
+			</Grid>
+			})
+		}
 	</>
 }
 
