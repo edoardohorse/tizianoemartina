@@ -1,3 +1,10 @@
+.neidintorni{
+  display: flex;
+  justify-content: center;
+}
+
+
+
 .sliderdintorni{
   display: flex;
   position: sticky;
@@ -21,11 +28,18 @@
   position: absolute;
 }
 
-.cardWrapperDintorni{
-  margin-top: 50px;
+.image_description{
+  margin-top: 30px !important;
 }
+
 
 .cardDintorni{
   height: auto;
   padding: 0;
+}
+
+@media (width <= 768px){
+  .image_description{
+    margin-top: 20px !important;
+  }
 }

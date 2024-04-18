@@ -10,6 +10,7 @@ import CardIndicazioneStradale from "@/components/CardIndicazioneStradale";
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import data from '@/data/data.json'
+import {a11yProps} from "@/utility/utility";
 const X_OFFSET = 20
 
 
@@ -38,12 +39,7 @@ function TabPanel(props: TabPanelProps) {
 	);
 }
 
-function a11yProps(index: number) {
-	return {
-		id: `vertical-tab-${index}`,
-		'aria-controls': `vertical-tabpanel-${index}`,
-	};
-}
+
 
 type IndicazioniStradaliBannerProps = {}
 

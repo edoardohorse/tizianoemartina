@@ -18,6 +18,7 @@
   --text: var(--primary);
   --text-title: #158e83;
   --text-hero: #fff;
+  --swiper-theme-color: var(--text-title) !important;
   /*--background: #b1c6af;
   --background-2: #c3e0c1;
   --primary: #241d13;
@@ -109,6 +110,17 @@ footer{
   opacity: 1;
 }
 
+.swiper-pagination{
+  position: relative !important;
+  margin-top: 10px;
+  bottom: 0 !important;
+}
+
+
+.MuiToolbar-root{
+  min-height: 50px !important;
+}
+
 .MuiTab-textColorPrimary.Mui-selected{
   color: var(--text-title) !important;
 }
@@ -124,4 +136,11 @@ footer{
 
 .MuiButton-contained *{
   color: white;
+}
+
+
+@media (width <= 768px){
+  .swiper-pagination{
+    margin-top: 0;
+  }
 }

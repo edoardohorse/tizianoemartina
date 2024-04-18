@@ -8,6 +8,17 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Drawer from '@mui/material/Drawer';
 import {useInView, useMotionValueEvent, useScroll} from "framer-motion";
 import clsx from "clsx";
+import Slide from '@mui/material/Slide';
+import useScrollTrigger from '@mui/material/useScrollTrigger';
+
+interface Props {
+	/**
+	 * Injected by the documentation to work in an iframe.
+	 * You won't need it on your project.
+	 */
+	window?: () => Window;
+	children: React.ReactElement;
+}
 
 
 type AppBarProps = {}
@@ -15,16 +26,31 @@ type AppBarProps = {}
 const navItems = [data.doveecome, data.perChiVieneDaFuori, data.neiDintorni]
 const drawerWidth = 240;
 
+function HideOnScroll(props: Props) {
+	const {children, window} = props;
+	// Note that you normally won't need to set the window ref as useScrollTrigger
+	// will default to window.
+	// This is only being set here because the demo is in an iframe.
+	const trigger = useScrollTrigger({
+		target: window ? window() : undefined,
+	});
+
+	return (
+		<Slide appear={false} direction="down" in={!trigger}>
+			{children}
+		</Slide>
+	);
+}
+
 
 const CustomAppBar = (props: AppBarProps) => {
 	const [heroInView, setHeroInView] = useState(true)
-	const { scrollY } = useScroll()
+	const {scrollY} = useScroll()
 
 	useMotionValueEvent(scrollY, "change", (latest) => {
-		if(latest > 0){
+		if (latest > 0) {
 			setHeroInView(false)
-		}
-		else{
+		} else {
 			setHeroInView(true)
 		}
 
@@ -37,7 +63,7 @@ const CustomAppBar = (props: AppBarProps) => {
 
 	const goTo = (id: string) => {
 		// @ts-ignore
-		const y = document?.getElementById(id)?.getBoundingClientRect()?.top + window?.pageYOffset - 80
+		const y = document?.getElementById(id)?.getBoundingClientRect()?.top + window?.pageYOffset - 60
 		//@ts-ignore
 		window.scrollTo({behavior: 'smooth', top: y})
 	}
@@ -46,12 +72,12 @@ const CustomAppBar = (props: AppBarProps) => {
 	const container = document?.body;
 
 	const drawer = (
-		<Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+		<Box onClick={handleDrawerToggle} sx={{textAlign: 'center'}}>
 			<List>
 				{navItems.map((item) => (
 					<ListItem key={item.id} disablePadding>
-						<ListItemButton sx={{ textAlign: 'center' }} onClick={()=>goTo(item.id)}>
-							<ListItemText primary={item.title} />
+						<ListItemButton sx={{textAlign: 'center'}} onClick={() => goTo(item.id)}>
+							<ListItemText primary={item.title}/>
 						</ListItemButton>
 					</ListItem>
 				))}
@@ -61,27 +87,28 @@ const CustomAppBar = (props: AppBarProps) => {
 
 	return (
 		<>
-			<AppBar position="fixed" className={clsx(heroInView &&'appbar--transparent')}>
-				<Toolbar id="back-to-top-anchor" sx={{justifyContent: 'right'}}>
-					<IconButton
-						color="inherit"
-						aria-label="open drawer"
-						edge="start"
-						onClick={handleDrawerToggle}
-						sx={{mr: 2, display: {sm: 'none'}}}
-					>
-						<MenuIcon/>
-					</IconButton>
-					<Box sx={{display: {xs: 'none', sm: 'block'}}}>
-						{navItems.map((item) => (
-							<Button key={item.id} sx={{color: '#fff'}} onClick={() => goTo(item.id)}>
-								{item.title}
-							</Button>
-						))}
-					</Box>
-				</Toolbar>
-			</AppBar>
-
+			<HideOnScroll {...props}>
+				<AppBar position="fixed" className={clsx(heroInView && 'appbar--transparent')} sx={{minHeight: "50px"}}>
+					<Toolbar id="back-to-top-anchor" sx={{justifyContent: 'right'}}>
+						<IconButton
+							color="inherit"
+							aria-label="open drawer"
+							edge="start"
+							onClick={handleDrawerToggle}
+							sx={{mr: 2, display: {sm: 'none'}}}
+						>
+							<MenuIcon/>
+						</IconButton>
+						<Box sx={{display: {xs: 'none', sm: 'block'}}}>
+							{navItems.map((item) => (
+								<Button key={item.id} sx={{color: '#fff'}} onClick={() => goTo(item.id)}>
+									{item.title}
+								</Button>
+							))}
+						</Box>
+					</Toolbar>
+				</AppBar>
+			</HideOnScroll>
 			<nav>
 				<Drawer
 					anchor={'right'}

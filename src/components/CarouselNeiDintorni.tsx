@@ -1,11 +1,13 @@
 import React, { useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination} from 'swiper/modules';
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/effect-cards';
-
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 // import required modules
 import { EffectCards } from 'swiper/modules';
@@ -22,14 +24,18 @@ export default function CarouselNeiDintorni(props: {images: Array<string>}) {
 			<Swiper
 				effect={'cards'}
 				grabCursor={true}
-				modules={[EffectCards]}
-				// slidesPerView={5}
+				modules={[Navigation, Pagination,EffectCards]}
 				className={styles.carousel}
 				spaceBetween={800}
 				speed={300}
+				navigation
+				pagination={{ clickable: true }}
+				scrollbar={{ draggable: true }}
 			>
 				{props.images.map((src, index)=>{
-					return <SwiperSlide key={index} className={styles['slide']}><img src={src} className={styles.image} alt={'1'}/></SwiperSlide>
+					return <SwiperSlide key={index} className={styles['slide']}>
+						<Image src={src} className={styles.image} alt={'1'} fill={true} loading={"lazy"}/>
+					</SwiperSlide>
 				})}
 
 			</Swiper>
