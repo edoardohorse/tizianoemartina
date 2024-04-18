@@ -2,16 +2,17 @@
 
 import React, {ElementRef, useEffect, useRef, useState} from 'react';
 import Banner from "@/components/Banner";
-import {Card, CardContent, Grid, Typography} from "@mui/material";
+import {Card, CardContent, Grid, Pagination, Typography} from "@mui/material";
 import SliderTitoliDintorni, {ISliderDintorniActions} from "@/components/SliderDintorni";
 import data from '@/data/data.json'
-import { useInView, useScroll} from "framer-motion";
+import {useInView, useScroll} from "framer-motion";
 import styles from '../style/neidintorni.module.css'
 import CarouselNeiDintorni from "@/components/CarouselNeiDintorni";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import {a11yProps} from "@/utility/utility";
 import {AnimatePresence, motion} from "framer-motion"
+
 const X_OFFSET = 20
 
 
@@ -26,8 +27,7 @@ type NeiDintorniProps = {}
 type TDintorno = {
 	value: number,
 	index: number,
-	direction: number,
-	select?: () => void
+	direction: number
 }
 
 function TabPanel(props: TabPanelProps) {
@@ -59,7 +59,6 @@ const NeiDintorni = (props: NeiDintorniProps) => {
 	const handleChange = (event: React.SyntheticEvent, newValue: number) => {
 		setDirection(newValue > value ? 1 : -1)
 		setValue(newValue);
-
 	};
 
 
@@ -67,32 +66,32 @@ const NeiDintorni = (props: NeiDintorniProps) => {
 		<>
 			<Banner title={data.neiDintorni.title} id={data.neiDintorni.id}>
 				<Grid container height={"auto"} justifyContent="center" className={styles.neidintorni}>
-				<Typography fontSize={25}>{data.neiDintorni.description}</Typography>
+					<Typography fontSize={20}>{data.neiDintorni.description}</Typography>
 
-				<Tabs
-					orientation="horizontal"
-					variant="scrollable"
-					value={value}
-					onChange={handleChange}
-				>
-					<Tab label={data.neiDintorni.sections.piazzaamerina.title} {...a11yProps(0)}/>
-					<Tab label={data.neiDintorni.sections.villaromana.title} {...a11yProps(1)}/>
-					<Tab label={data.neiDintorni.sections.caltagirone.title} {...a11yProps(2)}/>
-					<Tab label={data.neiDintorni.sections.enna.title} {...a11yProps(3)}/>
-					<Tab label={data.neiDintorni.sections.templi.title} {...a11yProps(4)}/>
-				</Tabs>
+					<Tabs
+						orientation="horizontal"
+						variant="scrollable"
+						scrollButtons="auto"
+						allowScrollButtonsMobile
+						value={value}
+						onChange={handleChange}
+					>
+						<Tab label={data.neiDintorni.sections.piazzaamerina.title} {...a11yProps(0)}/>
+						<Tab label={data.neiDintorni.sections.villaromana.title} {...a11yProps(1)}/>
+						<Tab label={data.neiDintorni.sections.caltagirone.title} {...a11yProps(2)}/>
+						<Tab label={data.neiDintorni.sections.enna.title} {...a11yProps(3)}/>
+						<Tab label={data.neiDintorni.sections.templi.title} {...a11yProps(4)}/>
+					</Tabs>
 
-
-				<Card className={styles.cardWrapperDintorni} elevation={0}>
-					<div ref={refSliderContainer}>
-						<PiazzaArmerina value={value} index={0} direction={direction}/>
-						<VillaRomana value={value} index={1} direction={direction}/>
-						<Caltagirone value={value} index={2} direction={direction}/>
-						<Enna value={value} index={3} direction={direction}/>
-						<Templi value={value} index={4} direction={direction}/>
-
-					</div>
-				</Card>
+					<Card className={styles.cardWrapperDintorni} elevation={0}>
+						<div ref={refSliderContainer}>
+							<PiazzaArmerina value={value} index={0} direction={direction}/>
+							<VillaRomana value={value} index={1} direction={direction}/>
+							<Caltagirone value={value} index={2} direction={direction}/>
+							<Enna value={value} index={3} direction={direction}/>
+							<Templi value={value} index={4} direction={direction}/>
+						</div>
+					</Card>
 				</Grid>
 			</Banner>
 		</>
@@ -103,11 +102,12 @@ const NeiDintorni = (props: NeiDintorniProps) => {
 const PiazzaArmerina = (props: TDintorno) => {
 	return <AnimatePresence>
 		<TabPanel value={props.value} index={props.index}>
-			<motion.div initial={{x: X_OFFSET * props.direction, opacity: 0}} animate={{x: 0, opacity: 1}} className={styles.cardDintorni}>
-					<CarouselNeiDintorni images={data.neiDintorni.sections.piazzaamerina.images}/>
+			<motion.div initial={{x: X_OFFSET * props.direction, opacity: 0}} animate={{x: 0, opacity: 1}}
+			            className={styles.cardDintorni}>
+				<CarouselNeiDintorni images={data.neiDintorni.sections.piazzaamerina.images}/>
 
-					<Typography fontSize={20}>{data.neiDintorni.sections.piazzaamerina.content}</Typography>
-					{/*https://www.piazzaarmerina.org/*/}
+				<Typography className={styles.image_description} fontSize={20}>{data.neiDintorni.sections.piazzaamerina.content}</Typography>
+				{/*https://www.piazzaarmerina.org/*/}
 			</motion.div>
 		</TabPanel>
 	</AnimatePresence>
@@ -116,11 +116,12 @@ const PiazzaArmerina = (props: TDintorno) => {
 const VillaRomana = (props: TDintorno) => {
 	return <AnimatePresence>
 		<TabPanel value={props.value} index={props.index}>
-			<motion.div initial={{x: X_OFFSET * props.direction, opacity: 0}} animate={{x: 0, opacity: 1}} className={styles.cardDintorni}>
-					<CarouselNeiDintorni images={data.neiDintorni.sections.villaromana.images}/>
+			<motion.div initial={{x: X_OFFSET * props.direction, opacity: 0}} animate={{x: 0, opacity: 1}}
+			            className={styles.cardDintorni}>
+				<CarouselNeiDintorni images={data.neiDintorni.sections.villaromana.images}/>
 
-					<Typography fontSize={20}>{data.neiDintorni.sections.villaromana.content}</Typography>
-					{/*https://www.villaromanadelcasale.it/*/}
+				<Typography className={styles.image_description} fontSize={20}>{data.neiDintorni.sections.villaromana.content}</Typography>
+				{/*https://www.villaromanadelcasale.it/*/}
 			</motion.div>
 		</TabPanel>
 	</AnimatePresence>
@@ -130,11 +131,12 @@ const Caltagirone = (props: TDintorno) => {
 
 	return <AnimatePresence>
 		<TabPanel value={props.value} index={props.index}>
-			<motion.div initial={{x: X_OFFSET * props.direction, opacity: 0}} animate={{x: 0, opacity: 1}} className={styles.cardDintorni}>
+			<motion.div initial={{x: X_OFFSET * props.direction, opacity: 0}} animate={{x: 0, opacity: 1}}
+			            className={styles.cardDintorni}>
 				<CardContent>
 					<CarouselNeiDintorni images={data.neiDintorni.sections.caltagirone.images}/>
 
-					<Typography fontSize={20}>{data.neiDintorni.sections.caltagirone.content}</Typography>
+					<Typography className={styles.image_description} fontSize={20}>{data.neiDintorni.sections.caltagirone.content}</Typography>
 				</CardContent>
 			</motion.div>
 		</TabPanel>
@@ -144,10 +146,11 @@ const Caltagirone = (props: TDintorno) => {
 const Enna = (props: TDintorno) => {
 	return <AnimatePresence>
 		<TabPanel value={props.value} index={props.index}>
-			<motion.div initial={{x: X_OFFSET * props.direction, opacity: 0}} animate={{x: 0, opacity: 1}} className={styles.cardDintorni}>
-					<CarouselNeiDintorni images={data.neiDintorni.sections.enna.images}/>
+			<motion.div initial={{x: X_OFFSET * props.direction, opacity: 0}} animate={{x: 0, opacity: 1}}
+			            className={styles.cardDintorni}>
+				<CarouselNeiDintorni images={data.neiDintorni.sections.enna.images}/>
 
-					<Typography fontSize={20}>{data.neiDintorni.sections.enna.content}</Typography>
+				<Typography className={styles.image_description} fontSize={20}>{data.neiDintorni.sections.enna.content}</Typography>
 			</motion.div>
 		</TabPanel>
 	</AnimatePresence>
@@ -156,11 +159,12 @@ const Enna = (props: TDintorno) => {
 const Templi = (props: TDintorno) => {
 	return <AnimatePresence>
 		<TabPanel value={props.value} index={props.index}>
-			<motion.div initial={{x: X_OFFSET * props.direction, opacity: 0}} animate={{x: 0, opacity: 1}} className={styles.cardDintorni}>
-					<CarouselNeiDintorni images={data.neiDintorni.sections.templi.images}/>
+			<motion.div initial={{x: X_OFFSET * props.direction, opacity: 0}} animate={{x: 0, opacity: 1}}
+			            className={styles.cardDintorni}>
+				<CarouselNeiDintorni images={data.neiDintorni.sections.templi.images}/>
 
-					<Typography fontSize={20}>{data.neiDintorni.sections.templi.content}</Typography>
-					{/*https://www.lavalledeitempli.it/*/}
+				<Typography className={styles.image_description} fontSize={20}>{data.neiDintorni.sections.templi.content}</Typography>
+				{/*https://www.lavalledeitempli.it/*/}
 			</motion.div>
 		</TabPanel>
 	</AnimatePresence>

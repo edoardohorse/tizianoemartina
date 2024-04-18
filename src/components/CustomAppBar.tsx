@@ -37,7 +37,7 @@ const CustomAppBar = (props: AppBarProps) => {
 
 	const goTo = (id: string) => {
 		// @ts-ignore
-		const y = document?.getElementById(id)?.getBoundingClientRect()?.top + window?.pageYOffset - 80
+		const y = document?.getElementById(id)?.getBoundingClientRect()?.top + window?.pageYOffset - 60
 		//@ts-ignore
 		window.scrollTo({behavior: 'smooth', top: y})
 	}
@@ -61,7 +61,7 @@ const CustomAppBar = (props: AppBarProps) => {
 
 	return (
 		<>
-			<AppBar position="fixed" className={clsx(heroInView &&'appbar--transparent')}>
+			<AppBar position="fixed" className={clsx(heroInView &&'appbar--transparent')}  sx={{minHeight: "50px"}}>
 				<Toolbar id="back-to-top-anchor" sx={{justifyContent: 'right'}}>
 					<IconButton
 						color="inherit"
