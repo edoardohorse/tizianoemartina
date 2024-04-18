@@ -33,7 +33,9 @@ export default function CarouselNeiDintorni(props: {images: Array<string>}) {
 				scrollbar={{ draggable: true }}
 			>
 				{props.images.map((src, index)=>{
-					return <SwiperSlide key={index} className={styles['slide']}><img src={src} className={styles.image} alt={'1'}/></SwiperSlide>
+					return <SwiperSlide key={index} className={styles['slide']}>
+						<Image src={src} className={styles.image} alt={'1'} fill={true} loading={"lazy"}/>
+					</SwiperSlide>
 				})}
 
 			</Swiper>

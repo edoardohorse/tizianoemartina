@@ -23,6 +23,7 @@
   width:100%;
   height: 600px;
   object-fit: contain;
+  user-select: none;
 }
 
 
