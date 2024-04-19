@@ -43,7 +43,7 @@ function TabPanel(props: TabPanelProps) {
 
 type IndicazioniStradaliBannerProps = {}
 
-const IndicazioniStradaliBanner = (props: IndicazioniStradaliBannerProps) => {
+const DoveECome = (props: IndicazioniStradaliBannerProps) => {
 	const [value, setValue] = React.useState(0);
 	const [direction, setDirection] = useState(-1)
 
@@ -146,4 +146,4 @@ const PanelCerimonia = (props: { value: number, index: number, direction: number
 }
 
 
-export default IndicazioniStradaliBanner;
+export default DoveECome;

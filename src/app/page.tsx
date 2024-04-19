@@ -2,7 +2,7 @@
 
 import HeroBanner from "@/components/sections/HeroBanner";
 import style from './page.module.css'
-import IndicazioniStradaliBanner from "@/components/sections/IndicazioniStradaliBanner";
+import DoveECome from "@/components/sections/DoveECome";
 import PerChiVieneDaFuori from "@/components/sections/PerChiVieneDaFuori";
 import NeiDintorni from "@/components/sections/NeiDintorni";
 import Partecipazione from "@/components/sections/Partecipazione";
@@ -21,7 +21,7 @@ export default async function Home() {
 			<main className={style.wrapper}>
 				<HeroBanner/>
 
-				<IndicazioniStradaliBanner/>
+				<DoveECome/>
 				<PerChiVieneDaFuori/>
 				<NeiDintorni/>
 				{/*<Partecipazione/>*/}

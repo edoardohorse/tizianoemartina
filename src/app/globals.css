@@ -35,7 +35,7 @@ body {
   letter-spacing: -0.2px;
   overflow-x: hidden;
   scrollbar-width: thin;
-  background-color: var(--background-2);
+  /*background-color: var(--background-2);*/
   text-size-adjust: none;
   -webkit-text-size-adjust: none;
   -ms-text-size-adjust: none;
