@@ -36,7 +36,7 @@ const Content = () => {
 
 	return <>
 		{data.perChiVieneDaFuori.location.map((data,index)=>{
-			return <Grid item>
+			return <Grid item key={index}>
 				<Card elevation={3}>
 					<CardContent className={styles.card}>
 						<Typography fontSize={20} fontWeight={700}>
