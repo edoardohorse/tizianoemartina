@@ -14,7 +14,11 @@ const PerChiVieneDaFuori = (props: PerChiVieneDaFuoriProps) => {
 
 	return (
 		<>
-			<Banner title={"Per chi viene da fuori"} id={data.perChiVieneDaFuori.id} background={data.perChiVieneDaFuori.background}>
+			<Banner title={"Per chi viene da fuori"}
+			        amoutInView={0.2}
+			        classNameInView={styles.perchivienedafuori_inview}
+			        id={data.perChiVieneDaFuori.id}
+			        background={data.perChiVieneDaFuori.background}>
 
 				<p className={stylesBanner.banner_text}>Saremo lieti di ospitarvi la notte delle nozze e
 					quella precedentei presso uno dei seguenti Hotel/B&B.<br/>Nelle prossime settimane vi aggiorneremo riguardo la disposizione che abbiamo scelto
@@ -40,11 +44,11 @@ const Content = () => {
 				<Card elevation={3} sx={{background:"transparent"}}>
 					<CardContent className={styles.card}>
 						<Typography fontSize={20} fontWeight={700}>
-							<Image src={data.image} width={400} height={300} style={{objectFit:"cover"}} alt={'hotel_marconi'}/>
+							<Image src={data.image} width={400} height={300} style={{objectFit:"cover", borderRadius: "4px"}} alt={'hotel_marconi'}/>
 
 						</Typography>
 						<CardActions>
-							<Button size="small" variant="contained"
+							<Button size="medium" variant="contained"
 							        onClick={()=>go(data.map)}><span dangerouslySetInnerHTML={{__html: data.text}}/></Button>
 						</CardActions>
 					</CardContent>

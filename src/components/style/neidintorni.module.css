@@ -1,8 +1,12 @@
 .neidintorni{
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
+.neidintorni_inview .cardBorded{
+  transform: translateY(0);
+}
 
 
 .sliderdintorni{
@@ -38,6 +42,17 @@
   padding: 0;
 }
 
+.cardBorded p{
+  font-size: 22px;
+}
+
+
+.cardBorded{
+  padding: 1em 2em;
+  max-width: 1400px;
+  transform: translateY(100px);
+  transition: transform 600ms;
+}
 
 
 @media (width <= 768px){
@@ -47,5 +62,9 @@
 
   .cardBorded{
     padding: 2em;
+  }
+
+  .cardBorded p{
+    font-size: 16px;
   }
 }

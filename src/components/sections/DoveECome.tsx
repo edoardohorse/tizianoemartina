@@ -1,16 +1,17 @@
 "use client"
 
-import React, {useState} from 'react';
+import React, {useRef, useState} from 'react';
 import {Button, Grid} from "@mui/material";
 import Banner from "@/components/Banner";
-import {AnimatePresence, motion} from "framer-motion"
-import styles from '../style/indicazioni.module.css'
+import {AnimatePresence, motion, useInView} from "framer-motion"
+import styles from '../style/doveecome.module.css'
 import Image from "next/image";
 import CardBorded from "@/components/CardBorded";
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import data from '@/data/data.json'
 import {a11yProps} from "@/utility/utility";
+import clsx from "clsx";
 const X_OFFSET = 20
 
 
@@ -39,7 +40,11 @@ function TabPanel(props: TabPanelProps) {
 	);
 }
 
-
+type TPanel = {
+	value: number;
+	index: number;
+	direction: number;
+}
 
 type IndicazioniStradaliBannerProps = {}
 
@@ -53,8 +58,9 @@ const DoveECome = (props: IndicazioniStradaliBannerProps) => {
 
 	};
 
+
 	return (
-		<Banner title={data.doveecome.title} id={data.doveecome.id}>
+		<Banner title={data.doveecome.title} id={data.doveecome.id} classNameInView={styles.panel_inview}>
 
 			<Grid container height={"auto"} justifyContent="center" className={styles.tabs_wrapper}>
 				<Tabs
@@ -77,7 +83,7 @@ const DoveECome = (props: IndicazioniStradaliBannerProps) => {
 	)
 }
 
-const PanelChiesa = (props: { value: number, index: number, direction: number }) => {
+const PanelChiesa = (props: TPanel) => {
 	return <AnimatePresence>
 		<TabPanel value={props.value} index={props.index}>
 			<motion.div initial={{x: X_OFFSET * props.direction, opacity: 0}} animate={{x: 0, opacity: 1}}
@@ -98,7 +104,7 @@ const PanelChiesa = (props: { value: number, index: number, direction: number })
 	</AnimatePresence>
 }
 
-const PanelTradizione = (props: { value: number, index: number, direction: number }) => {
+const PanelTradizione = (props: TPanel ) => {
 	const dataTab = data.doveecome.tradizione
 
 	return <AnimatePresence>
@@ -122,7 +128,7 @@ const PanelTradizione = (props: { value: number, index: number, direction: numbe
 	</AnimatePresence>
 }
 
-const PanelCerimonia = (props: { value: number, index: number, direction: number }) => {
+const PanelCerimonia = (props: TPanel) => {
 	const dataTab = data.doveecome.cerimonia
 
 	return <AnimatePresence>

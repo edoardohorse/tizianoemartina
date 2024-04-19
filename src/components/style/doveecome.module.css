@@ -16,6 +16,14 @@
   padding-left: 20%;
 }
 
+.panel_inview .panel_card{
+  transform: translateX(-125%);
+}
+
+.panel_inview .panel_foto{
+  transform: translateX(10%);
+}
+/*
 .panel:hover > .panel_card,
 .panel:active > .panel_card{
   transform: translateX(-125%);
@@ -24,13 +32,13 @@
 .panel:hover > .panel_foto,
 .panel:active > .panel_foto{
   transform: translateX(10%);
-}
+}*/
 
 .panel_card{
   position: absolute;
   z-index: 10;
   transform: translateX(-120%);
-  transition: transform 200ms;
+  transition: transform 500ms;
 }
 
 
@@ -72,17 +80,16 @@
 
   .panel_card{
     position: relative;
-    transform: translateY(-10%);
+    transform: translateY(0);
     width: 95%;
   }
 
-  .panel:hover > .panel_card,
-  .panel:active > .panel_card{
-    transform: translateY(-10%);
+  .panel_inview .panel_card{
+    transform: translateY(-25%);
   }
 
-  .panel:hover > .panel_foto,
-  .panel:active > .panel_foto{
+  .panel_inview .panel_foto{
     transform: unset;
   }
+
 }

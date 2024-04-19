@@ -119,6 +119,9 @@ footer{
   bottom: 0 !important;
 }
 
+.MuiTabs-scroller .MuiTabs-flexContainer{
+  justify-content: center;
+}
 
 .MuiToolbar-root{
   min-height: 50px !important;
@@ -143,6 +146,11 @@ footer{
 
 
 @media (width <= 768px){
+
+  .MuiTabs-scroller .MuiTabs-flexContainer{
+    justify-content: unset;
+  }
+
   .swiper-pagination{
     margin-top: 0;
  }

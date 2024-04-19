@@ -1,20 +1,25 @@
 "use client"
 
-import React, {ReactNode} from 'react';
+import React, {ReactNode, useRef} from 'react';
 import {Card} from "@mui/material";
 import style from './style/banner.module.css'
 import {Parallax} from "react-parallax";
 import clsx from "clsx";
+import {useInView} from "framer-motion";
 
 type BannerProps = {
 	title: string | null,
 	children: ReactNode,
 	id?: string,
 	background?: string | null
+	classNameInView?: string
+	amoutInView? : number
 }
 
 
 const Banner = (props: BannerProps) => {
+	const ref = useRef(null)
+	const isInView = useInView(ref, {amount: props.amoutInView ?? 0.3})
 
 	const content =
 		<>
@@ -25,7 +30,10 @@ const Banner = (props: BannerProps) => {
 		</>
 
 	return (
-		<Card className={clsx(props?.id, style.banner, props.background && style.banner_parallax)} elevation={0} id={props?.id}>
+		<Card className={clsx(props?.id,style.banner, isInView && props?.classNameInView, {
+			[style.banner_parallax]: props.background,
+		})}
+		      elevation={0} id={props?.id} ref={ref}>
 			{props.background
 				? <Parallax bgImage={props.background} strength={500} className={style.banner_parallax_image}>
 					{content}

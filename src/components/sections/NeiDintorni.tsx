@@ -1,11 +1,10 @@
 "use client"
 
-import React, {ElementRef, useEffect, useRef, useState} from 'react';
+import React, {useRef, useState} from 'react';
 import Banner from "@/components/Banner";
-import {Card, CardContent, Grid, Pagination, Typography} from "@mui/material";
-import SliderTitoliDintorni, {ISliderDintorniActions} from "@/components/SliderDintorni";
+import {Box, Card} from "@mui/material";
+import {ISliderDintorniActions} from "@/components/SliderDintorni";
 import data from '@/data/data.json'
-import {useInView, useScroll} from "framer-motion";
 import styles from '../style/neidintorni.module.css'
 import CarouselNeiDintorni from "@/components/CarouselNeiDintorni";
 import Tabs from "@mui/material/Tabs";
@@ -32,7 +31,13 @@ type TDintorno = {
 	value: number,
 	index: number,
 	direction: number,
-	data: typeof data.neiDintorni.sections.piazzaamerina,
+	data: {
+		title: string,
+		content: string,
+		link: string  |null,
+		textLink: string | null,
+		images: Array<string>
+	}
 }
 
 function TabPanel(props: TabPanelProps) {
@@ -69,9 +74,10 @@ const NeiDintorni = (props: NeiDintorniProps) => {
 
 	return (
 		<>
-			<Banner title={data.neiDintorni.title} id={data.neiDintorni.id}>
-				<Grid container height={"auto"} justifyContent="center" className={styles.neidintorni}>
+			<Banner title={data.neiDintorni.title} id={data.neiDintorni.id} amoutInView={0.5} classNameInView={styles.neidintorni_inview}>
+				{/*<Grid container height={"auto"} justifyContent="center" className={styles.neidintorni}>*/}
 					<p className={stylesBanner.banner_text}>{data.neiDintorni.description}</p>
+					<Box>
 
 					<Tabs
 						orientation="horizontal"
@@ -80,20 +86,24 @@ const NeiDintorni = (props: NeiDintorniProps) => {
 						allowScrollButtonsMobile
 						value={value}
 						onChange={handleChange}
+						centered
 					>
 						{Object.values(data.neiDintorni.sections).map((data,index )=>{
-							return <Tab label={data.title} {...a11yProps(index)}/>
+							return <Tab key={index} label={data.title} {...a11yProps(index)}/>
 						})}
 					</Tabs>
+					</Box>
 
 					<Card className={styles.cardWrapperDintorni} elevation={0}>
 						<div ref={refSliderContainer}>
 							{Object.values(data.neiDintorni.sections).map((data,index )=>{
-								return <NeiDintorniGallery value={value} index={index} direction={direction} data={data}/>
+								return  <React.Fragment key={index}>
+									<NeiDintorniGallery value={value} index={index} direction={direction} data={data}/>
+								</React.Fragment>
 							})}
 						</div>
 					</Card>
-				</Grid>
+				{/*</Grid>*/}
 			</Banner>
 		</>
 

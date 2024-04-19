@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './style/indicazioni.module.css'
+import style from './style/doveecome.module.css'
 
 type TIndicazioneStradale = {
 	title: string,
