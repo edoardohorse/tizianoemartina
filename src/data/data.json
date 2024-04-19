@@ -51,6 +51,7 @@
   "perChiVieneDaFuori": {
     "id": "perChiVieneDaFuori",
     "title": "Per chi viene da fuori",
+    "background": "/background/perchivienedafuori.jpg",
     "descr": "Elenco dei nomi degli hotel con relativi link maps e successiva frase: Saremo lieti di ospitarvi due notti presso uno dei seguenti Hotel/B&B. Prossimamente vi informeremo della disposizione scelta per voi.",
     "location": [
 
@@ -85,6 +86,7 @@
         "title": "Piazza Armerina",
         "content": "La cosiddetta città delle 100 chiese, con un centro storico dai richiami barocchi e normanni,  è ricca di riferimenti storici e religiosi che rimarranno impressi nei tuoi occhi. Svetta su questi il duomo situato in una piazzetta che ti regalerà una vista mozzafiato sulle vallate circostanti.",
         "link": "https://www.piazzaarmerina.org/",
+        "textLink": "piazzaarmerina.org",
         "images": [
           "/neidintorni/piazzaarmerina/1.jpg",
           "/neidintorni/piazzaarmerina/2.jpg",
@@ -95,8 +97,8 @@
         "title": "Villa Romana del Casale",
         "content": "Perché non continuare la visita di Piazza Armerina visitando anche gli scavi di epoca romana, tornando indietro nel tempo immergendosi nei momenti di svago della nobiltà di allora. Consigliato tour serale.",
         "link": "https://www.villaromanadelcasale.it/",
+        "textLink": "villaromanadelcasale.it",
         "images": [
-          "/neidintorni/villaromana/1.jpg",
           "/neidintorni/villaromana/2.jpg",
           "/neidintorni/villaromana/3.jpg",
           "/neidintorni/villaromana/4.jpg"
@@ -108,11 +110,8 @@
         "link": null,
         "images": [
           "/neidintorni/caltagirone/1.jpg",
-          "/neidintorni/caltagirone/2.jpg",
-          "/neidintorni/caltagirone/3.jpg",
           "/neidintorni/caltagirone/4.jpeg",
-          "/neidintorni/caltagirone/5.jpg",
-          "/neidintorni/caltagirone/6.jpg"
+          "/neidintorni/caltagirone/5.jpg"
         ]
       },
       "enna": {
@@ -128,9 +127,9 @@
       "templi": {
         "title": "Templi di Agrigento",
         "content": "Se il tempo a vostra disposizione ve lo consente, vi consigliamo di non perdervi la visita, al crepuscolo, al parco archeologico di Agrigento, inserito dall'UNESCO nell'elenco del patrimonio mondiale dell'umanità, in cui potrete ammirare la maestosità dei templi di epoca greca.",
-        "link": null,
+        "link": "https://www.lavalledeitempli.it/",
+        "textLink": "lavalledeitempli.it",
         "images": [
-          "/neidintorni/templi/1.webp",
           "/neidintorni/templi/2.jpg",
           "/neidintorni/templi/3.webp",
           "/neidintorni/templi/4.png"

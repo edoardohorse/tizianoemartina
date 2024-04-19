@@ -12,6 +12,10 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import {a11yProps} from "@/utility/utility";
 import {AnimatePresence, motion} from "framer-motion"
+import stylesBanner from "@/components/style/banner.module.css"
+import CardBorded from "@/components/CardBorded";
+import Link from "@mui/material/Link";
+
 
 const X_OFFSET = 20
 
@@ -27,7 +31,8 @@ type NeiDintorniProps = {}
 type TDintorno = {
 	value: number,
 	index: number,
-	direction: number
+	direction: number,
+	data: typeof data.neiDintorni.sections.piazzaamerina,
 }
 
 function TabPanel(props: TabPanelProps) {
@@ -66,7 +71,7 @@ const NeiDintorni = (props: NeiDintorniProps) => {
 		<>
 			<Banner title={data.neiDintorni.title} id={data.neiDintorni.id}>
 				<Grid container height={"auto"} justifyContent="center" className={styles.neidintorni}>
-					<Typography fontSize={20}>{data.neiDintorni.description}</Typography>
+					<p className={stylesBanner.banner_text}>{data.neiDintorni.description}</p>
 
 					<Tabs
 						orientation="horizontal"
@@ -76,20 +81,16 @@ const NeiDintorni = (props: NeiDintorniProps) => {
 						value={value}
 						onChange={handleChange}
 					>
-						<Tab label={data.neiDintorni.sections.piazzaamerina.title} {...a11yProps(0)}/>
-						<Tab label={data.neiDintorni.sections.villaromana.title} {...a11yProps(1)}/>
-						<Tab label={data.neiDintorni.sections.caltagirone.title} {...a11yProps(2)}/>
-						<Tab label={data.neiDintorni.sections.enna.title} {...a11yProps(3)}/>
-						<Tab label={data.neiDintorni.sections.templi.title} {...a11yProps(4)}/>
+						{Object.values(data.neiDintorni.sections).map((data,index )=>{
+							return <Tab label={data.title} {...a11yProps(index)}/>
+						})}
 					</Tabs>
 
 					<Card className={styles.cardWrapperDintorni} elevation={0}>
 						<div ref={refSliderContainer}>
-							<PiazzaArmerina value={value} index={0} direction={direction}/>
-							<VillaRomana value={value} index={1} direction={direction}/>
-							<Caltagirone value={value} index={2} direction={direction}/>
-							<Enna value={value} index={3} direction={direction}/>
-							<Templi value={value} index={4} direction={direction}/>
+							{Object.values(data.neiDintorni.sections).map((data,index )=>{
+								return <NeiDintorniGallery value={value} index={index} direction={direction} data={data}/>
+							})}
 						</div>
 					</Card>
 				</Grid>
@@ -99,72 +100,22 @@ const NeiDintorni = (props: NeiDintorniProps) => {
 	)
 }
 
-const PiazzaArmerina = (props: TDintorno) => {
-	return <AnimatePresence>
+const NeiDintorniGallery = (props: TDintorno) => {
+	return <AnimatePresence key={props.index}>
 		<TabPanel value={props.value} index={props.index}>
 			<motion.div initial={{x: X_OFFSET * props.direction, opacity: 0}} animate={{x: 0, opacity: 1}}
 			            className={styles.cardDintorni}>
-				<CarouselNeiDintorni images={data.neiDintorni.sections.piazzaamerina.images}/>
+				<CarouselNeiDintorni images={props.data.images}/>
 
-				<Typography className={styles.image_description} fontSize={20}>{data.neiDintorni.sections.piazzaamerina.content}</Typography>
-				{/*https://www.piazzaarmerina.org/*/}
-			</motion.div>
-		</TabPanel>
-	</AnimatePresence>
-}
+				<CardBorded className={styles.cardBorded}>
+					<p className={stylesBanner.banner_text}>{props.data.content}<br/>
+						{props.data?.link &&
+							<Link href={props.data?.link} target={"_blank"}>{props.data.textLink}</Link>
+						}
+					</p>
 
-const VillaRomana = (props: TDintorno) => {
-	return <AnimatePresence>
-		<TabPanel value={props.value} index={props.index}>
-			<motion.div initial={{x: X_OFFSET * props.direction, opacity: 0}} animate={{x: 0, opacity: 1}}
-			            className={styles.cardDintorni}>
-				<CarouselNeiDintorni images={data.neiDintorni.sections.villaromana.images}/>
+				</CardBorded>
 
-				<Typography className={styles.image_description} fontSize={20}>{data.neiDintorni.sections.villaromana.content}</Typography>
-				{/*https://www.villaromanadelcasale.it/*/}
-			</motion.div>
-		</TabPanel>
-	</AnimatePresence>
-}
-
-const Caltagirone = (props: TDintorno) => {
-
-	return <AnimatePresence>
-		<TabPanel value={props.value} index={props.index}>
-			<motion.div initial={{x: X_OFFSET * props.direction, opacity: 0}} animate={{x: 0, opacity: 1}}
-			            className={styles.cardDintorni}>
-				<CardContent>
-					<CarouselNeiDintorni images={data.neiDintorni.sections.caltagirone.images}/>
-
-					<Typography className={styles.image_description} fontSize={20}>{data.neiDintorni.sections.caltagirone.content}</Typography>
-				</CardContent>
-			</motion.div>
-		</TabPanel>
-	</AnimatePresence>
-}
-
-const Enna = (props: TDintorno) => {
-	return <AnimatePresence>
-		<TabPanel value={props.value} index={props.index}>
-			<motion.div initial={{x: X_OFFSET * props.direction, opacity: 0}} animate={{x: 0, opacity: 1}}
-			            className={styles.cardDintorni}>
-				<CarouselNeiDintorni images={data.neiDintorni.sections.enna.images}/>
-
-				<Typography className={styles.image_description} fontSize={20}>{data.neiDintorni.sections.enna.content}</Typography>
-			</motion.div>
-		</TabPanel>
-	</AnimatePresence>
-}
-
-const Templi = (props: TDintorno) => {
-	return <AnimatePresence>
-		<TabPanel value={props.value} index={props.index}>
-			<motion.div initial={{x: X_OFFSET * props.direction, opacity: 0}} animate={{x: 0, opacity: 1}}
-			            className={styles.cardDintorni}>
-				<CarouselNeiDintorni images={data.neiDintorni.sections.templi.images}/>
-
-				<Typography className={styles.image_description} fontSize={20}>{data.neiDintorni.sections.templi.content}</Typography>
-				{/*https://www.lavalledeitempli.it/*/}
 			</motion.div>
 		</TabPanel>
 	</AnimatePresence>

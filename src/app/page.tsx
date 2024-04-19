@@ -24,7 +24,9 @@ export default async function Home() {
 				<DoveECome/>
 				<PerChiVieneDaFuori/>
 				<NeiDintorni/>
+				{/*<Gallery/>*/}
 				{/*<Partecipazione/>*/}
+				{/*<IlNostroFuturo/>*/}
 			</main>
 			<ScrollTop/>
 

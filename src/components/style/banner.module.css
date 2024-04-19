@@ -1,16 +1,15 @@
 .banner{
   display: flex;
   flex-direction: column;
-  width: calc(100% - 2em);
+  width: 100%;
   min-height: 400px;
   height: fit-content;
-  margin: 2em 1em 1em 1em;
+  margin: 3em 0 3em 0;
   /*padding: 1em;*/
   padding: 0;
   box-sizing: border-box;
   background-color: transparent;
 }
-
 
 .banner_title{
   font-size: 50px;
@@ -20,16 +19,36 @@
   /*margin-bottom: 10px;*/
 }
 
+.banner_text{
+  font-size: 24px;
+  line-height: 1.4;
+  text-align: center;
+  padding: 0 1em;
+}
+
+.banner_parallax_image > img{
+  filter: brightness(0.4) !important;
+}
+.banner_parallax .banner_title{
+  text-shadow: 1px 1px 10px black;
+}
+
+.banner_parallax .banner_text{
+  color:white;
+}
+
 @media (width <= 475px){
   .banner{
     width: 100%;
-    margin-left: 0;
-    margin-right: 0;
+    margin: 1.5em 0 1.5em 0;
   }
 
   .banner_title{
     font-size: 30px;
   }
 
+  .banner_text{
+    font-size: 16px;
+  }
 }
 

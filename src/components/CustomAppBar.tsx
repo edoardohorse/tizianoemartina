@@ -63,7 +63,7 @@ const CustomAppBar = (props: AppBarProps) => {
 
 	const goTo = (id: string) => {
 		// @ts-ignore
-		const y = document?.getElementById(id)?.getBoundingClientRect()?.top + window?.pageYOffset - 60
+		const y = document?.getElementById(id)?.getBoundingClientRect()?.top + window?.pageYOffset
 		//@ts-ignore
 		window.scrollTo({behavior: 'smooth', top: y})
 	}

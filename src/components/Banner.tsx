@@ -3,22 +3,35 @@
 import React, {ReactNode} from 'react';
 import {Card} from "@mui/material";
 import style from './style/banner.module.css'
+import {Parallax} from "react-parallax";
+import clsx from "clsx";
 
 type BannerProps = {
 	title: string | null,
 	children: ReactNode,
-	id?: string
+	id?: string,
+	background?: string | null
 }
 
 
 const Banner = (props: BannerProps) => {
 
-	return (
-		<Card className={style.banner} elevation={0} id={props?.id}>
+	const content =
+		<>
 			<Banner.Title>{props.title}</Banner.Title>
 			<div>
 				{props.children}
 			</div>
+		</>
+
+	return (
+		<Card className={clsx(props?.id, style.banner, props.background && style.banner_parallax)} elevation={0} id={props?.id}>
+			{props.background
+				? <Parallax bgImage={props.background} strength={500} className={style.banner_parallax_image}>
+					{content}
+				</Parallax>
+				: <>{content}</>
+			}
 		</Card>
 
 	)

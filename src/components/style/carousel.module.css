@@ -1,6 +1,7 @@
 .carousel {
   width: 80%;
   height: 60vh;
+  margin-bottom: 1em;
 }
 
 
@@ -20,7 +21,7 @@
 }
 
 .image{
-  width:100%;
+  width:60%;
   height: 600px;
   object-fit: contain;
   user-select: none;

@@ -6,7 +6,7 @@ import Banner from "@/components/Banner";
 import {AnimatePresence, motion} from "framer-motion"
 import styles from '../style/indicazioni.module.css'
 import Image from "next/image";
-import CardIndicazioneStradale from "@/components/CardIndicazioneStradale";
+import CardBorded from "@/components/CardBorded";
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import data from '@/data/data.json'
@@ -83,13 +83,13 @@ const PanelChiesa = (props: { value: number, index: number, direction: number })
 			<motion.div initial={{x: X_OFFSET * props.direction, opacity: 0}} animate={{x: 0, opacity: 1}}
 			            className={styles.panel}>
 				<div className={styles.panel_card}>
-					<CardIndicazioneStradale title={data.doveecome.chiesa.cardTitle} time={data.doveecome.chiesa.time}>
+					<CardBorded title={data.doveecome.chiesa.cardTitle} time={data.doveecome.chiesa.time} style={{maxWidth: "410px", minHeight: "300px"}}>
 						{data.doveecome.chiesa.links.map((btn, index) => {
 							return <Button key={index} variant="contained" onClick={() => window.open(btn.url)}>
 								<span dangerouslySetInnerHTML={{__html: btn.text}}/>
 							</Button>
 						})}
-					</CardIndicazioneStradale>
+					</CardBorded>
 				</div>
 				<Image loading={"lazy"} className={styles.panel_foto} src={data.doveecome.chiesa.image} alt={'foto chiesa'}
 				       width={800} height={600}/>
@@ -106,13 +106,13 @@ const PanelTradizione = (props: { value: number, index: number, direction: numbe
 			<motion.div initial={{x: X_OFFSET * props.direction, opacity: 0}} animate={{x: 0, opacity: 1}}
 			            className={styles.panel}>
 				<div className={styles.panel_card}>
-					<CardIndicazioneStradale title={dataTab.cardTitle} details={dataTab.content}>
+					<CardBorded title={dataTab.cardTitle} details={dataTab.content} style={{maxWidth: "410px", minHeight: "300px"}}>
 						{dataTab.links.map((btn, index) => {
 							return <Button key={index} variant="contained" onClick={() => window.open(btn.url)}>
 								<span dangerouslySetInnerHTML={{__html: btn.text}}/>
 							</Button>
 						})}
-					</CardIndicazioneStradale>
+					</CardBorded>
 				</div>
 				<Image loading={"lazy"} className={styles.panel_foto} src={dataTab.image}
 				       alt={'foto tradizione'}
@@ -130,13 +130,13 @@ const PanelCerimonia = (props: { value: number, index: number, direction: number
 			<motion.div initial={{x: X_OFFSET * props.direction, opacity: 0}} animate={{x: 0, opacity: 1}}
 			            className={styles.panel}>
 				<div className={styles.panel_card}>
-					<CardIndicazioneStradale title={dataTab.cardTitle} details={dataTab.content}>
+					<CardBorded title={dataTab.cardTitle} details={dataTab.content} style={{maxWidth: "410px", minHeight: "300px"}}>
 						{dataTab.links.map((btn, index) => {
 							return <Button key={index} variant="contained" onClick={() => window.open(btn.url)}>
 								<span dangerouslySetInnerHTML={{__html: btn.text}}/>
 							</Button>
 						})}
-					</CardIndicazioneStradale>
+					</CardBorded>
 				</div>
 				<Image loading={"lazy"} className={styles.panel_foto} src={dataTab.image} alt={'foto cerimonia'}
 				       width={800} height={600}/>
