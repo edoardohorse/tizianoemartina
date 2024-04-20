@@ -144,6 +144,11 @@ footer{
   color: white;
 }
 
+.MuiToggleButtonGroup-grouped.Mui-selected{
+  background-color: var(--text-title) !important;
+  color: white !important;
+}
+
 
 @media (width <= 768px){
 

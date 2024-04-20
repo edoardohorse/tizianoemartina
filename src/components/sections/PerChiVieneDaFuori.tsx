@@ -41,15 +41,16 @@ const Content = () => {
 	return <>
 		{data.perChiVieneDaFuori.location.map((data,index)=>{
 			return <Grid item key={index}>
-				<Card elevation={3} sx={{background:"transparent"}}>
-					<CardContent className={styles.card}>
+				<Card elevation={3} className={styles.card}>
+					<CardContent style={{padding: '0 0 14px 0'}}>
 						<Typography fontSize={20} fontWeight={700}>
 							<Image src={data.image} width={400} height={300} style={{objectFit:"cover", borderRadius: "4px"}} alt={'hotel_marconi'}/>
 
 						</Typography>
-						<CardActions>
-							<Button size="medium" variant="contained"
-							        onClick={()=>go(data.map)}><span dangerouslySetInnerHTML={{__html: data.text}}/></Button>
+						<CardActions sx={{justifyContent:"center"}}>
+							<Button size="medium" variant="contained" onClick={()=>go(data.map)}>
+								<span dangerouslySetInnerHTML={{__html: data.text}}/>
+							</Button>
 						</CardActions>
 					</CardContent>
 				</Card>

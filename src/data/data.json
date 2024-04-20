@@ -149,5 +149,10 @@
     "description": "Vi invitiamo a postare le foto del matrimonio in quest'album",
     "background": "/background/gallery.jpg",
     "link": "https://photos.app.goo.gl/wGK64hwhq1wvnk4EA"
+  },
+  "partecipazione": {
+    "id": "partecipazione",
+    "title": "Partecipazione",
+    "background": "/background/partecipazione.jpg"
   }
 }

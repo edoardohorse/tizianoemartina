@@ -1,7 +1,7 @@
 "use client"
 
-import HeroBanner from "@/components/sections/HeroBanner";
 import style from './page.module.css'
+import HeroBanner from "@/components/sections/HeroBanner";
 import DoveECome from "@/components/sections/DoveECome";
 import PerChiVieneDaFuori from "@/components/sections/PerChiVieneDaFuori";
 import NeiDintorni from "@/components/sections/NeiDintorni";
@@ -17,7 +17,6 @@ export default async function Home() {
 
 	return (
 		<>
-			{/*<Header></Header>*/}
 			<CustomAppBar/>
 			<main className={style.wrapper}>
 				<HeroBanner/>
@@ -26,7 +25,7 @@ export default async function Home() {
 				<PerChiVieneDaFuori/>
 				<NeiDintorni/>
 				<Gallery/>
-				{/*<Partecipazione/>*/}
+				<Partecipazione/>
 				{/*<IlNostroFuturo/>*/}
 			</main>
 			<ScrollTop/>

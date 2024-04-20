@@ -50,7 +50,7 @@
 .cardBorded{
   padding: 1em 2em;
   max-width: 1400px;
-  transform: translateY(100px);
+  transform: translateY(50px);
   transition: transform 600ms;
 }
 

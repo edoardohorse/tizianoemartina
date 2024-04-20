@@ -23,7 +23,7 @@ interface Props {
 
 type AppBarProps = {}
 
-const navItems = [data.doveecome, data.perChiVieneDaFuori, data.neiDintorni, data.gallery]
+const navItems = [data.doveecome, data.perChiVieneDaFuori, data.neiDintorni, data.gallery, data.partecipazione]
 const drawerWidth = 240;
 
 function HideOnScroll(props: Props) {
@@ -63,7 +63,7 @@ const CustomAppBar = (props: AppBarProps) => {
 
 	const goTo = (id: string) => {
 		// @ts-ignore
-		const y = document?.getElementById(id)?.getBoundingClientRect()?.top + window?.pageYOffset - 60
+		const y = document?.getElementById(id)?.getBoundingClientRect()?.top + window?.pageYOffset - 50
 		//@ts-ignore
 		window.scrollTo({behavior: 'smooth', top: y})
 	}
