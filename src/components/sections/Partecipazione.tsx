@@ -91,7 +91,8 @@ const Partecipazione = (props: PartecipazioneProps) => {
 		fetch("/", {
 			method: "POST",
 			headers: {"Content-Type": "application/x-www-form-urlencoded"},
-			body: formData,
+		// @ts-ignore
+			body: new URLSearchParams(formData).toString(),
 		})
 			.then(() => {
 				setAlertError(false)
