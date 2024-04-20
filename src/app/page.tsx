@@ -20,7 +20,6 @@ export default async function Home() {
 			<CustomAppBar/>
 			<main className={style.wrapper}>
 				<HeroBanner/>
-
 				<DoveECome/>
 				<PerChiVieneDaFuori/>
 				<NeiDintorni/>
