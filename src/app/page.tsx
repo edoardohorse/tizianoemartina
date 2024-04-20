@@ -7,6 +7,7 @@ import PerChiVieneDaFuori from "@/components/sections/PerChiVieneDaFuori";
 import NeiDintorni from "@/components/sections/NeiDintorni";
 import Partecipazione from "@/components/sections/Partecipazione";
 import dynamic from "next/dynamic";
+import Gallery from "@/components/sections/Gallery";
 
 const ScrollTop = dynamic(() => import("@/components/ScrollTop"), {ssr: false});
 const CustomAppBar = dynamic(() => import("@/components/CustomAppBar"), {ssr: false});
@@ -24,7 +25,7 @@ export default async function Home() {
 				<DoveECome/>
 				<PerChiVieneDaFuori/>
 				<NeiDintorni/>
-				{/*<Gallery/>*/}
+				<Gallery/>
 				{/*<Partecipazione/>*/}
 				{/*<IlNostroFuturo/>*/}
 			</main>

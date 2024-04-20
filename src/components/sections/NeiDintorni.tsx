@@ -74,7 +74,7 @@ const NeiDintorni = (props: NeiDintorniProps) => {
 
 	return (
 		<>
-			<Banner title={data.neiDintorni.title} id={data.neiDintorni.id} amoutInView={0.5} classNameInView={styles.neidintorni_inview}>
+			<Banner title={data.neiDintorni.title} id={data.neiDintorni.id} amoutInView={0.3} classNameInView={styles.neidintorni_inview}>
 				{/*<Grid container height={"auto"} justifyContent="center" className={styles.neidintorni}>*/}
 					<p className={stylesBanner.banner_text}>{data.neiDintorni.description}</p>
 					<Box>

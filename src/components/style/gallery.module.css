@@ -1,0 +1,29 @@
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.description{
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+
+.link{
+  font-size: 28px !important;
+  text-align: center;
+  text-shadow: 1px 1px 10px black;
+  font-weight: 800 !important;
+}
+
+@media (width <= 768px){
+  .description{
+    padding: 0 16px;
+    font-size: 24px;
+  }
+
+  .link{
+    font-size: 20px !important;
+  }
+}
