@@ -91,7 +91,7 @@ const Partecipazione = (props: PartecipazioneProps) => {
 		fetch("/", {
 			method: "POST",
 			headers: {"Content-Type": "application/x-www-form-urlencoded"},
-			body: new URLSearchParams(formData).toString(),
+			body: formData,
 		})
 			.then(() => {
 				setAlertError(false)
@@ -134,7 +134,7 @@ const Partecipazione = (props: PartecipazioneProps) => {
 					           }} label="Nome & Cognome"/>
 
 					<TextField className={styles.field} name={'famiglia'} type="text" label={'Famiglia di appartenenza'} required
-					           defaultValue={mock['famiglia'] ?? famiglia} focused={!!famiglia}/>
+					           defaultValue={famiglia} focused={!!famiglia}/>
 					<div>
 						<Typography fontSize={15} textAlign={"center"}>N. persone</Typography>
 						<NumberInput min={1} max={10} defaultValue={1}/>
