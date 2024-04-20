@@ -28,10 +28,10 @@
 }
 
 .banner_parallax_image > img{
-  filter: brightness(0.4) !important;
+  filter: brightness(0.6) !important;
 }
 .banner_parallax .banner_title{
-  text-shadow: 1px 1px 10px rgba(0,0,0,0.3);
+  text-shadow: 1px 1px 3px rgba(0,0,0,.5);
 }
 
 .banner_parallax .banner_text{
