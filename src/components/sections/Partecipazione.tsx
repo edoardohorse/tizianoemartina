@@ -27,18 +27,18 @@ type TDaDove = 'Puglia' | 'Sicilia' | null
 type TPullman = 'Si' | 'No' | null
 
 
-type PartecipazioneProps = {window?: () => Window;}
+type PartecipazioneProps = { window?: () => Window; }
 
 /*const mock = {
-	'nome': 'Edoardo Cavallo',
-	'n_invitati': '5',
-	'intolleranze': 'Celiaco',
-	'telefono': '3926043814',
-	'email': 'edoardohorse@gmail.com',
-	'famiglia': 'Cavallo',
-	'da_dove': 'Puglia',
-	'pullman': 'si',
-}*/
+ 'nome': 'Edoardo Cavallo',
+ 'n_invitati': '5',
+ 'intolleranze': 'Celiaco',
+ 'telefono': '3926043814',
+ 'email': 'edoardohorse@gmail.com',
+ 'famiglia': 'Cavallo',
+ 'da_dove': 'Puglia',
+ 'pullman': 'si',
+ }*/
 const mock = {
 	'nome': '',
 	'n_invitati': '',
@@ -49,15 +49,6 @@ const mock = {
 	'da_dove': '',
 	'pullman': '',
 }
-
-/*const ToggleButton = styled(MuiToggleButton)(() => ({
- "&.Mui-selected, &.Mui-selected:hover": {
- color: "white",
- backgroundColor: '#00ff00'
-
- }
- }));*/
-
 
 
 const Partecipazione = (props: PartecipazioneProps) => {
@@ -70,7 +61,7 @@ const Partecipazione = (props: PartecipazioneProps) => {
 	const handleChangeDaDove = (event: React.MouseEvent<HTMLElement>, value: TDaDove) => {
 		setDaDove(value);
 
-		if(value === null) return setPullman(null)
+		if (value === null) return setPullman(null)
 
 		if (value === 'Sicilia') {
 			setPullman(null)
@@ -85,7 +76,7 @@ const Partecipazione = (props: PartecipazioneProps) => {
 		const myForm = event.target;
 		const formData = new FormData(myForm);
 
-		if( daDove?.toString() === undefined || daDove?.toString() === ''){
+		if (daDove?.toString() === undefined || daDove?.toString() === '') {
 			return setAlertError(true)
 		}
 		formData.append('da_dove', daDove?.toString() ?? '')
@@ -96,21 +87,20 @@ const Partecipazione = (props: PartecipazioneProps) => {
 			console.log(`${key}: ${value}`);
 		}
 
-		setAlertError(false)
-		setAlertSuccess(true)
-		/*
-		 fetch("/", {
-		 method: "POST",
-		 headers: { "Content-Type": "application/x-www-form-urlencoded" },
-		 body: new URLSearchParams(formData).toString(),
-		 })
-		 .then(() => console.log("Form successfully submitted"))
-		 .catch((error) => alert(error));
-		 */
+
+		fetch("/", {
+			method: "POST",
+			headers: {"Content-Type": "application/x-www-form-urlencoded"},
+			body: new URLSearchParams(formData).toString(),
+		})
+			.then(() => {
+				setAlertError(false)
+				setAlertSuccess(true)
+			})
+			.catch((error) => alert(error));
 	};
 
-	const handleCloseSnackSaveData = ()=>setAlertSuccess(false)
-
+	const handleCloseSnackSaveData = () => setAlertSuccess(false)
 
 
 	const actionSalvaData = (
@@ -118,7 +108,8 @@ const Partecipazione = (props: PartecipazioneProps) => {
 			<Button color="secondary" size="small" onClick={handleCloseSnackSaveData}>
 				<div style={{display: "flex", gap: "5px"}}>
 					<CalendarMonthOutlinedIcon fontSize="small"/>
-					<Link style={{color:"white", textDecoration:"unset"}}  id={'savedate'} href="/calendar.ics">{'SALVA DATA'}</Link>
+					<Link style={{color: "white", textDecoration: "unset"}} id={'savedate'}
+					      href="/calendar.ics">{'SALVA DATA'}</Link>
 				</div>
 			</Button>
 			<IconButton
@@ -138,7 +129,9 @@ const Partecipazione = (props: PartecipazioneProps) => {
 				<Image src={'/svg/girigoro.png'} alt={'girigoro'} className={styles.girigoro} width={200} height={300}/>
 				<form onSubmit={handleSubmit} data-netlify={true} className={styles.partecipazione}>
 					<TextField className={styles.field} name={'nome'} type="text" required defaultValue={mock['nome']}
-					           onChange={(e)=>{setFamiglia(e.target.value.split(" ")[1])}} label="Nome & Cognome"/>
+					           onChange={(e) => {
+						           setFamiglia(e.target.value.split(" ")[1])
+					           }} label="Nome & Cognome"/>
 
 					<TextField className={styles.field} name={'famiglia'} type="text" label={'Famiglia di appartenenza'} required
 					           defaultValue={mock['famiglia'] ?? famiglia} focused={!!famiglia}/>
@@ -150,28 +143,29 @@ const Partecipazione = (props: PartecipazioneProps) => {
 					<MinHeightTextarea name={'intolleranze'} defaultValue={mock['intolleranze']}/>
 					<TextField className={styles.field} name={'telefono'} type="tel" label={'Numero telefono'} required
 					           defaultValue={mock['telefono']}/>
-				{/*	<TextField className={styles.field} name={'email'} type="email" label={'Email'} required
-					           defaultValue={mock['email']}/>*/}
+					{/*	<TextField className={styles.field} name={'email'} type="email" label={'Email'} required
+					 defaultValue={mock['email']}/>*/}
 
 
 					<div>
 						<Typography fontSize={15} textAlign={"center"}>Regione</Typography>
-						<ToggleButtonGroup  value={daDove}  size="medium" exclusive={true} onChange={handleChangeDaDove}>
-							<ToggleButton sx={{backgroundColor: 'rgba(255,255,255,0.5)'}} className={styles.field_toggle} value="Puglia">Puglia</ToggleButton>
-							<ToggleButton sx={{backgroundColor: 'rgba(255,255,255,0.5)'}} className={styles.field_toggle} value="Sicilia">Sicilia</ToggleButton>
+						<ToggleButtonGroup value={daDove} size="medium" exclusive={true} onChange={handleChangeDaDove}>
+							<ToggleButton sx={{backgroundColor: 'rgba(255,255,255,0.5)'}} className={styles.field_toggle}
+							              value="Puglia">Puglia</ToggleButton>
+							<ToggleButton sx={{backgroundColor: 'rgba(255,255,255,0.5)'}} className={styles.field_toggle}
+							              value="Sicilia">Sicilia</ToggleButton>
 						</ToggleButtonGroup>
-						<FormControlLabel style={{marginLeft:"15px"}}
+						<FormControlLabel style={{marginLeft: "15px"}}
 						                  disabled={pullman === null}
 						                  checked={pullman === 'Si'}
-						                  onChange={(e,checked)=>{
+						                  onChange={(e, checked) => {
 							                  console.log(checked)
-																//@ts-ignore
-																if(e.target?.checked){
-																	setPullman('Si')
-																}
-																else{
-																	setPullman('No')
-																}
+							                  //@ts-ignore
+							                  if (e.target?.checked) {
+								                  setPullman('Si')
+							                  } else {
+								                  setPullman('No')
+							                  }
 						                  }}
 						                  name={'pullman'}
 						                  control={<Checkbox/>} label="Pullman?"/>
@@ -193,7 +187,7 @@ const Partecipazione = (props: PartecipazioneProps) => {
 			<Snackbar
 				open={bAlertError}
 				autoHideDuration={6000}>
-				<Alert onClose={()=>setAlertError(false)} severity="error" variant="filled" sx={{ width: '100%' }}>
+				<Alert onClose={() => setAlertError(false)} severity="error" variant="filled" sx={{width: '100%'}}>
 					{'Riempi il campo regione'}
 				</Alert>
 			</Snackbar>
