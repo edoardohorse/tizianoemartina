@@ -27,9 +27,10 @@
   align-items: center;
 
   height: 100%;
-  grid-template-rows: [title] 50vh [date] 50px [countdown] 1fr;
+  grid-template-rows: [title] 50vh [date] 50px [savedate] 50px [countdown] 1fr;
   grid-template-columns: 1fr;
 }
+
 
 .content > h1{
   margin: 0;
@@ -47,6 +48,11 @@
   color: #fff;
 
   grid-column: date;
+}
+
+.content #savedate{
+  text-align: center;
+  grid-column: savedate;
 }
 
 .countdown{

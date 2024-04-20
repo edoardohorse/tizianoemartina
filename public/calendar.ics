@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:Matrimonio Tiziano & Martina
+BEGIN:VEVENT
+DTSTART:20240831
+DTEND:20240901
+DTSTAMP:20240414T090911Z
+SUMMARY:Matrimonio Tiziano & Martina
+DESCRIPTION:Per maggiori info visita: tizianoemartina.it
+LOCATION:https://maps.app.goo.gl/RtDVDXBNKgHWTFis9
+UID:66055
+END:VEVENT
+END:VCALENDAR

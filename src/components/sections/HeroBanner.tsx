@@ -4,6 +4,7 @@ import style from '../style/herobanner.module.css'
 import Image from "next/image";
 import {useEffect, useState} from "react";
 import data from '@/data/data.json'
+import Link from "next/link";
 
 type HeroBanner = {}
 
@@ -16,6 +17,7 @@ const HeroBanner = (props: HeroBanner) => {
 			<div className={style.content}>
 				<h1>{data.hero.title}</h1>
 				<h2>{data.hero.date}</h2>
+					<Link id={'savedate'} href="/calendar.ics" color="inherit">{'Salva nel calendario'}</Link>
 				<Countdown/>
 			</div>
 		</section>
