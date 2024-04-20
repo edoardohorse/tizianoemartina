@@ -17,7 +17,7 @@ const HeroBanner = (props: HeroBanner) => {
 			<div className={style.content}>
 				<h1>{data.hero.title}</h1>
 				<h2>{data.hero.date}</h2>
-					<Link id={'savedate'} href="/calendar.ics" color="inherit">{'Salva nel calendario'}</Link>
+					<Link className={style.savedate} href="/calendar.ics" color="inherit">{'Salva la data'}</Link>
 				<Countdown/>
 			</div>
 		</section>
