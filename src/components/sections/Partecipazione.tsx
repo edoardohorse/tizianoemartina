@@ -129,6 +129,8 @@ const Partecipazione = (props: PartecipazioneProps) => {
 			<CardBorded className={styles.form_wrapper}>
 				<Image src={'/svg/girigoro.png'} alt={'girigoro'} className={styles.girigoro} width={200} height={300}/>
 				<form name={'invitation'} onSubmit={handleSubmit} data-netlify={true} className={styles.partecipazione}>
+					<input type="hidden" name="form-name" value="invitation"/>
+
 					<TextField className={styles.field} name={'nome'} type="text" required defaultValue={mock['nome']}
 					           onChange={(e) => {
 						           setFamiglia(e.target.value.split(" ")[1])
