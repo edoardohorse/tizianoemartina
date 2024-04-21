@@ -49,7 +49,8 @@ export default function CarouselNeiDintorni(props: {images: Array<string>}) {
 			}}
 			navigation
 			pagination={{ clickable: true }}
-			scrollbar={{ draggable: true }}
+			scrollbar={{ draggable: false }}
+			allowTouchMove={false}
 			modules={[Navigation, Pagination, EffectCoverflow, Pagination]}>
 				{props.images.map((src, index)=>{
 					return <SwiperSlide key={index} className={styles['slide']}>

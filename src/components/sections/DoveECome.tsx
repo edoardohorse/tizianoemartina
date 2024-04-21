@@ -12,6 +12,8 @@ import Tab from '@mui/material/Tab';
 import data from '@/data/data.json'
 import {a11yProps} from "@/utility/utility";
 import clsx from "clsx";
+import CaptureGesture from "@/components/CaptureGesture";
+
 const X_OFFSET = 20
 
 
@@ -52,11 +54,23 @@ const DoveECome = (props: IndicazioniStradaliBannerProps) => {
 	const [value, setValue] = React.useState(0);
 	const [direction, setDirection] = useState(-1)
 
+	const N_ELEMENT = 3
+
 	const handleChange = (event: React.SyntheticEvent, newValue: number) => {
 		setDirection(newValue > value ? 1 : -1)
 		setValue(newValue);
 
 	};
+
+	const goLeft = () => {
+		if (value != 0)
+			handleChange(null, value - 1)
+	}
+
+	const goRight = () => {
+		if (value + 1 != N_ELEMENT)
+			handleChange(null, value + 1)
+	}
 
 
 	return (
@@ -74,10 +88,11 @@ const DoveECome = (props: IndicazioniStradaliBannerProps) => {
 					<Tab label={data.doveecome.cerimonia.title} {...a11yProps(2)}/>
 				</Tabs>
 
-
-				<PanelTradizione value={value} index={0} direction={direction}/>
-				<PanelChiesa value={value} index={1} direction={direction}/>
-				<PanelCerimonia value={value} index={2} direction={direction}/>
+				<CaptureGesture onLeft={goLeft} onRight={goRight}>
+					<PanelTradizione value={value} index={0} direction={direction}/>
+					<PanelChiesa value={value} index={1} direction={direction}/>
+					<PanelCerimonia value={value} index={2} direction={direction}/>
+				</CaptureGesture>
 			</Grid>
 		</Banner>
 	)
@@ -104,7 +119,7 @@ const PanelChiesa = (props: TPanel) => {
 	</AnimatePresence>
 }
 
-const PanelTradizione = (props: TPanel ) => {
+const PanelTradizione = (props: TPanel) => {
 	const dataTab = data.doveecome.tradizione
 
 	return <AnimatePresence>
