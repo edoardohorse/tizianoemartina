@@ -1,7 +1,7 @@
 "use client"
 
 import React, {useRef, useState} from 'react';
-import {Button, Grid} from "@mui/material";
+import {Button, Grid, Typography} from "@mui/material";
 import Banner from "@/components/Banner";
 import {AnimatePresence, motion, useInView} from "framer-motion"
 import styles from '../style/doveecome.module.css'
@@ -62,6 +62,7 @@ const DoveECome = (props: IndicazioniStradaliBannerProps) => {
 					<PanelCerimonia value={value} index={2} direction={direction}/>
 				</CaptureGesture>
 			</Grid>
+
 		</Banner>
 	)
 }
@@ -72,7 +73,8 @@ const PanelChiesa = (props: TPanel) => {
 			<motion.div initial={{x: X_OFFSET * props.direction, opacity: 0}} animate={{x: 0, opacity: 1}}
 			            className={styles.panel}>
 				<div className={styles.panel_card}>
-					<CardBorded title={data.doveecome.chiesa.cardTitle} time={data.doveecome.chiesa.time} style={{maxWidth: "410px", minHeight: "300px"}}>
+					<CardBorded title={data.doveecome.chiesa.cardTitle} time={data.doveecome.chiesa.time} details={data.doveecome.chiesa.description}
+					            style={{maxWidth: "410px", minHeight: "300px"}}>
 						{data.doveecome.chiesa.links.map((btn, index) => {
 							return <Button key={index} variant="contained" onClick={() => window.open(btn.url)}>
 								<span dangerouslySetInnerHTML={{__html: btn.text}}/>
@@ -85,6 +87,7 @@ const PanelChiesa = (props: TPanel) => {
 			</motion.div>
 		</TabPanel>
 	</AnimatePresence>
+
 }
 
 const PanelTradizione = (props: TPanel) => {
