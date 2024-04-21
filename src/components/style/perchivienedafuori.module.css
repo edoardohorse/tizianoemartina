@@ -12,6 +12,7 @@
   transform: translateY(50px);
   opacity: 0.2;
   transition: transform 500ms, opacity 600ms !important;
+  touch-action: pan-y;
 }
 
 

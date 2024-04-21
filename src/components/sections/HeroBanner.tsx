@@ -15,7 +15,9 @@ const HeroBanner = (props: HeroBanner) => {
 		<section className={style.herobanner} id={data.hero.id}>
 			<Image className={style.hero} src={'/bouchet/ai/test1.png'} alt={"bouchet"} fill={true} sizes={"100vw"} priority/>
 			<div className={style.content}>
-				<h1>{data.hero.title}</h1>
+				<h1 className={style.tiziano}>Tiziano</h1>
+				<h1 className={style.ampersand}>&</h1>
+				<h1 className={style.martina}>Martina</h1>
 				<h2>{data.hero.date}</h2>
 					<Link className={style.savedate} href="/calendar.ics" color="inherit">{'Salva la data'}</Link>
 				<Countdown/>
@@ -43,9 +45,9 @@ const Countdown = () => {
 	return (<>
 		<p className={style.countdown}>
 			{date.days && <span>{date.days} giorni</span>}
-			<span>{date.hours} ore</span>
-			<span>{date.minutes} minuti</span>
-			<span>{date.seconds} secondi</span>
+			<span>{date.hours} h</span>
+			<span>{date.minutes} min</span>
+			<span>{date.seconds} sec</span>
 		</p>
 	</>)
 }

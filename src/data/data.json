@@ -52,29 +52,32 @@
     "id": "perChiVieneDaFuori",
     "title": "Per chi viene da fuori",
     "background": "/background/perchivienedafuori.jpg",
-    "descr": "Elenco dei nomi degli hotel con relativi link maps e successiva frase: Saremo lieti di ospitarvi due notti presso uno dei seguenti Hotel/B&B. Prossimamente vi informeremo della disposizione scelta per voi.",
+    "description": "Saremo lieti di ospitarvi la notte delle nozze e quella precedentei presso uno dei seguenti Hotel/B&B.<br/>Nelle prossime settimane vi aggiorneremo riguardo la disposizione che abbiamo scelto per voi previa conferma della vostra presenza.",
     "location": [
-
-    {
-      "image": "/perchivienedafuori/hotel_marconi.jpeg",
-      "map": "https://maps.app.goo.gl/w2bjZwfpmty6jSZo7",
-      "text": "<b><u>Hotel Marconi</u></b><br/> Pietraperzia EN"
-    },
       {
-      "image": "/perchivienedafuori/bb_dante.jpeg",
-      "map": "https://maps.app.goo.gl/ujhBt41qYAJgG6Li9",
-      "text": "<b><u>B&B Dante</u></b><br/>Barrafranca EN"
-    },
+        "title": "Hotel Marconi",
+        "image": "/perchivienedafuori/hotel_marconi.jpeg",
+        "map": "https://maps.app.goo.gl/w2bjZwfpmty6jSZo7",
+        "text": "<b><u>Hotel Marconi</u></b><br/> Pietraperzia EN"
+      },
       {
-      "image": "/perchivienedafuori/bb_primula.jpeg",
-      "map": "https://maps.app.goo.gl/eWEPFinkk6ttZ7DR6",
-      "text": "<b><u>B&B La Primula bivio catena</u></b><br/>Barrafranca EN"
-    },
+        "title": "B&B Dante",
+        "image": "/perchivienedafuori/bb_dante.jpeg",
+        "map": "https://maps.app.goo.gl/ujhBt41qYAJgG6Li9",
+        "text": "<b><u>B&B Dante</u></b><br/>Barrafranca EN"
+      },
       {
-      "image": "/perchivienedafuori/bb_scalea.jpeg",
-      "map": "https://maps.app.goo.gl/4H4oZLzKsiLmd4KKA",
-      "text": "<b><u>B&B Principe di Scalea</u></b><br/> Via Principe Scalea, Barrafranca EN"
-    }
+        "title": "B&B La Primula",
+        "image": "/perchivienedafuori/bb_primula.jpeg",
+        "map": "https://maps.app.goo.gl/eWEPFinkk6ttZ7DR6",
+        "text": "<b><u>B&B La Primula bivio catena</u></b><br/>Barrafranca EN"
+      },
+      {
+        "title": "B&B Principe di Scalea",
+        "image": "/perchivienedafuori/bb_scalea.jpeg",
+        "map": "https://maps.app.goo.gl/4H4oZLzKsiLmd4KKA",
+        "text": "<b><u>B&B Principe di Scalea</u></b><br/> Via Principe Scalea, Barrafranca EN"
+      }
     ]
   },
   "neiDintorni": {
