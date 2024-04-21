@@ -10,7 +10,8 @@
     "chiesa": {
       "title": "Chiesa",
       "cardTitle": "Chiesa",
-      "time": "16:00",
+      "descrizione": "Si consiglia di cercare parcheggio nelle vie limitrofe: Corso Vittorio Emanuele, Corso Garibaldi,  via Romano, via Santa Rita, Corso Umberto, Piazza Umberto.\nDa mettere sotto nel bianco, fuori dal riquadro verde.",
+      "time": "Il rito nuziale avrà luogo alle ore 16.00 presso la Chiesa Maria SS della Purificazione",
       "image": "/chiesa.jpg",
       "links": [
         {
