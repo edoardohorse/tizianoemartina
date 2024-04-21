@@ -54,6 +54,10 @@
   transition: transform 600ms;
 }
 
+.link{
+  display: block;
+  text-align: center;
+}
 
 @media (width <= 768px){
   .image_description{
