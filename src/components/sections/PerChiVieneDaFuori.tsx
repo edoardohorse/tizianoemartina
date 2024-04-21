@@ -55,8 +55,7 @@ const PerChiVieneDaFuori = (props: PerChiVieneDaFuoriProps) => {
 
 				<p className={stylesBanner.banner_text}
 				   dangerouslySetInnerHTML={{__html: data.perChiVieneDaFuori.description}}></p>
-				<Grid container spacing={3} columnSpacing={{xs: 1, sm: 2, md: 2}} justifyContent={"center"} marginTop={2}
-				      marginBottom={2}>
+				<div className={styles.wrapper}>
 					<Tabs
 						orientation="horizontal"
 						variant="scrollable"
@@ -76,7 +75,7 @@ const PerChiVieneDaFuori = (props: PerChiVieneDaFuoriProps) => {
 						})
 						}
 					</CaptureGesture>
-				</Grid>
+				</div>
 
 			</Banner>
 		</>
