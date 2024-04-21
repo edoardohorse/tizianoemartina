@@ -50,8 +50,7 @@ const PerChiVieneDaFuori = (props: PerChiVieneDaFuoriProps) => {
 			<Banner title={"Per chi viene da fuori"}
 			        amoutInView={0.2}
 			        classNameInView={styles.perchivienedafuori_inview}
-			        id={data.perChiVieneDaFuori.id}
-			        background={data.perChiVieneDaFuori.background}>
+			        id={data.perChiVieneDaFuori.id}>
 
 				<p className={stylesBanner.banner_text}
 				   dangerouslySetInnerHTML={{__html: data.perChiVieneDaFuori.description}}></p>

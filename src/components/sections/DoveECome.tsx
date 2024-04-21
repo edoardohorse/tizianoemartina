@@ -73,13 +73,14 @@ const PanelChiesa = (props: TPanel) => {
 			<motion.div initial={{x: X_OFFSET * props.direction, opacity: 0}} animate={{x: 0, opacity: 1}}
 			            className={styles.panel}>
 				<div className={styles.panel_card}>
-					<CardBorded title={data.doveecome.chiesa.cardTitle} time={data.doveecome.chiesa.time} details={data.doveecome.chiesa.description}
-					            style={{maxWidth: "410px", minHeight: "300px"}}>
+					<CardBorded style={{maxWidth: "410px", minHeight: "300px"}} title={data.doveecome.chiesa.cardTitle}>
+						<p>{data.doveecome.chiesa.time}</p>
 						{data.doveecome.chiesa.links.map((btn, index) => {
 							return <Button key={index} variant="contained" onClick={() => window.open(btn.url)}>
 								<span dangerouslySetInnerHTML={{__html: btn.text}}/>
 							</Button>
 						})}
+						<p>{data.doveecome.chiesa.description}</p>
 					</CardBorded>
 				</div>
 				<Image loading={"lazy"} className={styles.panel_foto} src={data.doveecome.chiesa.image} alt={'foto chiesa'}

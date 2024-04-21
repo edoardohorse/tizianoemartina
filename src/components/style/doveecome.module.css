@@ -53,6 +53,14 @@
   touch-action: pan-y;
 }
 
+.cardBorder_details{
+  order: 1;
+}
+
+.cardBorder_details{
+  order: 2;
+}
+
 @media (width <= 1024px){
 
   .tabs_wrapper{
