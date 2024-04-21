@@ -108,8 +108,8 @@ export default async function Home() {
 				<PerChiVieneDaFuori/>
 				<NeiDintorni/>
 				<Gallery/>
-				{/*<Partecipazione/>*/}
-				<ConfirmForm/>
+				<Partecipazione/>
+				{/*<ConfirmForm/>*/}
 				{/*<IlNostroFuturo/>*/}
 			</main>
 			<ScrollTop/>

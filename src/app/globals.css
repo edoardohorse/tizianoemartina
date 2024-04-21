@@ -123,6 +123,10 @@ footer{
   justify-content: center;
 }
 
+.MuiTabs-scroller .MuiTab-root{
+  max-width: 150px;
+}
+
 .MuiToolbar-root{
   min-height: 50px !important;
 }
