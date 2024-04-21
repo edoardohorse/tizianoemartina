@@ -65,13 +65,13 @@ const PerChiVieneDaFuori = (props: PerChiVieneDaFuoriProps) => {
 						allowScrollButtonsMobile
 					>
 						{data.perChiVieneDaFuori.location.map((location: TLocation, index: number) => {
-							return <Tab label={location.title} {...a11yProps(index)}/>
+							return <Tab key={index} label={location.title} {...a11yProps(index)}/>
 						})}
 					</Tabs>
 
 					<CaptureGesture onLeft={goLeft} onRight={goRight}>
 						{data.perChiVieneDaFuori.location.map((location: TLocation, index: number) => {
-							return <Content value={value} index={index} direction={direction} location={location}/>
+							return <React.Fragment key={index}><Content value={value} index={index} direction={direction} location={location}/></React.Fragment>
 						})
 						}
 					</CaptureGesture>
