@@ -5,6 +5,7 @@ import {Button, Grid, Typography} from "@mui/material";
 import Banner from "@/components/Banner";
 import {AnimatePresence, motion, useInView} from "framer-motion"
 import styles from '../style/doveecome.module.css'
+import stylesCard from '../style/cardBorded.module.css'
 import Image from "next/image";
 import CardBorded from "@/components/CardBorded";
 import Tabs from '@mui/material/Tabs';
@@ -73,13 +74,14 @@ const PanelChiesa = (props: TPanel) => {
 			<motion.div initial={{x: X_OFFSET * props.direction, opacity: 0}} animate={{x: 0, opacity: 1}}
 			            className={styles.panel}>
 				<div className={styles.panel_card}>
-					<CardBorded title={data.doveecome.chiesa.cardTitle} time={data.doveecome.chiesa.time} details={data.doveecome.chiesa.description}
-					            style={{maxWidth: "410px", minHeight: "300px"}}>
+					<CardBorded style={{maxWidth: "410px", minHeight: "300px"}} title={data.doveecome.chiesa.cardTitle}>
+						<span className={stylesCard.cardBorder_wrapper_details_text}>{data.doveecome.chiesa.time}</span>
 						{data.doveecome.chiesa.links.map((btn, index) => {
 							return <Button key={index} variant="contained" onClick={() => window.open(btn.url)}>
 								<span dangerouslySetInnerHTML={{__html: btn.text}}/>
 							</Button>
 						})}
+						<span className={stylesCard.cardBorder_wrapper_details_text}>{data.doveecome.chiesa.description}</span>
 					</CardBorded>
 				</div>
 				<Image loading={"lazy"} className={styles.panel_foto} src={data.doveecome.chiesa.image} alt={'foto chiesa'}

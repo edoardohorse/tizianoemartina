@@ -59,3 +59,12 @@
   user-select: none;
   pointer-events: none;
 }
+
+.cels{
+  font-size: 18px;
+}
+
+.cels a{
+  color: var(--text-title);
+  text-decoration: none;
+}

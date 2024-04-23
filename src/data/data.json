@@ -10,7 +10,7 @@
     "chiesa": {
       "title": "Chiesa",
       "cardTitle": "Chiesa",
-      "description": "Si consiglia di cercare parcheggio nelle vie limitrofe: Corso Vittorio Emanuele, Corso Garibaldi,  via Romano, via Santa Rita, Corso Umberto, Piazza Umberto.\nDa mettere sotto nel bianco, fuori dal riquadro verde.",
+      "description": "Si consiglia di cercare parcheggio nelle vie limitrofe: Corso Vittorio Emanuele, Corso Garibaldi,  via Romano, via Santa Rita, Corso Umberto, Piazza Umberto.",
       "time": "Il rito nuziale avrà luogo alle ore 16.00 presso la Chiesa Maria SS della Purificazione",
       "image": "/chiesa.jpg",
       "links": [
@@ -59,13 +59,13 @@
         "title": "Hotel Marconi",
         "image": "/perchivienedafuori/hotel_marconi.jpeg",
         "map": "https://maps.app.goo.gl/w2bjZwfpmty6jSZo7",
-        "text": "<b><u>Hotel Marconi</u></b><br/> Pietraperzia EN"
+        "text": "<b><u>Hotel Marconi Via Kennedy 5</u></b><br/> Pietraperzia EN"
       },
       {
         "title": "B&B Dante",
         "image": "/perchivienedafuori/bb_dante.jpeg",
         "map": "https://maps.app.goo.gl/ujhBt41qYAJgG6Li9",
-        "text": "<b><u>B&B Dante</u></b><br/>Barrafranca EN"
+        "text": "<b><u>B&B Dante Via Dante 7</u></b><br/>Barrafranca EN"
       },
       {
         "title": "B&B La Primula",
@@ -77,7 +77,7 @@
         "title": "B&B Principe di Scalea",
         "image": "/perchivienedafuori/bb_scalea.jpeg",
         "map": "https://maps.app.goo.gl/4H4oZLzKsiLmd4KKA",
-        "text": "<b><u>B&B Principe di Scalea</u></b><br/> Via Principe Scalea, Barrafranca EN"
+        "text": "<b><u>B&B Principe di Scalea 17-19</u></b><br/> Via Principe Scalea, Barrafranca EN"
       }
     ]
   },
@@ -156,7 +156,8 @@
   },
   "partecipazione": {
     "id": "partecipazione",
-    "title": "Partecipazione",
-    "background": "/background/partecipazione.jpg"
+    "title": "Conferma la partecipazione",
+    "background": "/background/partecipazione.jpg",
+    "cels": "I nostri contatti:<br/>Tiziano <a href='tel:3807548420'>380 754 8420</a><br/> Martina <a href='tel:334 917 3949'>334 917 3949</a>"
   }
 }

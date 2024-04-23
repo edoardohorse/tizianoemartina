@@ -173,6 +173,7 @@ const Partecipazione = (props: PartecipazioneProps) => {
 
 					<Button variant="contained" type={"submit"}>Invia</Button>
 					<Image src={'/svg/girigoro_2.png'} alt={'girigoro'} className={styles.girigoro2} width={200} height={300}/>
+					<p className={styles.cels} dangerouslySetInnerHTML={{__html: data.partecipazione.cels}}></p>
 				</form>
 			</CardBorded>
 
