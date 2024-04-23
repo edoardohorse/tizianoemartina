@@ -59,10 +59,12 @@ const PerChiVieneDaFuori = (props: PerChiVieneDaFuoriProps) => {
 					<Tabs
 						orientation="horizontal"
 						variant="scrollable"
+						scrollButtons="auto"
 						value={value}
 						onChange={handleChange}
 						style={{background: "rgb(226 240 237 / 90%)"}}
 						allowScrollButtonsMobile
+						centered
 					>
 						{data.perChiVieneDaFuori.location.map((location: TLocation, index: number) => {
 							return <Tab key={index} label={location.title} {...a11yProps(index)}/>
