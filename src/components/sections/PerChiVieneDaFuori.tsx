@@ -61,7 +61,6 @@ const PerChiVieneDaFuori = (props: PerChiVieneDaFuoriProps) => {
 						scrollButtons="auto"
 						value={value}
 						onChange={handleChange}
-						style={{background: "rgb(226 240 237 / 90%)"}}
 						allowScrollButtonsMobile
 						centered
 					>

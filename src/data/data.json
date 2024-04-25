@@ -15,7 +15,7 @@
       "image": "/chiesa.jpg",
       "links": [
         {
-          "text": "<u><b>Chiesa Madre</b></u><br/> Piazza Ligotti Tenente 2 Barrafranca EN",
+          "text": "<u><b>Chiesa Madre</b></u><br/>Piazza Ligotti Tenente 2, Barrafranca EN",
           "url": "https://maps.app.goo.gl/RtDVDXBNKgHWTFis9"
         }
       ]
@@ -59,25 +59,25 @@
         "title": "Hotel Marconi",
         "image": "/perchivienedafuori/hotel_marconi.jpeg",
         "map": "https://maps.app.goo.gl/w2bjZwfpmty6jSZo7",
-        "text": "<b><u>Hotel Marconi Via Kennedy 5</u></b><br/> Pietraperzia EN"
+        "text": "<b><u>Hotel Marconi</u></b><br/> Via Kennedy 5, Pietraperzia EN"
       },
       {
         "title": "B&B Dante",
         "image": "/perchivienedafuori/bb_dante.jpeg",
         "map": "https://maps.app.goo.gl/ujhBt41qYAJgG6Li9",
-        "text": "<b><u>B&B Dante Via Dante 7</u></b><br/>Barrafranca EN"
+        "text": "<b><u>B&B Dante</u></b><br/>Via Dante 7, Barrafranca EN"
       },
       {
         "title": "B&B La Primula",
         "image": "/perchivienedafuori/bb_primula.jpeg",
         "map": "https://maps.app.goo.gl/eWEPFinkk6ttZ7DR6",
-        "text": "<b><u>B&B La Primula bivio catena</u></b><br/>Barrafranca EN"
+        "text": "<b><u>B&B La Primula</u></b><br/>Bivio catena, Barrafranca EN"
       },
       {
         "title": "B&B Principe di Scalea",
         "image": "/perchivienedafuori/bb_scalea.jpeg",
         "map": "https://maps.app.goo.gl/4H4oZLzKsiLmd4KKA",
-        "text": "<b><u>B&B Principe di Scalea 17-19</u></b><br/> Via Principe Scalea, Barrafranca EN"
+        "text": "<b><u>B&B Principe di Scalea</u></b><br/> Via Principe Scalea 17-19, Barrafranca EN"
       }
     ]
   },
