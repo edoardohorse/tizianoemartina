@@ -5,9 +5,27 @@
 }
 
 .description{
-  color: white;
-  font-size: 30px;
+  color: var(--background);
+  font-size: 24px;
   text-align: center;
+}
+
+.appBtns_wrapper{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.appBtns{
+  width: 150px;
+  /*e: 150px;*/
+}
+
+.appBtns img{
+  width: 100%;
+  /*e: 150px;*/
 }
 
 .link{
@@ -20,7 +38,7 @@
 @media (width <= 768px){
   .description{
     padding: 0 16px;
-    font-size: 24px;
+    font-size: 16px;
   }
 
   .link{

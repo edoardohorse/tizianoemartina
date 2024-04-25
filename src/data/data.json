@@ -84,7 +84,7 @@
   "neiDintorni": {
     "id": "neiDintorni",
     "title": "Nei dintorni...",
-    "description": "Sicuramente il nostro matrimonio sarà l'evento clou del tuo viaggio… ma non credere che nelle vicinanze non ci sia nulla in cui trascorrere un po' di tempo piacevolmente. Anzi, l'entroterra siciliano è ricco di luoghi caratteristici da visitare, che ti consigliamo di aggiungere tra le tappe del tuo mini tour targato #Sicilia2024.",
+    "description": "Sicuramente il nostro matrimonio sarà l'evento clou del tuo viaggio… ma non credere che nelle vicinanze non ci sia nulla per cui valga la pena spendere piacevolmente un po' di tempo. Anzi, l'entroterra siciliano è ricco di luoghi caratteristici da visitare, che ti consigliamo di aggiungere tra le tappe del tuo mini tour targato #Sicilia2024.",
     "sections": {
       "piazzaamerina": {
         "title": "Piazza Armerina",
@@ -99,7 +99,7 @@
       },
       "villaromana": {
         "title": "Villa Romana del Casale",
-        "content": "Perché non continuare la visita di Piazza Armerina visitando anche gli scavi di epoca romana, tornando indietro nel tempo immergendosi nei momenti di svago della nobiltà di allora. Consigliato tour serale.",
+        "content": "Perché non continuare la visita di Piazza Armerina scoprendo anche gli scavi di epoca romana, tornando indietro nel tempo immergendosi nei momenti di svago della nobiltà di allora. Consigliato tour serale.",
         "link": "https://www.villaromanadelcasale.it/",
         "textLink": "villaromanadelcasale.it",
         "images": [
@@ -121,7 +121,7 @@
       },
       "enna": {
         "title": "Enna",
-        "content": "Noto capoluogo più alto d'Italia, in cui è possibile visitare i resti del castello di Lombardia posizionato nel punto più alto della città. La posizione del castello offre un panorama vastissimo, che spazia dalle Madonie all'Etna. Adiacente al castello sorge la Rocca di Cerere, costruita in direzione del sole nascente",
+        "content": "Noto capoluogo più alto d'Italia, in cui è possibile visitare i resti del castello di Lombardia collocato nel punto più alto della città. La posizione del castello offre un panorama vastissimo, che spazia dalle Madonie all'Etna. Adiacente al castello sorge la Rocca di Cerere, costruita in direzione del sole nascente",
         "link": null,
         "textLink":null,
         "images": [
@@ -150,7 +150,7 @@
   "gallery": {
     "id": "gallery",
     "title": "Gallery",
-    "description": "Vi invitiamo a postare le foto del matrimonio in quest'album",
+    "description": "Vi invitiamo a scaricare l'app WedShoots, in cui postare i vostri momenti preferiti del giorno del matrimonio e non solo...</br>È simile ad instagram ma con visibilità privata. Vi verrà inviato un codice di accesso, così solo gli invitati potranno caricare e visualizzare le foto pubblicate.",
     "background": "/background/gallery.jpg",
     "link": "https://photos.app.goo.gl/wGK64hwhq1wvnk4EA"
   },
