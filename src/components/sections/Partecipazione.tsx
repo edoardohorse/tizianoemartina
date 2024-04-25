@@ -125,7 +125,7 @@ const Partecipazione = (props: PartecipazioneProps) => {
 
 
 	return (
-		<Banner title={data.partecipazione.title} id={data.partecipazione.id} background={data.partecipazione.background}>
+		<Banner title={data.partecipazione.title} id={data.partecipazione.id} background={data.partecipazione.background} classtitle={styles.title}>
 			<CardBorded className={styles.form_wrapper}>
 				<Image src={'/svg/girigoro.png'} alt={'girigoro'} className={styles.girigoro} width={200} height={300}/>
 				<form name={'invitation'} onSubmit={handleSubmit} data-netlify={true} className={styles.partecipazione}>
