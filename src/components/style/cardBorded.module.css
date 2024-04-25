@@ -59,7 +59,7 @@
 
 .cardBorder_wrapper_details_title{
   color: var(--text-title);
-  font-size: 35px;
+  font-size: 38px;
   line-height: 1;
   font-family: 'Great Vibes', cursive !important;
   font-style: normal;
@@ -99,7 +99,7 @@
 
 @media (width <= 475px) {
   .cardBorder_wrapper_details_title{
-    font-size: 26px;
+    font-size: 30px;
   }
 
   .cardBorder_wrapper_details_orario{

@@ -75,13 +75,13 @@ const PanelChiesa = (props: TPanel) => {
 			            className={styles.panel}>
 				<div className={styles.panel_card}>
 					<CardBorded style={{maxWidth: "410px", minHeight: "300px"}} title={data.doveecome.chiesa.cardTitle}>
-						<span className={stylesCard.cardBorder_wrapper_details_text}>{data.doveecome.chiesa.time}</span>
+						<span className={stylesCard.cardBorder_wrapper_details_text} style={{textAlign:"center"}}>{data.doveecome.chiesa.time}</span>
 						{data.doveecome.chiesa.links.map((btn, index) => {
 							return <Button key={index} variant="contained" onClick={() => window.open(btn.url)}>
 								<span dangerouslySetInnerHTML={{__html: btn.text}}/>
 							</Button>
 						})}
-						<span className={stylesCard.cardBorder_wrapper_details_text}>{data.doveecome.chiesa.description}</span>
+						<span className={stylesCard.cardBorder_wrapper_details_text} style={{textAlign:"justify"}}>{data.doveecome.chiesa.description}</span>
 					</CardBorded>
 				</div>
 				<Image loading={"lazy"} className={styles.panel_foto} src={data.doveecome.chiesa.image} alt={'foto chiesa'}
@@ -124,7 +124,10 @@ const PanelCerimonia = (props: TPanel) => {
 			<motion.div initial={{x: X_OFFSET * props.direction, opacity: 0}} animate={{x: 0, opacity: 1}}
 			            className={styles.panel}>
 				<div className={styles.panel_card}>
-					<CardBorded title={dataTab.cardTitle} details={dataTab.content} style={{maxWidth: "410px", minHeight: "300px"}}>
+					<CardBorded title={dataTab.cardTitle} style={{maxWidth: "410px", minHeight: "300px"}}>
+						<span className={stylesCard.cardBorder_wrapper_details_text}
+						      style={{textAlign: "center"}}>{data.doveecome.cerimonia.content}</span>
+
 						{dataTab.links.map((btn, index) => {
 							return <Button key={index} variant="contained" onClick={() => window.open(btn.url)}>
 								<span dangerouslySetInnerHTML={{__html: btn.text}}/>
