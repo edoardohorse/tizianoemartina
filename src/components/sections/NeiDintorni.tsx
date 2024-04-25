@@ -107,7 +107,7 @@ const NeiDintorniGallery = (props: TDintorno) => {
 				<CaptureGesture onLeft={props.goLeft} onRight={props.goRight}>
 					<CarouselNeiDintorni images={props.data.images}/>
 
-					<CardBorded className={styles.cardBorded}>
+					<CardBorded className={styles.cardBorded} style={{gap:0}}>
 						<p className={stylesBanner.banner_text}>{props.data.content}<br/>
 							{props.data?.link &&
                   <Link href={props.data?.link} className={styles.link} target={"_blank"}>{props.data.textLink}</Link>

@@ -150,14 +150,15 @@ const Partecipazione = (props: PartecipazioneProps) => {
 					 defaultValue={mock['email']}/>*/}
 
 
-					<div>
-						<Typography fontSize={15} textAlign={"center"}>Regione</Typography>
+					<div style={{marginTop: "10px"}}>
+						<Typography fontSize={15} textAlign={"center"} style={{marginBottom: "5px"}}>Regione</Typography>
 						<ToggleButtonGroup value={daDove} size="medium" exclusive={true} onChange={handleChangeDaDove}>
 							<ToggleButton sx={{backgroundColor: 'rgba(255,255,255,0.5)'}} className={styles.field_toggle}
 							              value="Puglia">Puglia</ToggleButton>
 							<ToggleButton sx={{backgroundColor: 'rgba(255,255,255,0.5)'}} className={styles.field_toggle}
 							              value="Sicilia">Sicilia</ToggleButton>
 						</ToggleButtonGroup>
+					</div>
 						<FormControlLabel style={{marginLeft: "15px"}}
 						                  disabled={pullman === null}
 						                  checked={pullman === 'Si'}
@@ -171,8 +172,7 @@ const Partecipazione = (props: PartecipazioneProps) => {
 							                  }
 						                  }}
 						                  name={'pullman'}
-						                  control={<Checkbox/>} label="Pullman?"/>
-					</div>
+						                  control={<Checkbox/>} label="Riserva il tuo posto sul bus da Grottaglie"/>
 
 					<Button variant="contained" type={"submit"}>Invia</Button>
 					<Image src={'/svg/girigoro_2.png'} alt={'girigoro'} className={styles.girigoro2} width={200} height={300}/>

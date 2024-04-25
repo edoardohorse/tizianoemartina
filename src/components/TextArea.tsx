@@ -34,7 +34,7 @@ export default function MinHeightTextarea(props: any) {
     width: 320px;
     max-width: 320px;
     font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
     padding: 8px 12px;
