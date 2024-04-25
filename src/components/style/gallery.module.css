@@ -39,6 +39,7 @@
   .description{
     padding: 0 16px;
     font-size: 16px;
+    text-align: justify;
   }
 
   .link{
