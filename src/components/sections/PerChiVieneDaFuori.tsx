@@ -47,7 +47,7 @@ const PerChiVieneDaFuori = (props: PerChiVieneDaFuoriProps) => {
 
 	return (
 		<>
-			<Banner title={"Per chi viene da fuori"}
+			<Banner title={data.perChiVieneDaFuori.title}
 			        amoutInView={0.2}
 			        classNameInView={styles.perchivienedafuori_inview}
 			        id={data.perChiVieneDaFuori.id}>

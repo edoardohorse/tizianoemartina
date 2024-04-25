@@ -11,7 +11,7 @@ type GalleryProps = {}
 const Gallery = (props: GalleryProps) => {
 
 	return (
-		<Banner title={data.gallery.title} id={data.gallery.id} background={data.gallery.background}>
+		<Banner title={data.gallery.title} id={data.gallery.id} background={data.gallery.background} classtitle={styles.title}>
 			<div className={styles.wrapper}>
 				<p className={styles.description} dangerouslySetInnerHTML={{__html: data.gallery.description}}/>
 				{/*<Link href={data.gallery.link} className={styles.link} target={"_blank"}><CameraIcon/> Album</Link>*/}

@@ -6,7 +6,7 @@
   },
   "doveecome": {
     "id": "doveecome",
-    "title": "Dove e Come",
+    "title": "Dove E Come",
     "chiesa": {
       "title": "Chiesa",
       "cardTitle": "Chiesa",
@@ -51,7 +51,7 @@
   },
   "perChiVieneDaFuori": {
     "id": "perChiVieneDaFuori",
-    "title": "Per chi viene da fuori",
+    "title": "Per Chi Viene Da Fuori",
     "background": "/background/perchivienedafuori.jpg",
     "description": "Saremo lieti di ospitarvi la notte delle nozze e quella precedente presso uno dei seguenti Hotel/B&B.<br/>Nelle prossime settimane vi aggiorneremo riguardo la disposizione che abbiamo scelto per voi previa conferma della vostra presenza.",
     "location": [
@@ -77,13 +77,13 @@
         "title": "B&B Principe di Scalea",
         "image": "/perchivienedafuori/bb_scalea.jpeg",
         "map": "https://maps.app.goo.gl/4H4oZLzKsiLmd4KKA",
-        "text": "<b><u>B&B Principe di Scalea</u></b><br/> Via Principe Scalea 17-19, Barrafranca EN"
+        "text": "<b><u>B&B Principe di Scalea</u></b><br/> Via P. Scalea 17-19, Barrafranca EN"
       }
     ]
   },
   "neiDintorni": {
     "id": "neiDintorni",
-    "title": "Nei dintorni...",
+    "title": "Nei Dintorni...",
     "description": "Sicuramente il nostro matrimonio sarà l'evento clou del tuo viaggio… ma non credere che nelle vicinanze non ci sia nulla per cui valga la pena spendere piacevolmente un po' di tempo. Anzi, l'entroterra siciliano è ricco di luoghi caratteristici da visitare, che ti consigliamo di aggiungere tra le tappe del tuo mini tour targato #Sicilia2024.",
     "sections": {
       "piazzaamerina": {
@@ -156,8 +156,15 @@
   },
   "partecipazione": {
     "id": "partecipazione",
-    "title": "Conferma la partecipazione",
+    "title": "Conferma La Partecipazione",
     "background": "/background/partecipazione.jpg",
     "cels": "I nostri contatti:<br/>Tiziano <a href='tel:3807548420'>380 754 8420</a><br/> Martina <a href='tel:334 917 3949'>334 917 3949</a>"
+  },
+  "iban": {
+    "id": "iban",
+    "title": "Il Nostro Futuro",
+    "image": "/background/iban.jpg",
+    "description": "Saremo entusiasti di avervi con noi nel giorno più importante della nostra vita… <br/>Se vorreste esserci accanto anche nella costruzione del nostro futuro sarà per noi il dono più grande.",
+    "iban": "IBAN: IT92K0347501605CC0012595374"
   }
 }

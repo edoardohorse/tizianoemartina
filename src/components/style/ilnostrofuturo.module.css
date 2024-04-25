@@ -1,0 +1,26 @@
+.inview{
+
+}
+
+.title{
+  color: var(--background);
+}
+
+.description, .iban{
+  color: var(--background);
+  font-size: 24px;
+  text-align: center;
+}
+
+@media (width <= 768px){
+  .description, .iban{
+    padding: 0 16px;
+    font-size: 16px;
+    text-align: justify;
+  }
+
+  .iban{
+    text-align: center;
+  }
+
+}

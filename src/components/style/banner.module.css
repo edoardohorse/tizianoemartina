@@ -12,11 +12,17 @@
   border-radius: unset !important;
 }
 
+/*.firstLetter::first-letter{
+  font-size: 51px !important;
+}*/
+
 .banner_title{
   font-size: 50px;
   margin: 0;
   text-align: center;
   color: var(--text-title);
+  /*text-transform: uppercase;*/
+  font-variant: small-caps;
   /*margin-bottom: 10px;*/
 }
 
@@ -45,6 +51,10 @@
     min-height: unset;
 
   }
+
+/*  .firstLetter::first-letter{
+    font-size: 31px !important;
+  }*/
 
   .banner_title{
     font-size: 30px;

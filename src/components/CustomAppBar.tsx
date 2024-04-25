@@ -23,7 +23,7 @@ interface Props {
 
 type AppBarProps = {}
 
-const navItems = [data.doveecome, data.perChiVieneDaFuori, data.neiDintorni, data.gallery, data.partecipazione]
+const navItems = [data.doveecome, data.perChiVieneDaFuori, data.neiDintorni, data.gallery, data.iban, data.partecipazione]
 const drawerWidth = 240;
 
 function HideOnScroll(props: Props) {

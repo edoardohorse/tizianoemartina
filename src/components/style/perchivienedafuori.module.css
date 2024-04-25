@@ -47,6 +47,10 @@
 }
 
 @media (width <= 468px){
+  .card{
+    width: 100%;
+    padding: 0 !important;
+  }
 
   .wrapper{
     align-items: unset;

@@ -9,6 +9,7 @@ import Partecipazione from "@/components/sections/Partecipazione";
 import dynamic from "next/dynamic";
 import Gallery from "@/components/sections/Gallery";
 import {useRef, useState} from "react";
+import IlNostroFuturo from "@/components/sections/IlNostroFuturo";
 
 const ScrollTop = dynamic(() => import("@/components/ScrollTop"), {ssr: false});
 const CustomAppBar = dynamic(() => import("@/components/CustomAppBar"), {ssr: false});
@@ -108,9 +109,9 @@ export default function Home() {
 				<PerChiVieneDaFuori/>
 				<NeiDintorni/>
 				<Gallery/>
+				<IlNostroFuturo/>
 				<Partecipazione/>
 				{/*<ConfirmForm/>*/}
-				{/*<IlNostroFuturo/>*/}
 			</main>
 			<ScrollTop/>
 
