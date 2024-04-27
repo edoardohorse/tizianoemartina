@@ -64,8 +64,21 @@ const MinHeightTextarea = function (props: any) {
   `,
 	);
 
+
+	const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+	// Function to get the value of the textarea
+	const getValue = () => {
+		if (textareaRef.current) {
+			return textareaRef.current.value;
+		}
+		return '';
+	};
+
 	return (
-		<Textarea aria-label="intolleranze" minRows={4} maxRows={4} placeholder="Intolleranze" name={"intolleranze"}/>
+		<Textarea aria-label="intolleranze"
+		          ref={textareaRef}
+		          minRows={4} maxRows={4} placeholder="Intolleranze" name={"intolleranze"} defaultValue={getValue()}/>
 	);
 }
 

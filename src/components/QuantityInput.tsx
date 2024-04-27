@@ -20,7 +20,6 @@ const NumberInput = React.forwardRef(function CustomNumberInput(
 
 	return (
 		<BaseNumberInput
-			id={"test"}
 			required
 			slots={{
 				root: StyledInputRoot,
@@ -36,6 +35,9 @@ const NumberInput = React.forwardRef(function CustomNumberInput(
 				decrementButton: {
 					children: <RemoveIcon fontSize="small"/>,
 				},
+				input:{
+					name: "n_invitati"
+				}
 			}}
 			{...props}
 
