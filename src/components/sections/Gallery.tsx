@@ -1,9 +1,7 @@
 import React from 'react';
 import data from '@/data/data.json'
 import Banner from "@/components/Banner";
-import Link from "@mui/material/Link";
 import styles from "@/components/style/gallery.module.css"
-import CameraIcon from '@mui/icons-material/Camera';
 
 type GalleryProps = {}
 

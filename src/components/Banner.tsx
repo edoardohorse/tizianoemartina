@@ -13,7 +13,7 @@ type BannerProps = {
 	id?: string,
 	background?: string | null
 	classNameInView?: string
-	amoutInView? : number,
+	amoutInView?: number,
 	classtitle?: string
 }
 
@@ -48,7 +48,7 @@ const Banner = (props: BannerProps) => {
 
 const BannerTitle = (props: { children: ReactNode, className?: string }) => {
 	if (props.children == null) return <></>
-	return <h1 className={clsx(style.banner_title,props.className)}>{props.children}</h1>
+	return <h1 className={clsx(style.banner_title, props.className)}>{props.children}</h1>
 }
 
 Banner.Title = BannerTitle

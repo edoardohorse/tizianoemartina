@@ -4,12 +4,13 @@
   width: 100%;
   min-height: 400px;
   height: fit-content;
-  margin: 3em 0 3em 0;
+  /*margin: 2em 0 2em 0;*/
   /*padding: 1em;*/
   padding: 0;
   box-sizing: border-box;
   background-color: transparent;
   border-radius: unset !important;
+  z-index: 10;
 }
 
 /*.firstLetter::first-letter{
@@ -47,7 +48,7 @@
 @media (width <= 768px){
   .banner{
     width: 100%;
-    margin: 1em 0 1em 0;
+    /*margin: 1em 0 1em 0;*/
     min-height: unset;
 
   }
