@@ -1,8 +1,13 @@
 import * as React from 'react';
 import { TextareaAutosize as BaseTextareaAutosize } from '@mui/base/TextareaAutosize';
 import { styled } from '@mui/system';
+import {Ref, useImperativeHandle, useRef} from "react";
 
-export default function MinHeightTextarea(props: any) {
+export type ActionTextArea ={
+	getValue: ()=>void
+}
+
+const MinHeightTextarea = React.forwardRef(function (props: any, ref: Ref<ActionTextArea>) {
 	const green = {
 		100: '#b4e1df',
 		200: '#84ceca',
@@ -62,7 +67,26 @@ export default function MinHeightTextarea(props: any) {
   `,
 	);
 
+	const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+	// Function to get the value of the textarea
+	const getValue = () => {
+		// debugger
+		if (textareaRef.current) {
+			return textareaRef.current.value;
+		}
+		return '';
+	};
+
+	useImperativeHandle(ref, ()=>({
+		getValue
+	}))
+
 	return (
-		<Textarea aria-label="intolleranze" minRows={4} maxRows={4} placeholder="Intolleranze"  {...props} />
+		<Textarea aria-label="intolleranze" minRows={4} maxRows={4} placeholder="Intolleranze" name={"intolleranze"} ref={textareaRef} defaultValue={getValue()} />
 	);
-}
+})
+
+MinHeightTextarea.displayName = 'MinHeightTextarea'
+
+export default MinHeightTextarea

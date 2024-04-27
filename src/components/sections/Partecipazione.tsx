@@ -15,7 +15,7 @@ import data from '@/data/data.json'
 import styles from '@/components/style/partecipazione.module.css'
 import Banner from "@/components/Banner";
 import NumberInput from "@/components/QuantityInput";
-import MinHeightTextarea from "@/components/TextArea";
+import MinHeightTextarea, {ActionTextArea} from "@/components/TextArea";
 import CardBorded from "@/components/CardBorded";
 import Image from "next/image";
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
@@ -34,7 +34,6 @@ type PartecipazioneProps = { window?: () => Window; }
  'n_invitati': '5',
  'intolleranze': 'Celiaco',
  'telefono': '3926043814',
- 'email': 'edoardohorse@gmail.com',
  'famiglia': 'Cavallo',
  'da_dove': 'Puglia',
  'pullman': 'si',
@@ -44,7 +43,6 @@ const mock = {
 	'n_invitati': '',
 	'intolleranze': '',
 	'telefono': '',
-	// 'email': '',
 	'famiglia': '',
 	'da_dove': '',
 	'pullman': '',
@@ -57,6 +55,7 @@ const Partecipazione = (props: PartecipazioneProps) => {
 	const [daDove, setDaDove] = React.useState<TDaDove>(null);
 	const [pullman, setPullman] = React.useState<TPullman>(null);
 	const [famiglia, setFamiglia] = useState<string | null>(null)
+	const refIntollerenze = useRef<ActionTextArea>(null)
 
 	const handleChangeDaDove = (event: React.MouseEvent<HTMLElement>, value: TDaDove) => {
 		setDaDove(value);
@@ -81,6 +80,9 @@ const Partecipazione = (props: PartecipazioneProps) => {
 		}
 		formData.append('da_dove', daDove?.toString() ?? '')
 		formData.append('pullman', pullman?.toString() ?? 'No')
+
+		const intollerenza = refIntollerenze?.current?.getValue()
+		formData.append('intolleranze', intollerenza ?? '')
 
 		// @ts-ignore
 		for (const [key, value] of formData) {
@@ -143,7 +145,7 @@ const Partecipazione = (props: PartecipazioneProps) => {
 						<NumberInput min={1} max={10} defaultValue={1}/>
 					</div>
 
-					<MinHeightTextarea name={'intolleranze'} defaultValue={mock['intolleranze']}/>
+					<MinHeightTextarea ref={refIntollerenze} />
 					<TextField className={styles.field} name={'telefono'} type="tel" label={'Numero telefono'} required
 					           defaultValue={mock['telefono']}/>
 					{/*	<TextField className={styles.field} name={'email'} type="email" label={'Email'} required
@@ -171,7 +173,7 @@ const Partecipazione = (props: PartecipazioneProps) => {
 								                  setPullman('No')
 							                  }
 						                  }}
-						                  name={'pullman'}
+						                  // name={'pullman'}
 						                  control={<Checkbox/>} label="Riserva il tuo posto sul bus da Grottaglie"/>
 
 					<Button variant="contained" type={"submit"}>Invia</Button>
