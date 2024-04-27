@@ -15,7 +15,7 @@ import data from '@/data/data.json'
 import styles from '@/components/style/partecipazione.module.css'
 import Banner from "@/components/Banner";
 import NumberInput from "@/components/QuantityInput";
-import MinHeightTextarea, {ActionTextArea} from "@/components/TextArea";
+import MinHeightTextarea from "@/components/TextArea";
 import CardBorded from "@/components/CardBorded";
 import Image from "next/image";
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
@@ -55,8 +55,6 @@ const Partecipazione = (props: PartecipazioneProps) => {
 	const [daDove, setDaDove] = React.useState<TDaDove>(null);
 	const [pullman, setPullman] = React.useState<TPullman>(null);
 	const [famiglia, setFamiglia] = useState<string | null>(null)
-	const refIntollerenze = useRef<ActionTextArea>(null)
-
 	const handleChangeDaDove = (event: React.MouseEvent<HTMLElement>, value: TDaDove) => {
 		setDaDove(value);
 
@@ -81,8 +79,6 @@ const Partecipazione = (props: PartecipazioneProps) => {
 		formData.append('da_dove', daDove?.toString() ?? '')
 		formData.append('pullman', pullman?.toString() ?? 'No')
 
-		const intollerenza = refIntollerenze?.current?.getValue()
-		formData.append('intolleranze', intollerenza ?? '')
 
 		// @ts-ignore
 		for (const [key, value] of formData) {
@@ -90,7 +86,7 @@ const Partecipazione = (props: PartecipazioneProps) => {
 		}
 
 
-		fetch("/", {
+		fetch("/__forms.html", {
 			method: "POST",
 			headers: {"Content-Type": "application/x-www-form-urlencoded"},
 		// @ts-ignore
@@ -145,7 +141,7 @@ const Partecipazione = (props: PartecipazioneProps) => {
 						<NumberInput min={1} max={10} defaultValue={1}/>
 					</div>
 
-					<MinHeightTextarea ref={refIntollerenze} />
+					<MinHeightTextarea />
 					<TextField className={styles.field} name={'telefono'} type="tel" label={'Numero telefono'} required
 					           defaultValue={mock['telefono']}/>
 					{/*	<TextField className={styles.field} name={'email'} type="email" label={'Email'} required
