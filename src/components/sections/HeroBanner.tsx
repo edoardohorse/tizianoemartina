@@ -13,7 +13,7 @@ const HeroBanner = (props: HeroBanner) => {
 
 	return (<>
 		<section className={style.herobanner} id={data.hero.id}>
-			<Image className={style.hero} src={'/hero/hero.png'} alt={"bouchet"} fill={true} sizes={"100vw"} priority draggable={false}/>
+			<Image className={style.hero} src={data.hero.image} alt={"bouchet"} fill={true} sizes={"100vw"} priority draggable={false}/>
 			{/*<div className={style.interlaced}/>*/}
 			<div className={style.content}>
 				<embed src={'/hero/tiziano.svg'} className={style.tiziano}/>

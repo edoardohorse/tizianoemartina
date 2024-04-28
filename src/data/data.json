@@ -2,7 +2,8 @@
   "hero": {
     "id": "hero",
     "title": "Tiziano & Martina",
-    "date": "SAB AGO 2024"
+    "date": "SAB AGO 2024",
+    "image": "/hero/hero.webp"
   },
   "doveecome": {
     "id": "doveecome",
@@ -12,7 +13,7 @@
       "cardTitle": "Chiesa",
       "description": "Si consiglia di cercare parcheggio nelle vie limitrofe: Corso Vittorio Emanuele, Corso Garibaldi,  via Romano, via Santa Rita, Corso Umberto, Piazza Umberto.",
       "time": "Il rito nuziale avrà luogo alle ore 16.00 presso la Chiesa Maria SS della Purificazione",
-      "image": "/chiesa.jpg",
+      "image": "/doveecome/chiesa.webp",
       "links": [
         {
           "text": "<u><b>Chiesa Madre</b></u><br/>Piazza Ligotti Tenente 2, Barrafranca EN",
@@ -23,7 +24,7 @@
     "tradizione": {
       "title": "Tradizione",
       "cardTitle": "Visita",
-      "image": "/tradizione_full.png",
+      "image": "/doveecome/tradizione_full.webp",
       "content": "Storicamente è tradizione locale far visita agli sposi durante la vestizione che precede il rito nuziale",
       "links": [
         {
@@ -39,7 +40,7 @@
     "cerimonia": {
       "title": "Cerimonia",
       "cardTitle": "Cerimonia",
-      "image": "/location.jpg",
+      "image": "/doveecome/location.webp",
       "content": "A seguito della cerimonia, gli sposi saranno lieti di festeggiare assieme a voi presso la",
       "links": [
         {
@@ -52,30 +53,29 @@
   "perChiVieneDaFuori": {
     "id": "perChiVieneDaFuori",
     "title": "Per Chi Viene Da Fuori",
-    "background": "/background/perchivienedafuori.jpg",
     "description": "Saremo lieti di ospitarvi la notte delle nozze e quella precedente presso uno dei seguenti Hotel/B&B.<br/>Nelle prossime settimane vi aggiorneremo riguardo la disposizione che abbiamo scelto per voi previa conferma della vostra presenza.",
     "location": [
       {
         "title": "Hotel Marconi",
-        "image": "/perchivienedafuori/hotel_marconi.jpeg",
+        "image": "/perchivienedafuori/hotel_marconi.webp",
         "map": "https://maps.app.goo.gl/w2bjZwfpmty6jSZo7",
         "text": "<b><u>Hotel Marconi</u></b><br/> Via Kennedy 5, Pietraperzia EN"
       },
       {
         "title": "B&B Dante",
-        "image": "/perchivienedafuori/bb_dante.jpeg",
+        "image": "/perchivienedafuori/bb_dante.webp",
         "map": "https://maps.app.goo.gl/ujhBt41qYAJgG6Li9",
         "text": "<b><u>B&B Dante</u></b><br/>Via Dante 7, Barrafranca EN"
       },
       {
         "title": "B&B La Primula",
-        "image": "/perchivienedafuori/bb_primula.jpeg",
+        "image": "/perchivienedafuori/bb_primula.webp",
         "map": "https://maps.app.goo.gl/eWEPFinkk6ttZ7DR6",
         "text": "<b><u>B&B La Primula</u></b><br/>Bivio catena, Barrafranca EN"
       },
       {
         "title": "B&B Principe di Scalea",
-        "image": "/perchivienedafuori/bb_scalea.jpeg",
+        "image": "/perchivienedafuori/bb_scalea.webp",
         "map": "https://maps.app.goo.gl/4H4oZLzKsiLmd4KKA",
         "text": "<b><u>B&B Principe di Scalea</u></b><br/> Via P. Scalea 17-19, Barrafranca EN"
       }
@@ -92,9 +92,9 @@
         "link": "https://www.piazzaarmerina.org/",
         "textLink": "piazzaarmerina.org",
         "images": [
-          "/neidintorni/piazzaarmerina/1.jpg",
-          "/neidintorni/piazzaarmerina/2.jpg",
-          "/neidintorni/piazzaarmerina/3.jpg"
+          "/neidintorni/piazzaarmerina/1.webp",
+          "/neidintorni/piazzaarmerina/2.webp",
+          "/neidintorni/piazzaarmerina/3.webp"
         ]
       },
       "villaromana": {
@@ -103,9 +103,9 @@
         "link": "https://www.villaromanadelcasale.it/",
         "textLink": "villaromanadelcasale.it",
         "images": [
-          "/neidintorni/villaromana/2.jpg",
-          "/neidintorni/villaromana/3.jpg",
-          "/neidintorni/villaromana/4.jpg"
+          "/neidintorni/villaromana/2.webp",
+          "/neidintorni/villaromana/3.webp",
+          "/neidintorni/villaromana/4.webp"
         ]
       },
       "caltagirone": {
@@ -114,9 +114,9 @@
         "link": null,
         "textLink":null,
         "images": [
-          "/neidintorni/caltagirone/1.jpg",
-          "/neidintorni/caltagirone/4.jpeg",
-          "/neidintorni/caltagirone/5.jpg"
+          "/neidintorni/caltagirone/1.webp",
+          "/neidintorni/caltagirone/4.webp",
+          "/neidintorni/caltagirone/5.webp"
         ]
       },
       "enna": {
@@ -125,9 +125,9 @@
         "link": null,
         "textLink":null,
         "images": [
-          "/neidintorni/enna/1.jpg",
-          "/neidintorni/enna/2.jpg",
-          "/neidintorni/enna/3.jpg"
+          "/neidintorni/enna/1.webp",
+          "/neidintorni/enna/2.webp",
+          "/neidintorni/enna/3.webp"
         ]
       },
       "templi": {
@@ -136,9 +136,9 @@
         "link": "https://www.lavalledeitempli.it/",
         "textLink": "lavalledeitempli.it",
         "images": [
-          "/neidintorni/templi/2.jpg",
+          "/neidintorni/templi/2.webp",
           "/neidintorni/templi/3.webp",
-          "/neidintorni/templi/4.png"
+          "/neidintorni/templi/4.webp"
         ]
       }
     },
@@ -151,19 +151,19 @@
     "id": "gallery",
     "title": "Gallery",
     "description": "Vi invitiamo a scaricare l'app WedShoots, in cui postare i vostri momenti preferiti del giorno del matrimonio e non solo...</br>È simile ad instagram ma con visibilità privata. Vi verrà inviato un codice di accesso, così solo gli invitati potranno caricare e visualizzare le foto pubblicate.",
-    "background": "/background/gallery.jpg",
+    "background": "/background/gallery.webp",
     "link": "https://photos.app.goo.gl/wGK64hwhq1wvnk4EA"
   },
   "partecipazione": {
     "id": "partecipazione",
     "title": "Conferma La Partecipazione",
-    "background": "/background/partecipazione.jpg",
+    "background": "/background/partecipazione.webp",
     "cels": "I nostri contatti:<br/>Tiziano <a href='tel:3807548420'>380 754 8420</a><br/> Martina <a href='tel:334 917 3949'>334 917 3949</a>"
   },
   "iban": {
     "id": "iban",
     "title": "Il Nostro Futuro",
-    "image": "/background/iban.jpg",
+    "image": "/background/iban.webp",
     "description": "Nel giorno più bello della nostra vita desideriamo essere circondati dalle persone a noi più care. Per questo ti chiediamo di esserci.</br>E mai finiremo di esser grati a tutti coloro che vorranno aiutarci nell'inizio del nostro futuro insieme.",
     "iban": "IBAN: IT92K0347501605CC0012595374"
   }
