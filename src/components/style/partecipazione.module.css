@@ -64,6 +64,7 @@
 
 .cels{
   font-size: 18px;
+  z-index: 11;
 }
 
 .cels a{

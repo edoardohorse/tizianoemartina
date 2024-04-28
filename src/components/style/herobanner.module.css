@@ -14,7 +14,7 @@
   top: 0;
   left: 0;
   object-fit: cover;
-  filter: brightness(0.5);
+  filter: brightness(0.7);
 }
 
 .interlaced {
@@ -39,6 +39,7 @@
   --width_tizianoemartina: 400px;
   --height_tizianoemartina: 100px;
   --opacity_ampersand: 0.3;
+  --y_date:40dvh;
   --size_ampersand: calc(var(--height_tizianoemartina) * 2);
 
   display: flex;
@@ -80,7 +81,7 @@
   height: auto;
   z-index: 10;
   position: absolute;
-  transform: translate(0, 40dvh);
+  transform: translate(0, var(--y_date));
 }
 
 .content .savedate {
@@ -134,18 +135,22 @@
   .content{
     --width_tizianoemartina: 200px;
     --height_tizianoemartina: 70px;
-    --x_tiziano: 0px;
-    --x_martina: 0px;
+    --x_tiziano: -30px;
+    --x_martina: 30px;
     /*--y_tiziano: 0px;*/
     --y_martina: 170px;
-    --x_ampersand: 10px;
-    --y_ampersand: 153px;
+    --x_ampersand: -50px;
+    --y_ampersand: 160px;
     --size_ampersand: 50px;
-    /*--opacity_ampersand: 0.4;*/
+    --opacity_ampersand: 0.4;
   }
 
   .countdown{
     font-size: 20px;
+  }
+
+  .data{
+    --y_date: -35dvh;
   }
 }
 

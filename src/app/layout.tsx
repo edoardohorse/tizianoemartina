@@ -22,6 +22,7 @@ export default function RootLayout({
 	return (
 		<CookiesProvider>
 			<html lang="en">
+			<meta name="theme-color" content="#dbe0d7"/>
 			{/*   <head>
 			 <title>Tiziano e Martina</title>
 			 </head>*/}
