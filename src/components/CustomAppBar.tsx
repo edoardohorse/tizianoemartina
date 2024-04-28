@@ -24,7 +24,6 @@ interface Props {
 type AppBarProps = {}
 
 const navItems = [data.doveecome, data.perChiVieneDaFuori, data.neiDintorni, data.gallery, data.iban, data.partecipazione]
-const drawerWidth = 240;
 
 function HideOnScroll(props: Props) {
 	const {children, window} = props;
@@ -72,7 +71,7 @@ const CustomAppBar = (props: AppBarProps) => {
 	const container = document?.body;
 
 	const drawer = (
-		<Box onClick={handleDrawerToggle} sx={{textAlign: 'center'}}>
+		<Box onClick={handleDrawerToggle} sx={{textAlign: 'center'}} className={"drawer"}>
 			<List>
 				{navItems.map((item) => (
 					<ListItem key={item.id} disablePadding>
@@ -121,8 +120,9 @@ const CustomAppBar = (props: AppBarProps) => {
 					}}
 					sx={{
 						display: {xs: 'block', sm: 'none'},
-						'& .MuiDrawer-paper': {boxSizing: 'border-box', width: drawerWidth},
+						'& .MuiDrawer-paper': {boxSizing: 'border-box'},
 					}}
+					className={"drawer_wrapper"}
 				>
 					{drawer}
 				</Drawer>

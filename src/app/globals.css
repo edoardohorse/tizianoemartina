@@ -12,6 +12,7 @@
 
 :root{
   --pisellino: #dbe0d7;
+  --pisellino-80: #dbe0d7bf;
   --background-2: #f9fbff;
   --primary: #343a40;
   --secondary: #fff;
@@ -47,6 +48,13 @@ body {
   font-family: 'Sitka Display',serif !important;
   /*color: var(--text);*/
 
+}
+
+
+
+.drawer{
+  height: 100%;
+  background: var(--pisellino);
 }
 
 main {
