@@ -11,14 +11,14 @@
 }
 
 :root{
-  --background: #dbe0d7;
+  --pisellino: #dbe0d7;
   --background-2: #f9fbff;
   --primary: #343a40;
   --secondary: #fff;
   --text: var(--primary);
-  --text-title: #709075;
+  --salvia: #709075;
   --text-hero: #fff;
-  --swiper-theme-color: var(--text-title) !important;
+  --swiper-theme-color: var(--salvia) !important;
   /*--background: #b1c6af;
   --background-2: #c3e0c1;
   --primary: #241d13;
@@ -137,7 +137,7 @@ footer{
 }
 
 .MuiTabs-indicator{
-  background-color: var(--text-title) !important;
+  background-color: var(--salvia) !important;
 }
 
 .MuiButton-contained{
@@ -150,7 +150,7 @@ footer{
 }
 
 .MuiToggleButtonGroup-grouped.Mui-selected{
-  background-color: var(--text-title) !important;
+  background-color: var(--salvia) !important;
   color: white !important;
 }
 

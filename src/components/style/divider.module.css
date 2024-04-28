@@ -19,11 +19,11 @@
 }*/
 
 .odd{
-  background: var(--background);
+  background: var(--pisellino);
 }
 
 .even{
-  background: var(--text-title);
+  background: var(--salvia);
 }
 
 /*

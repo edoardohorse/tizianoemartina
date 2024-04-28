@@ -8,7 +8,7 @@
 }
 
 .title{
-  color: var(--background);
+  color: var(--pisellino);
 }
 
 .partecipazione{
@@ -67,6 +67,6 @@
 }
 
 .cels a{
-  color: var(--text-title);
+  color: var(--salvia);
   text-decoration: none;
 }

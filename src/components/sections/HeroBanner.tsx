@@ -13,11 +13,13 @@ const HeroBanner = (props: HeroBanner) => {
 
 	return (<>
 		<section className={style.herobanner} id={data.hero.id}>
-			<Image className={style.hero} src={'/bouchet/ai/test1.png'} alt={"bouchet"} fill={true} sizes={"100vw"} priority draggable={false}/>
-			<div className={style.interlaced}/>
+			<Image className={style.hero} src={'/hero/hero.png'} alt={"bouchet"} fill={true} sizes={"100vw"} priority draggable={false}/>
+			{/*<div className={style.interlaced}/>*/}
 			<div className={style.content}>
-				<embed src={'/hero_tizianoemartina.svg'} className={style.tizianoemartina}/>
-				<embed src={'/hero_data.svg'} className={style.data}/>
+				<embed src={'/hero/tiziano.svg'} className={style.tiziano}/>
+				<embed src={'/hero/martina.svg'} className={style.martina}/>
+				<embed src={'/hero/ampersand.svg'} className={style.ampersand}/>
+				<embed src={'/hero/data.svg'} className={style.data}/>
 				{/*<Image src={'/hero.svg'} width={600} height={400} alt={""} className={style.tizianoemartina} draggable={false} priority/>*/}
 				{/*<h1 className={style.tiziano}>Tiziano</h1>
 				<h1 className={style.ampersand}>&</h1>
@@ -25,7 +27,7 @@ const HeroBanner = (props: HeroBanner) => {
 				<h2 className={style.date}>{data.hero.date.split(" ")}</h2>
 					<Link className={style.savedate} href="/calendar.ics" color="inherit">{'Salva la data'}</Link>*/}
 			</div>
-				{/*<Countdown/>*/}
+				<Countdown/>
 		</section>
 	</>)
 }

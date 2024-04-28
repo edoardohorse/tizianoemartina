@@ -1,6 +1,6 @@
 .cardBorder_wrapper{
   position: relative;
-  background-color: var(--background);
+  background-color: var(--pisellino);
   justify-content: center;
   width: auto;
   padding: 3em;
@@ -58,7 +58,7 @@
 }
 
 .cardBorder_wrapper_details_title{
-  color: var(--text-title);
+  color: var(--salvia);
   font-size: 38px;
   line-height: 1;
   font-family: 'Great Vibes', cursive !important;
@@ -67,7 +67,7 @@
 }
 
 .cardBorder_wrapper_details_orario{
-  color: var(--text-title);
+  color: var(--salvia);
   font-size: 25px;
   line-height: 1;
 }

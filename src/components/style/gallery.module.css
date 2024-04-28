@@ -5,13 +5,13 @@
 }
 
 .description{
-  color: var(--background);
+  color: var(--pisellino);
   font-size: 24px;
   text-align: center;
 }
 
 .title{
-  color: var(--background);
+  color: var(--pisellino);
 }
 
 .appBtns_wrapper{

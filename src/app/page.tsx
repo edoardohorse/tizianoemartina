@@ -33,7 +33,6 @@ export default function Home() {
 				<IlNostroFuturo/>
 				<Divider type={"even"}/>
 				<Partecipazione/>
-				{/*<ConfirmForm/>*/}
 			</main>
 			<ScrollTop/>
 
