@@ -2,12 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap')*/
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
-
 @font-face {
-  font-family: 'sitka';
-  src:  url('/font/sitka-small-599.ttf') format('ttf'),
-  url('/font/sitka-small-652.ttf') format('ttf'),
-  url('/font/sitka-small-815.ttf') format('ttf');
+  font-family: 'Sitka Display';
+  src:  url('/public/font/sitka-small-599.ttf') format('ttf'),
+  url('/public/font/sitka-small-652.ttf') format('ttf'),
+  url('/public/font/sitka-small-815.ttf') format('ttf');
 }
 
 :root{
@@ -32,7 +31,6 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Sitka Text', serif;
   letter-spacing: -0.2px;
   overflow-x: hidden;
   scrollbar-width: thin;
@@ -72,6 +70,7 @@ main {
 .appbar--transparent{
  background-color: transparent !important;
   box-shadow: unset !important;
+  opacity: 0;
 }
 
 .container {

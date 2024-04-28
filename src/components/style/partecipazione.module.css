@@ -71,3 +71,13 @@
   color: var(--salvia);
   text-decoration: none;
 }
+
+.savedate {
+  font-size: 20px;
+  font-weight: 800;
+  text-align: center;
+  grid-column: savedate;
+  color: var(--salvia);
+  z-index: 10;
+  /*transform: translate(0,-35dvh);*/
+}

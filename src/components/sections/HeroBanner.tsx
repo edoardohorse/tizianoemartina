@@ -20,12 +20,13 @@ const HeroBanner = (props: HeroBanner) => {
 				<embed src={'/hero/martina.svg'} className={style.martina}/>
 				<embed src={'/hero/ampersand.svg'} className={style.ampersand}/>
 				<embed src={'/hero/data.svg'} className={style.data}/>
+
 				{/*<Image src={'/hero.svg'} width={600} height={400} alt={""} className={style.tizianoemartina} draggable={false} priority/>*/}
 				{/*<h1 className={style.tiziano}>Tiziano</h1>
 				<h1 className={style.ampersand}>&</h1>
 				<h1 className={style.martina}>Martina</h1>
 				<h2 className={style.date}>{data.hero.date.split(" ")}</h2>
-					<Link className={style.savedate} href="/calendar.ics" color="inherit">{'Salva la data'}</Link>*/}
+					*/}
 			</div>
 				<Countdown/>
 		</section>

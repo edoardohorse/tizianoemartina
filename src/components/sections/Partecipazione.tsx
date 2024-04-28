@@ -20,6 +20,7 @@ import CardBorded from "@/components/CardBorded";
 import Image from "next/image";
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
 import Link from "next/link";
+import style from "@/components/style/herobanner.module.css";
 
 
 type TDaDove = 'Puglia' | 'Sicilia' | null
@@ -175,6 +176,7 @@ const Partecipazione = (props: PartecipazioneProps) => {
 					<Button variant="contained" type={"submit"}>Invia</Button>
 					<Image src={'/svg/girigoro_2.png'} alt={'girigoro'} className={styles.girigoro2} width={200} height={300}/>
 					<p className={styles.cels} dangerouslySetInnerHTML={{__html: data.partecipazione.cels}}></p>
+					<Link className={styles.savedate} href="/calendar.ics" color="inherit">{'Salva la data'}</Link>
 				</form>
 			</CardBorded>
 

@@ -1,5 +1,3 @@
-"use client"
-
 import style from './page.module.css'
 import HeroBanner from "@/components/sections/HeroBanner";
 import DoveECome from "@/components/sections/DoveECome";
