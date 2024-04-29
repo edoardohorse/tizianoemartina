@@ -10,6 +10,7 @@ import {useInView, useMotionValueEvent, useScroll} from "framer-motion";
 import clsx from "clsx";
 import Slide from '@mui/material/Slide';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
+import packageJson from "../../package.json";
 
 interface Props {
 	/**
@@ -81,6 +82,9 @@ const CustomAppBar = (props: AppBarProps) => {
 					</ListItem>
 				))}
 			</List>
+			<div className={"version"}>
+				v.{packageJson.version}
+			</div>
 		</Box>
 	);
 

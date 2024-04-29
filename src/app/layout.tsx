@@ -2,7 +2,7 @@ import type {Metadata} from "next";
 import {CookiesProvider} from 'next-client-cookies/server';
 
 import "./globals.css";
-import packageJson from "../../package.json"
+
 import {createTheme, ThemeProvider} from "@mui/material";
 import theme from "@/app/theme";
 import {AppRouterCacheProvider} from "@mui/material-nextjs/v13-appRouter";
@@ -32,7 +32,6 @@ export default function RootLayout({
 					{children}
 				</ThemeProvider>
 			</AppRouterCacheProvider>
-			<footer>v{packageJson.version}</footer>
 			</body>
 			</html>
 		</CookiesProvider>
