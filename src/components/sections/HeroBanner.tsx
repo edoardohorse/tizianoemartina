@@ -2,33 +2,34 @@
 
 import style from '../style/herobanner.module.css'
 import Image from "next/image";
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import data from '@/data/data.json'
 import Link from "next/link";
+import {useInView} from "framer-motion";
+import clsx from "clsx";
 
 type HeroBanner = {}
 
 const HeroBanner = (props: HeroBanner) => {
-	const countdown = ""
+	const ref = useRef(null)
+	const [bNotReady, setNotReady] = useState<boolean>(true)
+	useEffect(function () {
+		setNotReady(false)
+	}, []);
+
 
 	return (<>
-		<section className={style.herobanner} id={data.hero.id}>
-			<Image className={style.hero} src={data.hero.image} alt={"bouchet"} fill={true} sizes={"100vw"} priority draggable={false}/>
-			{/*<div className={style.interlaced}/>*/}
-			<div className={style.content}>
-				<embed src={'/hero/tiziano.svg'} className={style.tiziano}/>
-				<embed src={'/hero/martina.svg'} className={style.martina}/>
-				<embed src={'/hero/ampersand.svg'} className={style.ampersand}/>
-				<embed src={'/hero/data.svg'} className={style.data}/>
+		<section className={style.herobanner} id={data.hero.id} ref={ref}>
+			<Image className={style.hero} src={data.hero.image} alt={"bouchet"} fill={true} sizes={"100vw"} priority
+			       draggable={false}/>
 
-				{/*<Image src={'/hero.svg'} width={600} height={400} alt={""} className={style.tizianoemartina} draggable={false} priority/>*/}
-				{/*<h1 className={style.tiziano}>Tiziano</h1>
-				<h1 className={style.ampersand}>&</h1>
-				<h1 className={style.martina}>Martina</h1>
-				<h2 className={style.date}>{data.hero.date.split(" ")}</h2>
-					*/}
+			<div className={style.content}>
+				<embed src={'/hero/tiziano.svg'} className={clsx(style.tiziano, bNotReady && style.tiziano_notinview)}/>
+				<embed src={'/hero/martina.svg'} className={clsx(style.martina, bNotReady && style.martina_notinview)}/>
+				<embed src={'/hero/ampersand.svg'} className={clsx(style.ampersand, bNotReady && style.ampersand_notinview)}/>
+				<embed src={'/hero/data.svg'} className={clsx(style.data, bNotReady && style.data_notinview)}/>
 			</div>
-				<Countdown/>
+			<Countdown/>
 		</section>
 	</>)
 }
