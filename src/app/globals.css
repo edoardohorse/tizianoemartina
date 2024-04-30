@@ -2,11 +2,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap')*/
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
+/*
 @font-face {
-  font-family: 'Sitka Display';
-  src:  url('/public/font/sitka-small-599.ttf') format('ttf'),
-  url('/public/font/sitka-small-652.ttf') format('ttf'),
-  url('/public/font/sitka-small-815.ttf') format('ttf');
+  font-family: 'Sitka';
+  src:  url('/font/sitka-small-599.ttf') format('ttf'),
+  url('/font/sitka-small-652.ttf') format('ttf'),
+  url('/font/sitka-small-815.ttf') format('ttf');
+}
+*/
+
+@font-face {
+  font-family: "Sitka Display";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: optional;
+  src: url('/fonts/Sitka_Display.woff') format('woff'),
+       url('/fonts/Sitka_Display.woff2') format('woff2');
 }
 
 :root{
@@ -43,18 +54,10 @@ body {
 
 * {
   box-sizing: border-box;
-  font-family: 'Sitka Display',serif !important;
+  font-family:'Sitka', 'Sitka Display', 'serif' !important;
   /*color: var(--text);*/
 
 }
-
-
-
-.drawer{
-  height: 100%;
-  background: var(--pisellino);
-}
-
 main {
   padding: 5rem 0;
   flex: 1;

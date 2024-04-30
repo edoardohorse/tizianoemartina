@@ -19,10 +19,18 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 
+
 	return (
 		<CookiesProvider>
 			<html lang="en">
 			<meta name="theme-color" content="#dbe0d7"/>
+{/*			<link
+				rel="preload"
+				href="/fonts/sitka-small-815.ttf"
+				as="font"
+				type="font/ttf"
+				crossOrigin="anonymous"
+			/>*/}
 			{/*   <head>
 			 <title>Tiziano e Martina</title>
 			 </head>*/}
