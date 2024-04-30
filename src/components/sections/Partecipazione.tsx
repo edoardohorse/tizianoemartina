@@ -74,10 +74,8 @@ const Partecipazione = (props: PartecipazioneProps) => {
 		const myForm = event.target;
 		const formData = new FormData(myForm);
 
-		if (daDove?.toString() === undefined || daDove?.toString() === '') {
-			return setAlertError(true)
-		}
-		formData.append('da_dove', daDove?.toString() ?? '')
+
+		formData.append('da_dove', daDove?.toString() ?? 'Altro')
 		formData.append('pullman', pullman?.toString() ?? 'No')
 
 
