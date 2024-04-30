@@ -63,7 +63,7 @@ const Countdown = () => {
 
 const useCountdown = () => {
 	// Set the countdown date
-	const [finishDate, setFinishDate] = useState(new Date('August 31, 2024 00:00:00').getTime())
+	const [finishDate, setFinishDate] = useState(new Date('August 31, 2024 16:00:00').getTime())
 	const [countdownDate, setCountdownDate] = useState<CountdownDate>(undefined)
 	const [distance, setDistance] = useState(0)
 	useEffect(function () {
